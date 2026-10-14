@@ -38,7 +38,7 @@ node server.js
 
 1. اذهب إلى <https://www.mongodb.com/cloud/atlas/register> وسجّل (مجاني).
 2. أنشئ **Cluster** (اختر `M0 Free`).
-3. في **Database Access**: أنشئ مستخدم (user + password) ولازم我给你 رقم ما فيهش رموز خاصة.
+3. في **Database Access**: أنشئ مستخدم (username + password) — وخلّي الباسورد **بلا رموز خاصة** (مثل `@`, `#`, `%`, `:`)، حيت الرموز هذي تخربط الرابط.
 4. في **Network Access**: أضف `0.0.0.0/0` (يسمح لأي سيرفر يتصل) — مناسب للاستضافة.
 5. اضغط **Connect → Drivers** وخُذ الرابط اللي يشبه:
    ```
@@ -64,6 +64,11 @@ node server.js
    - **Build Command**: `npm install`
    - **Start Command**: `node server.js`
    - **Plan**: Free
+
+   > ⚠️ **أهم حاجة:** لازم الـ Start Command يكون **`node server.js`** بالضبط.
+   > Render يقرا خانة `main` من `package.json`، وإذا كانت غالطة (كيما كانت `security.js`)
+   > يشغّل الملف الغلط → ما يتفتحش البورت → الخدمة تفشل.
+   > لهذا في `package.json` خلّي `"main": "server.js"`.
 5. في **Environment Variables** أضف:
    | المفتاح | القيمة |
    |---|---|
