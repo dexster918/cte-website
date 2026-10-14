@@ -127,15 +127,12 @@
     <!-- SETTINGS PANEL -->
     <div class="panel" id="panel-settings">
       <div class="card">
-        <h3>Password</h3>
-        <div style="display:flex;gap:0.75rem;align-items:end">
-          <div style="flex:1">
-            <label>New Password</label>
-            <input type="password" id="newPass" placeholder="Enter new password" />
-          </div>
-          <button class="btn btn-primary" onclick="changePassword()">Change</button>
-        </div>
-        <p style="color:#64748b;font-size:0.8rem;margin-top:0.5rem">Current password: <span id="currentPassDisplay">cte2026</span></p>
+        <h3>Admin Password</h3>
+        <p style="color:#64748b;font-size:0.82rem;margin-top:0.25rem">
+          The admin password is set on the <b>server</b>, not in this panel.<br>
+          To change it, open your hosting dashboard (e.g. <b>Render → Environment</b>),
+          edit the <b>ADMIN_PASSWORD</b> variable, then redeploy.
+        </p>
       </div>
       <div class="card">
         <h3>Email Configuration</h3>
@@ -181,15 +178,32 @@ function showToast(msg, isError) {
 }
 
 // ═══ LOGIN ═══
-function checkLogin() {
-  const key = document.getElementById('adminKey').value;
-  if (key === ADMIN_PASSWORD) {
-    document.getElementById('login').style.display = 'none';
-    document.getElementById('app').style.display = 'block';
-    loadData();
-  } else {
-    document.getElementById('loginError').style.display = 'block';
+async function checkLogin() {
+  const err = document.getElementById('loginError');
+  const key = document.getElementById('adminKey').value.trim();
+  if (!key) { err.textContent = 'Please enter the password.'; err.style.display = 'block'; return; }
+
+  // Check the password against the server when one is reachable.
+  let serverReachable = false, ok = false;
+  for (const base of API_CANDIDATES) {
+    try {
+      const r = await fetch(base + '/verify', { method: 'POST', headers: { 'x-admin-password': key } });
+      serverReachable = true;
+      ok = r.ok;
+      break;
+    } catch (e) { /* try the next base */ }
   }
+  // No server reachable (e.g. plain static hosting) → fall back to the built-in local password.
+  if (!serverReachable) ok = (key === ADMIN_PASSWORD);
+
+  if (!ok) { err.textContent = 'Wrong password.'; err.style.display = 'block'; return; }
+
+  err.style.display = 'none';
+  ADMIN_PASSWORD = key;
+  localStorage.setItem('cte-admin-pass', key);
+  document.getElementById('login').style.display = 'none';
+  document.getElementById('app').style.display = 'block';
+  loadData();
 }
 
 // ═══ LOAD / SAVE ═══
@@ -233,7 +247,7 @@ async function saveAll() {
         body: JSON.stringify(data)
       });
       if (res.status === 401) {
-        showToast('❌ Wrong admin password — change it in Settings or set ADMIN_PASSWORD on the server.', true);
+        showToast('❌ Wrong admin password. It must match ADMIN_PASSWORD on the server.', true);
         saved = true; // don't fall back to download on auth failure
         break;
       }
@@ -462,7 +476,6 @@ function renderTransForLang(lang) {
 
 // ═══ SETTINGS ═══
 function loadSettings() {
-  document.getElementById('currentPassDisplay').textContent = ADMIN_PASSWORD;
   if (!data.emailjs) data.emailjs = { serviceId: 'service_32vywm9', templateId: 'template_63qog7p', publicKey: 'r5VyE0XmW10H7HRJU', web3formsKey: '' };
   const ej = data.emailjs;
   document.getElementById('cfg-emailjs-service').value = ej.serviceId || 'service_32vywm9';
@@ -479,13 +492,7 @@ function loadSettings() {
 }
 
 function changePassword() {
-  const newPass = document.getElementById('newPass').value;
-  if (newPass.length < 4) { showToast('Password must be at least 4 characters', true); return; }
-  ADMIN_PASSWORD = newPass;
-  localStorage.setItem('cte-admin-pass', newPass);
-  document.getElementById('currentPassDisplay').textContent = newPass;
-  document.getElementById('newPass').value = '';
-  showToast('✅ Password changed');
+  showToast('The admin password is set on the server (ADMIN_PASSWORD). Edit it in your hosting dashboard.', true);
 }
 
 // ═══ UTILS ═══

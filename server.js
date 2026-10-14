@@ -132,6 +132,11 @@ app.get('/health', (req, res) => {
   res.json({ ok: true, storage: storageMode, dbConnected: !!contentCollection });
 });
 
+// Lightweight password check used by the admin login screen.
+app.post('/verify', requireAdmin, (req, res) => {
+  res.json({ ok: true, storage: storageMode });
+});
+
 // ── Static site ──────────────────────────────────────────────────────
 // (content.json is handled by the route above, so static never serves it)
 app.use(express.static(__dirname, {

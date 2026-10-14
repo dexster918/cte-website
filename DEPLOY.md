@@ -44,7 +44,15 @@ node server.js
    ```
    mongodb+srv://USER:PASSWORD@cluster0.xxxxx.mongodb.net/?retryWrites=true&w=majority
    ```
-   (بدّل `USER` و`PASSWORD` باللي درتهم).
+   (بدّل `USER` و`PASSWORD` باللي درتهم، وحيّد الرموز `< >`).
+
+> ⚠️ **ملاحظة مهمة (`querySrv ECONNREFUSED`)**  
+> بعض الشبكات (راوتر/DNS) ما تسمحش بـ SRV. إذا بانلك هذا الخطأ في السجلّات،
+> استعمل الرابط **بلا `+srv`**، يعني بالعُقد المباشرة:
+> ```
+> mongodb://USER:PASSWORD@ac-xxxxx-shard-00-00.xxxxx.mongodb.net:27017,ac-xxxxx-shard-00-01.xxxxx.mongodb.net:27017,ac-xxxxx-shard-00-02.xxxxx.mongodb.net:27017/DATABASE?ssl=true&replicaSet=atlas-xxxxx-shard-0&authSource=admin&retryWrites=true&w=majority
+> ```
+> تقدر تجيب أسماء العُقد من: **Connect → Drivers → (اختر نسخة Node قديمة)**، ولا من سجل TXT تاع الـ SRV.
 
 ### الخطوة 2: نشر السيرفر على Render
 
@@ -82,7 +90,7 @@ node server.js
 
 - **Render المجاني ينعّس**: إذا ما دخلش أحد للموقع مدة ~15 دقيقة، أول زيارة تاخذ ~30 ثانية باش يفيق. عادي.
 - **حجم الصور**: خزّن الصور **صغيرة** (أقل من 1 ميغا) أو استعمل **روابط immagini** (URL) بلا ما ترفع الملف مباشرة. السبب: قاعدة البيانات عندها حد أقصى ~16 ميغا للمستند الواحد، والصور Base64 تكبّر الحجم بزاف.
-- **تغيير كلمة السر**: بدّلها في Render (Environment Variables) وفي خانة Settings في الأدمن باش يتوافقوا.
+- **تغيير كلمة السر**: راهي محطوطة في **سيرفر** (متغيّر `ADMIN_PASSWORD` في Render). بدّلها من **Render → Environment** وعاود انشر. الأدمن في المتصفح راح يتحقّق منها وقت الدخول.
 - **الاحتياط**: قبل أي تعديل كبير، احتفظ بنسخة من `content.json`.
 
 ---
