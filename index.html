@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta http-equiv="X-Frame-Options" content="DENY" />
+  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="Permissions-Policy" content="geolocation=(), camera=(), microphone=()" />
+  <title>CTE 2018 — Technology & Engineering Club</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --white: #ffffff; --blue: #0a2a6e; --blue-mid: #1a4abf; --blue-light: #2563eb;
+      --gold: #c9a227; --gold-light: #f0c94d; --gold-bright: #ffe066;
+      --bg: #f5f7fc; --text-dark: #111111; --border: #e2e8f0;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Rajdhani', sans-serif; background: var(--bg); color: var(--text-dark); overflow-x: hidden; cursor: none; }
+    ::selection { background: var(--gold); color: var(--blue); }
+
+    /* ── SCROLL PROGRESS ── */
+    #scroll-progress { position: fixed; top: 0; left: 0; width: 0%; height: 3px; z-index: 10001; background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold-bright)); border-radius: 0 2px 2px 0; transition: width 0.1s linear; }
+
+    /* ── SPOTLIGHT CURSOR ── */
+    #spotlight { position: fixed; width: 500px; height: 500px; border-radius: 50%; pointer-events: none; z-index: 9998; background: radial-gradient(circle, rgba(201,162,39,0.06) 0%, transparent 60%); transform: translate(-50%, -50%); transition: opacity 0.3s; will-change: left, top; }
+    @media (max-width: 768px) { #spotlight { display: none; } body { cursor: auto; } }
+
+    /* ── PAGE TRANSITION ── */
+    #page-transition { position: fixed; inset: 0; z-index: 9999; background: var(--blue); pointer-events: none; clip-path: circle(0% at 50% 50%); transition: clip-path 0.6s cubic-bezier(0.77, 0, 0.18, 1); }
+    #page-transition.active { clip-path: circle(150% at 50% 50%); }
+
+    /* ── LOADING SCREEN ── */
+    #loader { position: fixed; inset: 0; z-index: 10000; background: var(--blue); display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 1.2rem; transition: opacity 0.6s, visibility 0.6s; }
+    #loader.hidden { opacity: 0; visibility: hidden; }
+    .loader-ring { width: 60px; height: 60px; border-radius: 50%; border: 3px solid rgba(201,162,39,0.15); border-top-color: var(--gold-light); animation: spin 0.8s linear infinite; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .loader-text { font-family: 'Orbitron', sans-serif; font-size: 0.8rem; letter-spacing: 0.3em; color: var(--gold-light); text-transform: uppercase; animation: pulse-text 1.5s ease-in-out infinite; }
+    @keyframes pulse-text { 0%,100% { opacity: 0.4; } 50% { opacity: 1; } }
+    .loader-bar { width: 180px; height: 2px; background: rgba(255,255,255,0.1); border-radius: 2px; overflow: hidden; }
+    .loader-bar-fill { height: 100%; width: 0%; background: linear-gradient(90deg, var(--gold), var(--gold-light)); border-radius: 2px; transition: width 0.3s; }
+    .loader-dots { display: flex; gap: 6px; }
+    .loader-dots span { width: 6px; height: 6px; border-radius: 50%; background: var(--gold-light); animation: dot-bounce 1.2s ease-in-out infinite; }
+    .loader-dots span:nth-child(2) { animation-delay: 0.2s; }
+    .loader-dots span:nth-child(3) { animation-delay: 0.4s; }
+    @keyframes dot-bounce { 0%,80%,100% { transform: scale(0.4); opacity: 0.3; } 40% { transform: scale(1); opacity: 1; } }
+
+    /* ── NAVBAR ── */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(10,42,110,0.95); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid rgba(201,162,39,0.2); display: flex; align-items: center; justify-content: space-between; padding: 0 2.5rem; height: 70px; transition: height 0.3s, box-shadow 0.3s, background 0.3s; }
+    nav.scrolled { height: 56px; box-shadow: 0 4px 40px rgba(0,0,0,0.4); background: rgba(6,24,61,0.98); }
+    .nav-logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
+    .nav-logo-icon { width: 42px; height: 42px; background: linear-gradient(135deg, var(--gold), var(--gold-light)); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-family: 'Orbitron', sans-serif; font-weight: 900; font-size: 0.7rem; color: var(--blue); overflow: hidden; }
+    .nav-logo-icon img { width: 100%; height: 100%; object-fit: cover; border-radius: 10px; }
+    .nav-logo-text { font-family: 'Orbitron', sans-serif; font-size: 0.85rem; font-weight: 700; color: var(--white); line-height: 1.2; }
+    .nav-logo-text span { color: var(--gold-light); }
+    .nav-links { display: flex; align-items: center; gap: 0; list-style: none; }
+    .nav-links a { font-weight: 600; font-size: 0.9rem; color: rgba(255,255,255,0.75); text-decoration: none; padding: 0.4rem 0.85rem; border-radius: 6px; letter-spacing: 0.05em; text-transform: uppercase; transition: color 0.3s; position: relative; }
+    .nav-links a::after { content: ''; position: absolute; bottom: 2px; left: 50%; width: 0; height: 2px; background: var(--gold-light); transition: width 0.3s, left 0.3s; border-radius: 2px; }
+    .nav-links a:hover::after, .nav-links a.active::after { width: 60%; left: 20%; }
+    .nav-links a:hover, .nav-links a.active { color: var(--gold-light); }
+    .nav-join-btn { background: linear-gradient(135deg, var(--gold), var(--gold-light)) !important; color: var(--blue) !important; font-weight: 700 !important; margin-left: 0.5rem; border-radius: 6px !important; }
+    .nav-join-btn::after { display: none !important; }
+    .nav-join-btn:hover { filter: brightness(1.1) !important; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; z-index: 1001; }
+    .hamburger span { display: block; width: 25px; height: 2px; background: var(--white); border-radius: 2px; transition: 0.3s; }
+    .lang-switch { display: flex; gap: 2px; margin-left: 0.75rem; align-items: center; }
+    .lang-btn { background: transparent; border: 1px solid rgba(201,162,39,0.25); color: rgba(255,255,255,0.5); font-family: 'Orbitron', sans-serif; font-size: 0.55rem; padding: 0.2rem 0.35rem; border-radius: 4px; cursor: pointer; transition: all 0.25s; letter-spacing: 0.05em; font-weight: 700; line-height: 1.2; }
+    .lang-btn:hover { border-color: var(--gold); color: var(--gold-light); }
+    .lang-btn.active { background: rgba(201,162,39,0.15); border-color: var(--gold-light); color: var(--gold-light); }
+    @media (max-width: 820px) {
+      .hamburger { display: flex; }
+      .lang-switch { margin-left: auto; margin-right: 0.5rem; }
+      .nav-links { position: fixed; top: 0; right: 0; background: rgba(10,42,110,0.98); backdrop-filter: blur(16px); flex-direction: column; gap: 0; width: 260px; height: 100vh; padding: 5rem 0 2rem; border-left: 1px solid rgba(201,162,39,0.2); transform: translateX(110%); transition: transform 0.4s cubic-bezier(0.77, 0, 0.18, 1); }
+      .nav-links.open { transform: translateX(0); }
+      .nav-links a { display: block; padding: 1rem 2rem; border-radius: 0; border-bottom: 1px solid rgba(201,162,39,0.08); font-size: 1rem; }
+      .nav-links a::after { display: none; }
+      .nav-join-btn { margin-left: 0; text-align: center; }
+    }
+    html[dir="rtl"] body { direction: rtl; }
+    html[dir="rtl"] .nav-links { flex-direction: row-reverse; }
+    html[dir="rtl"] .hero-text { text-align: right; }
+    html[dir="rtl"] .hero-text ul, html[dir="rtl"] .hero-text ol { padding-right: 1.5rem; padding-left: 0; }
+    html[dir="rtl"] .lang-switch { margin-left: 0; margin-right: 0.75rem; }
+    @media (max-width: 820px) {
+      html[dir="rtl"] .nav-links { flex-direction: column; }
+    }
+
+    /* ── HERO ── */
+    #hero { min-height: 100vh; background: var(--blue); display: flex; align-items: center; justify-content: center; padding: 110px 2rem 4rem; position: relative; overflow: hidden; }
+    #hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 30% 20%, rgba(37,99,235,0.15) 0%, transparent 50%), radial-gradient(ellipse at 70% 80%, rgba(201,162,39,0.08) 0%, transparent 50%); }
+
+    /* ── LIQUID BLOBS ── */
+    .blob-container { position: absolute; inset: 0; overflow: hidden; z-index: 0; }
+    .blob { position: absolute; border-radius: 50%; filter: blur(60px); opacity: 0.15; will-change: transform; }
+    .blob:nth-child(1) { width: 400px; height: 400px; background: #2563eb; top: -10%; left: -5%; animation: blob-drift1 20s ease-in-out infinite; }
+    .blob:nth-child(2) { width: 350px; height: 350px; background: #c9a227; top: 60%; right: -8%; animation: blob-drift2 25s ease-in-out infinite; }
+    .blob:nth-child(3) { width: 250px; height: 250px; background: #f0c94d; bottom: 10%; left: 30%; animation: blob-drift3 18s ease-in-out infinite; }
+    @keyframes blob-drift1 { 0%,100% { transform: translate(0, 0) scale(1); } 33% { transform: translate(80px, 60px) scale(1.1); } 66% { transform: translate(-30px, 100px) scale(0.9); } }
+    @keyframes blob-drift2 { 0%,100% { transform: translate(0, 0) scale(1); } 33% { transform: translate(-60px, -40px) scale(1.15); } 66% { transform: translate(40px, -80px) scale(0.85); } }
+    @keyframes blob-drift3 { 0%,100% { transform: translate(0, 0) scale(1); } 33% { transform: translate(50px, -30px) scale(0.9); } 66% { transform: translate(-40px, 20px) scale(1.1); } }
+
+    .hero-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(201,162,39,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(201,162,39,0.04) 1px, transparent 1px); background-size: 56px 56px; z-index: 1; }
+
+    .hero-content { position: relative; text-align: center; max-width: 900px; z-index: 2; }
+
+    .hero-badge { display: inline-block; background: rgba(201,162,39,0.12); border: 1px solid rgba(201,162,39,0.3); color: var(--gold-light); font-family: 'Orbitron', sans-serif; font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase; padding: 0.4rem 1.2rem; border-radius: 100px; margin-bottom: 1.5rem; transition: all 0.3s; }
+    .hero-badge:hover { background: rgba(201,162,39,0.2); border-color: var(--gold); transform: scale(1.05); }
+
+    .hero-title { font-family: 'Orbitron', sans-serif; font-size: clamp(2rem, 6vw, 4rem); font-weight: 900; color: var(--white); line-height: 1.1; margin-bottom: 0.5rem; }
+    .hero-title .line { display: block; }
+    .hero-title .gold { color: var(--gold-light); }
+    .hero-title .char { display: inline-block; opacity: 0; transform: translateY(30px); animation: char-in 0.5s ease forwards; }
+    @keyframes char-in { to { opacity: 1; transform: translateY(0); } }
+
+    .hero-subtitle { font-family: 'Rajdhani', sans-serif; font-size: clamp(0.9rem, 2vw, 1.3rem); font-weight: 300; color: rgba(255,255,255,0.6); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 2rem; min-height: 2rem; }
+    .hero-subtitle .cursor { animation: blink 0.7s step-end infinite; }
+    @keyframes blink { 50% { opacity: 0; } }
+
+    .hero-divider { width: 80px; height: 3px; background: linear-gradient(90deg, var(--gold), var(--gold-light)); margin: 0 auto 2.5rem; border-radius: 2px; }
+
+    .hero-stats { display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; }
+    .stat-box { text-align: center; }
+    .stat-num { font-family: 'Orbitron', sans-serif; font-size: 2.2rem; font-weight: 900; color: var(--gold-light); display: block; line-height: 1; }
+    .stat-label { font-size: 0.8rem; color: rgba(255,255,255,0.5); letter-spacing: 0.1em; text-transform: uppercase; margin-top: 0.3rem; display: block; }
+
+    .hero-text { font-size: 1.02rem; line-height: 1.9; color: rgba(246,245,245,0.78); max-width: 800px; margin: 0 auto 2.5rem; font-weight: 300; text-align: left; }
+    .hero-text h2 { font-family: 'Orbitron', sans-serif; font-size: 1.1rem; font-weight: 700; color: var(--gold-light); margin: 1.5rem 0 0.8rem; text-align: center; }
+    .hero-text ul, .hero-text ol { padding-left: 1.5rem; margin: 0.5rem 0; }
+    .hero-text li { margin-bottom: 0.3rem; }
+    .hero-text strong { color: var(--gold-light); }
+
+    .hero-cta { display: inline-flex; align-items: center; gap: 0.75rem; margin-top: 2rem; padding: 1rem 2.5rem; background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: var(--blue); font-family: 'Orbitron', sans-serif; font-size: 1rem; font-weight: 700; border-radius: 14px; text-decoration: none; letter-spacing: 0.07em; box-shadow: 0 4px 30px rgba(201,162,39,0.3); transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.3s; position: relative; overflow: hidden; }
+    .hero-cta::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, var(--gold-light), var(--gold-bright)); opacity: 0; transition: opacity 0.4s; }
+    .hero-cta:hover::before { opacity: 1; }
+    .hero-cta span, .hero-cta svg { position: relative; z-index: 1; }
+    .hero-cta:hover { transform: translateY(-3px) scale(1.03); box-shadow: 0 12px 45px rgba(201,162,39,0.45); }
+    .hero-cta svg { transition: transform 0.3s; }
+    .hero-cta:hover svg { transform: translateX(4px); }
+
+    /* ── SCROLL INDICATOR ── */
+    .scroll-indicator { position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); z-index: 2; display: flex; flex-direction: column; align-items: center; gap: 0.3rem; opacity: 0.5; animation: scroll-bounce 2s ease-in-out infinite; }
+    .scroll-indicator span { font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.4); font-family: 'Orbitron', sans-serif; }
+    .scroll-indicator .arrow { width: 20px; height: 20px; border-right: 2px solid rgba(255,255,255,0.3); border-bottom: 2px solid rgba(255,255,255,0.3); transform: rotate(45deg); }
+    @keyframes scroll-bounce { 0%,100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(8px); } }
+
+    /* ── PARTICLES ── */
+    #particles-canvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
+
+    /* ── MARQUEE ── */
+    .marquee-section { background: #06183d; padding: 1.2rem 0; overflow: hidden; border-top: 1px solid rgba(201,162,39,0.1); border-bottom: 1px solid rgba(201,162,39,0.1); }
+    .marquee-track { display: flex; gap: 3rem; width: max-content; animation: marquee-scroll 30s linear infinite; }
+    .marquee-track:hover { animation-play-state: paused; }
+    .marquee-item { display: flex; align-items: center; gap: 0.75rem; font-family: 'Orbitron', sans-serif; font-size: 0.75rem; letter-spacing: 0.15em; color: rgba(255,255,255,0.35); text-transform: uppercase; white-space: nowrap; }
+    .marquee-item .dot { width: 4px; height: 4px; border-radius: 50%; background: var(--gold); flex-shrink: 0; }
+    @keyframes marquee-scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+    /* ── SECTIONS ── */
+    section { padding: 80px 2rem; position: relative; z-index: 1; }
+    .section-header { text-align: center; margin-bottom: 3rem; }
+    .section-label { font-family: 'Orbitron', sans-serif; font-size: 0.68rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 0.6rem; }
+    .section-title { font-family: 'Orbitron', sans-serif; font-size: clamp(1.5rem, 4vw, 2.4rem); font-weight: 900; margin-bottom: 0.75rem; background: linear-gradient(90deg, var(--blue), var(--gold-light)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .section-title.animate-bg { background-size: 200% 200%; animation: gradientShift 4s ease infinite; }
+    @keyframes gradientShift { 
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    .section-bar { width: 60px; height: 3px; background: linear-gradient(90deg, var(--gold), var(--gold-light)); margin: 0 auto; border-radius: 2px; }
+
+    .reveal { opacity: 0; transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal-up { transform: translateY(40px); }
+    .reveal-left { transform: translateX(-60px); }
+    .reveal-right { transform: translateX(60px); }
+    .reveal-scale { transform: scale(0.85); }
+    .reveal.visible { opacity: 1; transform: translate(0, 0) scale(1); }
+    .reveal-d1 { transition-delay: 0.1s; }
+    .reveal-d2 { transition-delay: 0.2s; }
+    .reveal-d3 { transition-delay: 0.3s; }
+    .reveal-d4 { transition-delay: 0.4s; }
+
+    /* ── QUICK LINKS ── */
+    #quick-links { background: var(--white); }
+    .quick-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; max-width: 1100px; margin: 0 auto; }
+    .quick-card { background: var(--bg); border: 1px solid var(--border); border-radius: 18px; padding: 2.5rem 1.5rem; text-align: center; text-decoration: none; transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s, border-color 0.4s; position: relative; overflow: hidden; }
+    .quick-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--gold), var(--gold-light)); transform: scaleX(0); transition: transform 0.4s; transform-origin: left; }
+    .quick-card:hover::before { transform: scaleX(1); }
+    .quick-card:hover { transform: translateY(-8px) scale(1.03); box-shadow: 0 25px 60px rgba(10,42,110,0.12); border-color: var(--gold); }
+    .quick-icon { font-size: 2.5rem; margin-bottom: 1rem; display: inline-block; transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); }
+    .quick-card:hover .quick-icon { transform: scale(1.25) rotate(-8deg); }
+    .quick-card h3 { font-family: 'Orbitron', sans-serif; font-size: 1rem; font-weight: 700; color: var(--blue); margin-bottom: 0.5rem; }
+    .quick-card p { font-size: 0.9rem; color: var(--text-dark); line-height: 1.6; }
+
+    /* ── SECTION DIVIDER ── */
+    .section-divider { height: 3px; background: linear-gradient(90deg, transparent, var(--gold), transparent); opacity: 0.15; margin: 0; border: none; }
+
+    /* ── TOAST ── */
+    .toast { position: fixed; bottom: 2rem; right: 2rem; background: var(--blue); border: 1px solid var(--gold); color: var(--white); padding: 1rem 1.5rem; border-radius: 12px; font-family: 'Rajdhani', sans-serif; font-size: 1rem; font-weight: 600; box-shadow: 0 8px 30px rgba(0,0,0,0.3); z-index: 9999; opacity: 0; transform: translateY(20px) scale(0.95); transition: opacity 0.4s, transform 0.4s; pointer-events: none; }
+    .toast.show { opacity: 1; transform: translateY(0) scale(1); }
+
+    /* ── FOOTER ── */
+    footer { background: #06183d; color: rgba(255,255,255,0.4); text-align: center; padding: 2.5rem 2rem; font-size: 0.85rem; position: relative; }
+    footer::before { content: ''; position: absolute; top: 0; left: 10%; right: 10%; height: 1px; background: linear-gradient(90deg, transparent, rgba(201,162,39,0.3), transparent); }
+    footer span { color: var(--gold); }
+    .footer-links { margin-bottom: 0.5rem; display: flex; justify-content: center; flex-wrap: wrap; gap: 0.5rem; }
+    .footer-links a { color: rgba(255,255,255,0.4); text-decoration: none; margin: 0 0.5rem; font-size: 0.85rem; transition: color 0.3s; position: relative; }
+    .footer-links a::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 1px; background: var(--gold); transition: width 0.3s; }
+    .footer-links a:hover::after { width: 100%; }
+    .footer-links a:hover { color: var(--gold-light); }
+
+    #backToTop { position: fixed; bottom: 2rem; left: 2rem; z-index: 999; width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg, var(--gold), var(--gold-light)); border: none; color: var(--blue); font-size: 1.3rem; font-weight: 700; cursor: pointer; box-shadow: 0 4px 16px rgba(0,0,0,0.25); opacity: 0; transform: translateY(20px); transition: opacity 0.3s, transform 0.3s, box-shadow 0.3s; display: flex; align-items: center; justify-content: center; }
+    #backToTop.show { opacity: 1; transform: translateY(0); }
+    #backToTop:hover { transform: translateY(-5px) scale(1.05); box-shadow: 0 10px 30px rgba(201,162,39,0.35); }
+  </style>
+</head>
+<body>
+
+<div id="scroll-progress"></div>
+<div id="spotlight"></div>
+<div id="page-transition"></div>
+
+<div id="loader">
+  <div class="loader-ring"></div>
+  <div class="loader-text" data-i18n="loading">Loading</div>
+  <div class="loader-bar"><div class="loader-bar-fill" id="loaderFill"></div></div>
+  <div class="loader-dots"><span></span><span></span><span></span></div>
+</div>
+
+<canvas id="particles-canvas"></canvas>
+
+<nav id="navbar">
+  <a class="nav-logo" href="index.html" data-transition>
+    <div class="nav-logo-icon"><img src="cte logo.jpg" alt="CTE"></div>
+    <div class="nav-logo-text">CTE <span>2018</span></div>
+  </a>
+  <div class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html" class="active" data-transition data-i18n="nav-home">Home</a></li>
+    <li><a href="inventions.html" data-transition data-i18n="nav-inventions">Inventions</a></li>
+    <li><a href="team.html" data-transition data-i18n="nav-team">Team</a></li>
+    <li><a href="contact.html" data-transition data-i18n="nav-contact">Contact</a></li>
+    <li><a href="join.html" class="nav-join-btn" data-transition data-i18n="nav-join">Join Us</a></li>
+  </ul>
+  <div class="lang-switch">
+    <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+    <button class="lang-btn" data-lang="fr" onclick="setLang('fr')">FR</button>
+    <button class="lang-btn" data-lang="ar" onclick="setLang('ar')">AR</button>
+  </div>
+</nav>
+
+<section id="hero">
+  <div class="blob-container">
+    <div class="blob"></div>
+    <div class="blob"></div>
+    <div class="blob"></div>
+  </div>
+  <div class="hero-grid" id="heroGrid"></div>
+  <div class="hero-content">
+    <div class="hero-badge" data-i18n="hero-badge">✦ CTE.2018 · Technology & Engineering ✦</div>
+    <h1 class="hero-title" id="heroTitle" data-i18n-title="hero-title">
+      <span class="line">Technology & <span class="gold">Engineering</span></span>
+      <span class="line">Club</span>
+    </h1>
+    <p class="hero-subtitle" id="typing-text"></p>
+    <div class="hero-divider"></div>
+
+    <div class="hero-text reveal reveal-up" style="transition-delay:0.2s" data-i18n-html="hero-text">
+      <h2>Scientific Club: The Pioneer of Innovation at the University of Tipaza</h2>
+      <p>Founded in 2018 by the student and inventor Ahmed Lahoual, the CTE Scientific Club holds the distinction of being the oldest scientific club at the University of Tipaza. Since its inception, it has served as a cornerstone for student-led innovation and technical excellence.</p>
+      <h2>Our Vision: Interdisciplinary Synergy</h2>
+      <p>The CTE Club operates on the principle that the future of technology lies in the integration of diverse fields. We bridge the gap between various engineering disciplines to create a holistic environment for growth:</p>
+      <ul>
+        <li>Mechanical Engineering (GM)</li>
+        <li>Process Engineering (GP)</li>
+        <li>Civil Engineering (GC)</li>
+        <li>Electronics</li>
+      </ul>
+      <h2>Objectives</h2>
+      <p>The club is dedicated to transforming the academic experience from theoretical learning into practical mastery by:</p>
+      <ol>
+        <li><strong>Developing Student Ideas:</strong> Empowering students to evolve their creative concepts into functional prototypes and real-world projects.</li>
+        <li><strong>Peer-to-Peer Support:</strong> Fostering a collaborative community where students from different majors exchange expertise and solve technical challenges.</li>
+        <li><strong>Cultivating Invention:</strong> Carrying forward the legacy of our founder by encouraging a mindset of invention, research, and continuous improvement.</li>
+      </ol>
+      <h2>Why CTE?</h2>
+      <p>As the most established scientific club in the university, CTE combines tradition with modern ambition. We are more than just a club; we are an incubator for innovators. By bringing together the best minds from GM, GP, GC, and Electronics, we build a foundation where interdisciplinary collaboration leads to groundbreaking results.</p>
+      <h2>CTE Scientific Club: Where Engineering Disciplines Converge to Shape the Future.</h2>
+    </div>
+
+    <a href="inventions.html" class="hero-cta reveal reveal-up" style="transition-delay:0.4s" data-transition>
+      <span data-i18n="hero-cta">Explore Our Inventions</span>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </a>
+
+    <div class="hero-stats reveal reveal-up" style="transition-delay:0.5s;margin-top:2.5rem;">
+      <div class="stat-box">
+        <span class="stat-num" data-count="2018">0</span>
+        <span class="stat-label" data-i18n="stat-founded">Founded</span>
+      </div>
+      <div class="stat-box">
+        <span class="stat-num"><span data-count="6">0</span>+</span>
+        <span class="stat-label" data-i18n="stat-fields">Engineering Fields</span>
+      </div>
+      <div class="stat-box">
+        <span class="stat-num"><span data-count="15">0</span>+</span>
+        <span class="stat-label" data-i18n="stat-projects">Projects</span>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-indicator">
+    <span data-i18n="scroll">Scroll</span>
+    <div class="arrow"></div>
+  </div>
+</section>
+
+<div class="marquee-section">
+  <div class="marquee-track" id="marqueeTrack">
+    <div class="marquee-item"><span class="dot"></span> Mechanical Engineering</div>
+    <div class="marquee-item"><span class="dot"></span> Process Engineering</div>
+    <div class="marquee-item"><span class="dot"></span> Civil Engineering</div>
+    <div class="marquee-item"><span class="dot"></span> Electronics</div>
+    <div class="marquee-item"><span class="dot"></span> Robotics</div>
+    <div class="marquee-item"><span class="dot"></span> IoT</div>
+    <div class="marquee-item"><span class="dot"></span> CAD Design</div>
+    <div class="marquee-item"><span class="dot"></span> 3D Printing</div>
+    <div class="marquee-item"><span class="dot"></span> Renewable Energy</div>
+    <div class="marquee-item"><span class="dot"></span> Innovation</div>
+    <div class="marquee-item"><span class="dot"></span> Arduino</div>
+    <div class="marquee-item"><span class="dot"></span> AI & Automation</div>
+    <div class="marquee-item"><span class="dot"></span> Embedded Systems</div>
+    <div class="marquee-item"><span class="dot"></span> Water Treatment</div>
+    <div class="marquee-item"><span class="dot"></span> Assistive Tech</div>
+    <div class="marquee-item"><span class="dot"></span> Sustainable Design</div>
+    <div class="marquee-item"><span class="dot"></span> Compétitions</div>
+    <div class="marquee-item"><span class="dot"></span> Workshops</div>
+    <div class="marquee-item"><span class="dot"></span> Courses</div>
+    <div class="marquee-item"><span class="dot"></span> Field Trips</div>
+  </div>
+</div>
+
+<section id="quick-links">
+  <div class="section-header">
+    <span class="section-label reveal reveal-up" data-i18n="explore-label">Explore</span>
+    <h2 class="section-title reveal reveal-up" style="transition-delay:0.1s" data-i18n="explore-title">Discover CTE</h2>
+    <div class="section-bar reveal reveal-scale" style="transition-delay:0.2s"></div>
+  </div>
+  <div class="quick-grid">
+    <a href="inventions.html" class="quick-card reveal reveal-up reveal-d1" data-transition>
+      <div class="quick-icon">💡</div>
+      <h3 data-i18n="card-inv-title">Our Inventions</h3>
+      <p data-i18n="card-inv-desc">Explore the innovative projects and prototypes built by our members.</p>
+    </a>
+    <a href="team.html" class="quick-card reveal reveal-up reveal-d2" data-transition>
+      <div class="quick-icon">👥</div>
+      <h3 data-i18n="card-team-title">Meet the Team</h3>
+      <p data-i18n="card-team-desc">Get to know the talented students behind CTE, from founder to leadership.</p>
+    </a>
+    <a href="contact.html" class="quick-card reveal reveal-up reveal-d3" data-transition>
+      <div class="quick-icon">📬</div>
+      <h3 data-i18n="card-contact-title">Contact Us</h3>
+      <p data-i18n="card-contact-desc">Have questions? Reach out via email, social media, or visit us at the university.</p>
+    </a>
+    <a href="join.html" class="quick-card reveal reveal-up reveal-d4" data-transition>
+      <div class="quick-icon">🚀</div>
+      <h3 data-i18n="card-join-title">Join CTE</h3>
+      <p data-i18n="card-join-desc">Become a member and start your journey of innovation, collaboration, and excellence.</p>
+    </a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-links">
+    <a href="index.html" data-transition data-i18n="nav-home">Home</a>
+    <a href="inventions.html" data-transition data-i18n="nav-inventions">Inventions</a>
+    <a href="team.html" data-transition data-i18n="nav-team">Team</a>
+    <a href="contact.html" data-transition data-i18n="nav-contact">Contact</a>
+    <a href="join.html" data-transition data-i18n="nav-join">Join Us</a>
+  </div>
+  <p>© 2024-2026 <span data-i18n="club-name">Technology & Engineering Club</span>. <span data-i18n="rights">All rights reserved.</span></p>
+</footer>
+
+<div class="toast" id="toast" data-i18n="toast-welcome">🚀 Welcome to CTE 2018!</div>
+<button id="backToTop">↑</button>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+  emailjs.init('r5VyE0XmW10H7HRJU');
+
+  // ═══ 1. LOADING SCREEN ═══
+  (function() {
+    const fill = document.getElementById('loaderFill');
+    let p = 0;
+    const interval = setInterval(() => { p += Math.random() * 18 + 4; if (p >= 100) { p = 100; clearInterval(interval); } fill.style.width = p + '%'; }, 200);
+    window.addEventListener('load', () => { clearInterval(interval); fill.style.width = '100%'; setTimeout(() => document.getElementById('loader').classList.add('hidden'), 400); });
+    setTimeout(() => { if (p < 100) { p = 100; fill.style.width = '100%'; clearInterval(interval); } }, 4000);
+  })();
+
+  // ═══ 2. SCROLL PROGRESS ═══
+  (function() {
+    const bar = document.getElementById('scroll-progress');
+    window.addEventListener('scroll', () => { const h = document.documentElement; bar.style.width = ((h.scrollTop || document.body.scrollTop) / (h.scrollHeight - h.clientHeight) * 100) + '%'; });
+  })();
+
+  // ═══ 3. SPOTLIGHT CURSOR ═══
+  (function() {
+    const spot = document.getElementById('spotlight');
+    let raf;
+    document.addEventListener('mousemove', (e) => {
+      if (raf) cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(() => { spot.style.left = e.clientX + 'px'; spot.style.top = e.clientY + 'px'; });
+    });
+    document.addEventListener('mouseenter', () => spot.style.opacity = '1');
+    document.addEventListener('mouseleave', () => spot.style.opacity = '0');
+  })();
+
+  // ═══ 4. PAGE TRANSITION ═══
+  (function() {
+    const overlay = document.getElementById('page-transition');
+    document.querySelectorAll('[data-transition]').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const href = this.getAttribute('href');
+        if (!href || href === '#') return;
+        overlay.classList.add('active');
+        setTimeout(() => { window.location.href = href; }, 550);
+      });
+    });
+    window.addEventListener('pageshow', () => overlay.classList.remove('active'));
+  })();
+
+  // ═══ 5. SPLIT TEXT ANIMATION ═══
+  (function() {
+    const title = document.getElementById('heroTitle');
+    const lines = title.querySelectorAll('.line');
+    lines.forEach((line, li) => {
+      const text = line.textContent;
+      line.innerHTML = '';
+      text.split('').forEach((ch, i) => {
+        const span = document.createElement('span');
+        span.className = 'char';
+        if (ch === ' ') span.innerHTML = '&nbsp;'; else span.textContent = ch;
+        span.style.animationDelay = (li * 300 + i * 35) + 'ms';
+        line.appendChild(span);
+      });
+    });
+  })();
+
+  // ═══ 6. TYPING EFFECT ═══
+  const phrases = [
+    'Innovation projects • Workshops • Courses • Trips • Competitions',
+    'Where Engineering Disciplines Converge to Shape the Future',
+    'Turning Ideas into Reality Since 2018'
+  ];
+  let phraseIdx = 0, charIdx = 0, isDeleting = false;
+  const tyEl = document.getElementById('typing-text');
+  function typeEffect() {
+    const current = phrases[phraseIdx];
+    if (!isDeleting) {
+      tyEl.innerHTML = current.substring(0, charIdx + 1) + '<span class="cursor">|</span>';
+      charIdx++;
+      if (charIdx === current.length) { isDeleting = true; setTimeout(typeEffect, 2500); return; }
+      setTimeout(typeEffect, 50 + Math.random() * 20);
+    } else {
+      tyEl.innerHTML = current.substring(0, charIdx - 1) + '<span class="cursor">|</span>';
+      charIdx--;
+      if (charIdx === 0) { isDeleting = false; phraseIdx = (phraseIdx + 1) % phrases.length; setTimeout(typeEffect, 400); return; }
+      setTimeout(typeEffect, 20 + Math.random() * 15);
+    }
+  }
+  setTimeout(() => { if (document.querySelector('.hero-title .char')) { typeEffect(); } }, 1500);
+
+
+
+  // ═══ 9. MAGNETIC BUTTON ═══
+  (function() {
+    const btn = document.querySelector('.hero-cta');
+    if (!btn) return;
+    btn.addEventListener('mousemove', (e) => {
+      const rect = btn.getBoundingClientRect();
+      const x = (e.clientX - rect.left - rect.width / 2) * 0.3;
+      const y = (e.clientY - rect.top - rect.height / 2) * 0.3;
+      btn.style.transform = `translate(${x}px, ${y}px)`;
+    });
+    btn.addEventListener('mouseleave', () => { btn.style.transform = ''; });
+  })();
+
+  // ═══ 10. PARALLAX SCROLL ═══
+  (function() {
+    const blobs = document.querySelectorAll('.blob');
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY;
+      blobs.forEach((blob, i) => {
+        const speed = 0.05 + i * 0.03;
+        blob.style.transform = `translateY(${scrollY * speed}px)`;
+      });
+    });
+  })();
+
+  // ═══ 11. MARQUEE DUPLICATE ═══
+  (function() {
+    const track = document.getElementById('marqueeTrack');
+    if (track) track.innerHTML += track.innerHTML;
+  })();
+
+  // ═══ 12. MOBILE MENU ═══
+  function toggleMenu() { document.getElementById('navLinks').classList.toggle('open'); }
+  function closeMenu() { document.getElementById('navLinks').classList.remove('open'); }
+  document.addEventListener('click', function(e) {
+    const nav = document.getElementById('navLinks');
+    const ham = document.getElementById('hamburger');
+    if (nav.classList.contains('open') && !nav.contains(e.target) && !ham.contains(e.target)) closeMenu();
+  });
+
+  // ═══ 13. NAVBAR / BACK TO TOP ═══
+  window.addEventListener('scroll', function() {
+    const nav = document.getElementById('navbar');
+    const btn = document.getElementById('backToTop');
+    if (window.scrollY > 50) nav.classList.add('scrolled'); else nav.classList.remove('scrolled');
+    if (window.scrollY > 400) btn.classList.add('show'); else btn.classList.remove('show');
+  });
+  document.getElementById('backToTop').addEventListener('click', () => window.scrollTo({top:0,behavior:'smooth'}));
+
+  // ═══ 14. REVEAL OBSERVER ═══
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+  // ═══ 15. COUNTER ANIMATION ═══
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        const target = parseInt(el.getAttribute('data-count'));
+        if (!target) return;
+        let current = 0;
+        const step = Math.ceil(target / 35);
+        const interval = setInterval(() => {
+          current += step;
+          if (current >= target) { current = target; clearInterval(interval); }
+          el.textContent = current;
+        }, 30);
+        counterObserver.unobserve(el);
+      }
+    });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('[data-count]').forEach(el => counterObserver.observe(el));
+
+  // ═══ 16. ENHANCED PARTICLES ═══
+  const canvas = document.getElementById('particles-canvas');
+  const ctx = canvas.getContext('2d');
+  let w, h, particles = [];
+  function resize() { w = canvas.width = window.innerWidth; h = canvas.height = window.innerHeight; }
+  resize();
+  window.addEventListener('resize', resize);
+  for (let i = 0; i < 80; i++) {
+    particles.push({ x: Math.random() * w, y: Math.random() * h, r: Math.random() * 2.5 + 0.5, dx: (Math.random() - 0.5) * 0.5, dy: (Math.random() - 0.5) * 0.5, o: Math.random() * 0.35 + 0.1, pulse: Math.random() * Math.PI * 2 });
+  }
+  let mx = -9999, my = -9999;
+  document.addEventListener('mousemove', (e) => { mx = e.clientX; my = e.clientY; });
+  document.addEventListener('mouseleave', () => { mx = -9999; my = -9999; });
+  function drawParticles() {
+    ctx.clearRect(0, 0, w, h);
+    particles.forEach(p => {
+      p.x += p.dx; p.y += p.dy; p.pulse += 0.02;
+      if (p.x < 0) p.x = w; if (p.x > w) p.x = 0; if (p.y < 0) p.y = h; if (p.y > h) p.y = 0;
+      const pulseR = p.r + Math.sin(p.pulse) * 0.5;
+      ctx.beginPath(); ctx.arc(p.x, p.y, pulseR, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(201, 162, 39, ' + p.o + ')'; ctx.fill();
+      particles.forEach(p2 => {
+        const dx = p.x - p2.x, dy = p.y - p2.y, dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < 130) { ctx.beginPath(); ctx.moveTo(p.x, p.y); ctx.lineTo(p2.x, p2.y); ctx.strokeStyle = 'rgba(201, 162, 39, ' + (0.06 * (1 - dist / 130)) + ')'; ctx.lineWidth = 0.5; ctx.stroke(); }
+      });
+      const mdx = p.x - mx, mdy = p.y - my, mdist = Math.sqrt(mdx * mdx + mdy * mdy);
+      if (mdist < 100 && mdist > 0) { const force = (100 - mdist) / 100 * 2; p.x += (mdx / mdist) * force; p.y += (mdy / mdist) * force; }
+    });
+    requestAnimationFrame(drawParticles);
+  }
+  drawParticles();
+
+  // ═══ 18. LANGUAGE SYSTEM ═══
+  const translations = {
+    en: {
+      'nav-home': 'Home', 'nav-inventions': 'Inventions', 'nav-team': 'Team', 'nav-contact': 'Contact', 'nav-join': 'Join Us',
+      'club-name': 'Technology & Engineering Club', 'rights': 'All rights reserved.',
+      'loading': 'Loading',
+      'hero-badge': '✦ CTE.2018 · Technology & Engineering ✦',
+      'hero-title': ['Technology & <span class="gold">Engineering</span>', 'Club'],
+      'hero-subtitle': ['Innovation projects • Workshops • Courses • Trips • Competitions', 'Where Engineering Disciplines Converge to Shape the Future', 'Turning Ideas into Reality Since 2018'],
+      'hero-text': '<h2>Scientific Club: The Pioneer of Innovation at the University of Tipaza</h2><p>Founded in 2018 by the student and inventor Ahmed Lahoual, the CTE Scientific Club holds the distinction of being the oldest scientific club at the University of Tipaza. Since its inception, it has served as a cornerstone for student-led innovation and technical excellence.</p><h2>Our Vision: Interdisciplinary Synergy</h2><p>The CTE Club operates on the principle that the future of technology lies in the integration of diverse fields. We bridge the gap between various engineering disciplines to create a holistic environment for growth:</p><ul><li>Mechanical Engineering (GM)</li><li>Process Engineering (GP)</li><li>Civil Engineering (GC)</li><li>Electronics</li></ul><h2>Objectives</h2><p>The club is dedicated to transforming the academic experience from theoretical learning into practical mastery by:</p><ol><li><strong>Developing Student Ideas:</strong> Empowering students to evolve their creative concepts into functional prototypes and real-world projects.</li><li><strong>Peer-to-Peer Support:</strong> Fostering a collaborative community where students from different majors exchange expertise and solve technical challenges.</li><li><strong>Cultivating Invention:</strong> Carrying forward the legacy of our founder by encouraging a mindset of invention, research, and continuous improvement.</li></ol><h2>Why CTE?</h2><p>As the most established scientific club in the university, CTE combines tradition with modern ambition. We are more than just a club; we are an incubator for innovators. By bringing together the best minds from GM, GP, GC, and Electronics, we build a foundation where interdisciplinary collaboration leads to groundbreaking results.</p><h2>CTE Scientific Club: Where Engineering Disciplines Converge to Shape the Future.</h2>',
+      'hero-cta': 'Explore Our Inventions',
+      'stat-founded': 'Founded', 'stat-fields': 'Engineering Fields', 'stat-projects': 'Projects',
+      'scroll': 'Scroll',
+      'explore-label': 'Explore', 'explore-title': 'Discover CTE',
+      'card-inv-title': 'Our Inventions', 'card-inv-desc': 'Explore the innovative projects and prototypes built by our members.',
+      'card-team-title': 'Meet the Team', 'card-team-desc': 'Get to know the talented students behind CTE, from founder to leadership.',
+      'card-contact-title': 'Contact Us', 'card-contact-desc': 'Have questions? Reach out via email, social media, or visit us at the university.',
+      'card-join-title': 'Join CTE', 'card-join-desc': 'Become a member and start your journey of innovation, collaboration, and excellence.',
+      'toast-welcome': '🚀 Welcome to CTE 2018!'
+    },
+    fr: {
+      'nav-home': 'Accueil', 'nav-inventions': 'Inventions', 'nav-team': 'Équipe', 'nav-contact': 'Contact', 'nav-join': 'Rejoindre',
+      'club-name': 'Club de Technologie et d\'Ingénierie', 'rights': 'Tous droits réservés.',
+      'loading': 'Chargement',
+      'hero-badge': '✦ CTE.2018 · Technologie & Ingénierie ✦',
+      'hero-title': ['Technologie & <span class="gold">Ingénierie</span>', 'Club'],
+      'hero-subtitle': ['Projets d\'innovation • Ateliers • Cours • Sorties • Compétitions', 'Où les disciplines d\'ingénierie convergent pour façonner l\'avenir', 'Des idées en réalité depuis 2018'],
+      'hero-text': '<h2>Club Scientifique : Pionnier de l\'Innovation à l\'Université de Tipaza</h2><p>Fondé en 2018 par l\'étudiant et inventeur Ahmed Lahoual, le Club Scientifique CTE est le plus ancien club scientifique de l\'Université de Tipaza. Depuis sa création, il sert de pilier pour l\'innovation étudiante et l\'excellence technique.</p><h2>Notre Vision : Synergie Interdisciplinaire</h2><p>Le Club CTE fonctionne sur le principe que l\'avenir de la technologie réside dans l\'intégration de divers domaines. Nous comblons le fossé entre les disciplines d\'ingénierie pour créer un environnement holistique de croissance :</p><ul><li>Génie Mécanique (GM)</li><li>Génie des Procédés (GP)</li><li>Génie Civil (GC)</li><li>Électronique</li></ul><h2>Objectifs</h2><p>Le club se consacre à transformer l\'expérience académique de l\'apprentissage théorique en maîtrise pratique en :</p><ol><li><strong>Développer les idées étudiantes :</strong> Permettre aux étudiants de transformer leurs concepts créatifs en prototypes fonctionnels.</li><li><strong>Soutien par les pairs :</strong> Favoriser une communauté collaborative où les étudiants échangent leur expertise.</li><li><strong>Cultiver l\'invention :</strong> Perpétuer l\'héritage de notre fondateur en encourageant l\'innovation et la recherche.</li></ol><h2>Pourquoi CTE ?</h2><p>En tant que club scientifique le plus établi de l\'université, CTE allie tradition et ambition moderne. Nous sommes plus qu\'un club ; nous sommes un incubateur d\'innovateurs.</p><h2>Club Scientifique CTE : Là où les disciplines d\'ingénierie convergent pour façonner l\'avenir.</h2>',
+      'hero-cta': 'Explorer Nos Inventions',
+      'stat-founded': 'Fondé', 'stat-fields': 'Domaines d\'Ingénierie', 'stat-projects': 'Projets',
+      'scroll': 'Défiler',
+      'explore-label': 'Explorer', 'explore-title': 'Découvrir CTE',
+      'card-inv-title': 'Nos Inventions', 'card-inv-desc': 'Explorez les projets innovants réalisés par nos membres.',
+      'card-team-title': 'Rencontrez l\'Équipe', 'card-team-desc': 'Découvrez les étudiants talentueux derrière CTE.',
+      'card-contact-title': 'Contactez-Nous', 'card-contact-desc': 'Des questions ? Contactez-nous par email ou réseaux sociaux.',
+      'card-join-title': 'Rejoindre CTE', 'card-join-desc': 'Devenez membre et commencez votre parcours d\'innovation.',
+      'toast-welcome': '🚀 Bienvenue au CTE 2018 !'
+    },
+    ar: {
+      'nav-home': 'الرئيسية', 'nav-inventions': 'الاختراعات', 'nav-team': 'الفريق', 'nav-contact': 'اتصل بنا', 'nav-join': 'انضم إلينا',
+      'club-name': 'نادي التكنولوجيا والهندسة', 'rights': 'جميع الحقوق محفوظة.',
+      'loading': 'جاري التحميل',
+      'hero-badge': '✦ CTE.2018 · التكنولوجيا والهندسة ✦',
+      'hero-title': ['التكنولوجيا و<span class="gold">الهندسة</span>', 'النادي العلمي'],
+      'hero-subtitle': ['مشاريع ابتكارية • ورش • دورات • رحلات • مسابقات', 'حيث تتلاقى تخصصات الهندسة لتشكيل المستقبل', 'نحول الأفكار إلى واقع منذ 2018'],
+      'hero-text': '<h2>النادي العلمي: رائد الابتكار في جامعة تيبازة</h2><p>تأسس النادي العلمي CTE في عام 2018 على يد الطالب والمخترع أحمد لحول، ويعتبر أقدم نادٍ علمي في جامعة تيبازة. منذ نشأته، كان حجر الزاوية للابتكار الطلابي والتميز التقني.</p><h2>رؤيتنا: التكامل متعدد التخصصات</h2><p>يعمل نادي CTE على مبدأ أن مستقبل التكنولوجيا يكمن في دمج المجالات المتنوعة. نسد الفجوة بين تخصصات الهندسة المختلفة لخلق بيئة شاملة للنمو:</p><ul><li>الهندسة الميكانيكية (GM)</li><li>هندسة العمليات (GP)</li><li>الهندسة المدنية (GC)</li><li>الإلكترونيات</li></ul><h2>الأهداف</h2><p>يهدف النادي لتحويل التجربة الأكاديمية من التعلم النظري إلى الإتقان العملي من خلال:</p><ol><li><strong>تطوير أفكار الطلاب:</strong> تمكين الطلاب من تحويل مفاهيمهم الإبداعية إلى نماذج أولية وظيفية.</li><li><strong>الدعم المتبادل:</strong> تعزيز مجتمع تعاوني يتبادل فيه الطلاب من مختلف التخصصات الخبرات.</li><li><strong>تنمية الابتكار:</strong> مواصلة إرث مؤسسنا بتشجيع عقلية الابتكار والبحث والتطوير المستمر.</li></ol><h2>لماذا CTE؟</h2><p>باعتباره النادي العلمي الأكثر رسوخاً في الجامعة، يجمع CTE بين التقاليد والطموح الحديث. نحن أكثر من مجرد نادٍ؛ نحن حاضنة للمبتكرين.</p><h2>نادي CTE العلمي: حيث تتلاقى تخصصات الهندسة لتشكيل المستقبل.</h2>',
+      'hero-cta': 'استكشف اختراعاتنا',
+      'stat-founded': 'تأسس', 'stat-fields': 'مجالات الهندسة', 'stat-projects': 'مشاريع',
+      'scroll': 'لأسفل',
+      'explore-label': 'استكشف', 'explore-title': 'اكتشف CTE',
+      'card-inv-title': 'اختراعاتنا', 'card-inv-desc': 'استكشف المشاريع والنماذج الأولية المبتكرة التي أنشأها أعضاؤنا.',
+      'card-team-title': 'تعرف على الفريق', 'card-team-desc': 'تعرف على الطلاب الموهوبين الذين يقفون وراء CTE.',
+      'card-contact-title': 'اتصل بنا', 'card-contact-desc': 'لديك أسئلة؟ تواصل معنا عبر البريد الإلكتروني أو وسائل التواصل الاجتماعي.',
+      'card-join-title': 'انضم إلى CTE', 'card-join-desc': 'كن عضواً وابدأ رحلتك في الابتكار والتعاون والتميز.',
+      'toast-welcome': '🚀 مرحباً بك في CTE 2018!'
+    }
+  };
+
+  let currentLang = localStorage.getItem('cte-lang') || 'en';
+
+  function applyTranslations(lang) {
+    const t = translations[lang] || translations.en;
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (t[key]) el.textContent = t[key];
+    });
+    document.querySelectorAll('[data-i18n-html]').forEach(el => {
+      const key = el.getAttribute('data-i18n-html');
+      if (t[key]) el.innerHTML = t[key];
+    });
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+      const key = el.getAttribute('data-i18n-placeholder');
+      if (t[key]) el.placeholder = t[key];
+    });
+    // Hero title
+    const titleEl = document.getElementById('heroTitle');
+    if (titleEl && t['hero-title']) {
+      titleEl.innerHTML = t['hero-title'].map(line => `<span class="line">${line}</span>`).join('');
+      // Re-split chars (skip for Arabic to preserve letter connections)
+      if (lang !== 'ar') {
+        const lines = titleEl.querySelectorAll('.line');
+        lines.forEach((line, li) => {
+          const text = line.textContent;
+          line.innerHTML = '';
+          text.split('').forEach((ch, i) => {
+            const span = document.createElement('span');
+            span.className = 'char';
+            if (ch === ' ') span.innerHTML = '&nbsp;'; else span.textContent = ch;
+            span.style.animationDelay = (li * 300 + i * 35) + 'ms';
+            line.appendChild(span);
+          });
+        });
+      }
+    }
+    // Typing effect
+    if (t['hero-subtitle']) {
+      phrases.length = 0;
+      phrases.push(...t['hero-subtitle']);
+    }
+    // RTL
+    if (lang === 'ar') { document.documentElement.setAttribute('dir', 'rtl'); } else { document.documentElement.removeAttribute('dir'); }
+    localStorage.setItem('cte-lang', lang);
+  }
+
+  function setLang(lang) {
+    currentLang = lang;
+    applyTranslations(lang);
+    document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.getAttribute('data-lang') === lang));
+    // Restart typing
+    phraseIdx = 0; charIdx = 0; isDeleting = false;
+  }
+
+  // Init
+  (async function init() {
+    try {
+      const res = await fetch('content.json?v=' + Date.now());
+      if (res.ok) {
+        const json = await res.json();
+        if (json.translations && json.translations.index) {
+          for (const lang of ['en','fr','ar']) { if (json.translations.index[lang]) { if (!translations[lang]) translations[lang] = {}; Object.assign(translations[lang], json.translations.index[lang]); } }
+        }
+      }
+    } catch(e) {}
+    applyTranslations(currentLang);
+    document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.getAttribute('data-lang') === currentLang));
+  })();
+</script>
+<script src="security.js"></script>
+</body>
+</html>

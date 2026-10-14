@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CTE Admin Panel</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: #0f172a; color: #e2e8f0; padding: 2rem; }
+    .container { max-width: 1200px; margin: 0 auto; }
+    h1 { font-size: 1.8rem; font-weight: 800; color: #fbbf24; margin-bottom: 0.5rem; }
+    h1 span { color: #94a3b8; font-weight: 400; font-size: 1rem; }
+    .tabs { display: flex; gap: 0.5rem; margin: 1.5rem 0; flex-wrap: wrap; }
+    .tab { padding: 0.6rem 1.5rem; border: none; border-radius: 8px; background: #1e293b; color: #94a3b8; cursor: pointer; font-weight: 600; font-size: 0.9rem; transition: all 0.2s; }
+    .tab:hover { background: #334155; }
+    .tab.active { background: #fbbf24; color: #0f172a; }
+    .panel { display: none; }
+    .panel.active { display: block; }
+    .card { background: #1e293b; border-radius: 12px; padding: 1.5rem; margin-bottom: 1rem; border: 1px solid #334155; }
+    .card h3 { font-size: 1.1rem; margin-bottom: 1rem; color: #fbbf24; }
+    .card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
+    .card-header h3 { margin: 0; }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.75rem; }
+    label { display: block; font-size: 0.8rem; color: #94a3b8; margin-bottom: 0.25rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+    input, textarea, select { width: 100%; padding: 0.6rem 0.75rem; border: 1px solid #334155; border-radius: 6px; background: #0f172a; color: #e2e8f0; font-family: 'Inter', sans-serif; font-size: 0.9rem; transition: border 0.2s; }
+    input:focus, textarea:focus { outline: none; border-color: #fbbf24; }
+    textarea { min-height: 80px; resize: vertical; }
+    .lang-group { border: 1px solid #334155; border-radius: 8px; padding: 0.75rem; margin-bottom: 0.75rem; background: #0f172a; }
+    .lang-group .lang-label { font-size: 0.75rem; font-weight: 700; color: #fbbf24; margin-bottom: 0.5rem; text-transform: uppercase; }
+    .btn { padding: 0.6rem 1.5rem; border: none; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 0.9rem; transition: all 0.2s; }
+    .btn-primary { background: #fbbf24; color: #0f172a; }
+    .btn-primary:hover { background: #f59e0b; }
+    .btn-danger { background: #ef4444; color: white; }
+    .btn-danger:hover { background: #dc2626; }
+    .btn-sm { padding: 0.4rem 1rem; font-size: 0.8rem; }
+    .btn-success { background: #22c55e; color: white; }
+    .btn-success:hover { background: #16a34a; }
+    .action-bar { display: flex; gap: 0.75rem; align-items: center; margin: 1rem 0; flex-wrap: wrap; }
+    .toast { position: fixed; bottom: 2rem; right: 2rem; background: #22c55e; color: white; padding: 0.75rem 1.5rem; border-radius: 8px; font-weight: 600; opacity: 0; transform: translateY(20px); transition: all 0.3s; z-index: 999; }
+    .toast.show { opacity: 1; transform: translateY(0); }
+    .toast.error { background: #ef4444; }
+    .tag-list { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+    .tag-item { display: flex; align-items: center; gap: 0.25rem; background: #334155; padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.8rem; }
+    .tag-item button { background: none; border: none; color: #ef4444; cursor: pointer; font-size: 1rem; line-height: 1; }
+    .tag-input { display: flex; gap: 0.5rem; align-items: center; }
+    .tag-input input { flex: 1; }
+    .login-box { max-width: 400px; margin: 20vh auto; text-align: center; }
+    .login-box input { margin: 1rem 0; }
+    .login-box .btn { width: 100%; }
+    .nav { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; }
+    .nav a { color: #94a3b8; text-decoration: none; font-size: 0.85rem; }
+    .nav a:hover { color: #fbbf24; }
+    .save-all { position: fixed; bottom: 2rem; left: 50%; transform: translateX(-50%); background: #fbbf24; color: #0f172a; padding: 0.8rem 2.5rem; border-radius: 50px; font-weight: 700; font-size: 1.1rem; box-shadow: 0 4px 20px rgba(251,191,36,0.3); z-index: 100; cursor: pointer; border: none; display: none; }
+    .save-all.show { display: block; }
+    .save-all:hover { background: #f59e0b; }
+    .login-error { color: #ef4444; font-size: 0.85rem; margin-top: 0.5rem; display: none; }
+    .lang-tabs { display: flex; gap: 0.25rem; margin-bottom: 0.75rem; }
+    .lang-tab { padding: 0.3rem 0.75rem; border: 1px solid #334155; border-radius: 4px; background: transparent; color: #94a3b8; cursor: pointer; font-size: 0.8rem; font-weight: 600; }
+    .lang-tab.active { background: #fbbf24; color: #0f172a; border-color: #fbbf24; }
+    .img-upload { border: 2px dashed #334155; border-radius: 8px; padding: 1rem; text-align: center; cursor: pointer; transition: all 0.2s; position: relative; min-height: 120px; display: flex; align-items: center; justify-content: center; flex-direction: column; }
+    .img-upload:hover { border-color: #fbbf24; background: rgba(251,191,36,0.05); }
+    .img-upload img { max-width: 100%; max-height: 200px; border-radius: 6px; object-fit: contain; }
+    .img-upload .placeholder { color: #64748b; font-size: 0.85rem; }
+    .img-upload .placeholder .icon { font-size: 2rem; margin-bottom: 0.5rem; }
+    .img-upload input[type=file] { position: absolute; inset: 0; opacity: 0; cursor: pointer; }
+    .img-preview { position: relative; display: inline-block; }
+    .img-remove { position: absolute; top: -8px; right: -8px; background: #ef4444; color: white; border: none; border-radius: 50%; width: 24px; height: 24px; cursor: pointer; font-size: 14px; line-height: 24px; text-align: center; z-index: 5; }
+  </style>
+</head>
+<body>
+
+<div id="login">
+  <div class="login-box">
+    <h1>CTE <span>Admin</span></h1>
+    <p style="color:#94a3b8;font-size:0.9rem">Enter admin password</p>
+    <input type="password" id="adminKey" placeholder="Password" onkeydown="if(event.key==='Enter') checkLogin()" />
+    <button class="btn btn-primary" onclick="checkLogin()">Login</button>
+    <p class="login-error" id="loginError">Wrong password</p>
+    <p style="margin-top:2rem;font-size:0.8rem;color:#475569"><a href="index.html" style="color:#94a3b8">← Back to site</a></p>
+  </div>
+</div>
+
+<div id="app" style="display:none">
+  <div class="container">
+    <div class="nav">
+      <div>
+        <h1>CTE <span>Content Manager</span></h1>
+        <p style="color:#64748b;font-size:0.85rem">Edit inventions, team, and translations</p>
+      </div>
+      <div style="display:flex;gap:0.75rem;align-items:center">
+        <a href="index.html" target="_blank">View Site →</a>
+        <button class="btn btn-sm btn-success" onclick="saveAll()">💾 Save All</button>
+      </div>
+    </div>
+
+    <div class="tabs">
+      <button class="tab active" onclick="switchTab('inventions',this)">🗂️ Inventions</button>
+      <button class="tab" onclick="switchTab('team',this)">👥 Team</button>
+      <button class="tab" onclick="switchTab('translations',this)">🌐 Translations</button>
+      <button class="tab" onclick="switchTab('settings',this)">⚙️ Settings</button>
+    </div>
+
+    <!-- INVENTIONS PANEL -->
+    <div class="panel active" id="panel-inventions">
+      <div class="action-bar">
+        <button class="btn btn-primary btn-sm" onclick="addInvention()">+ Add Invention</button>
+      </div>
+      <div id="inventions-list"></div>
+    </div>
+
+    <!-- TEAM PANEL -->
+    <div class="panel" id="panel-team">
+      <div class="action-bar">
+        <button class="btn btn-primary btn-sm" onclick="addMember()">+ Add Member</button>
+      </div>
+      <div id="team-list"></div>
+    </div>
+
+    <!-- TRANSLATIONS PANEL -->
+    <div class="panel" id="panel-translations">
+      <div class="lang-tabs" id="trans-lang-tabs"></div>
+      <div id="translations-list"></div>
+    </div>
+
+    <!-- SETTINGS PANEL -->
+    <div class="panel" id="panel-settings">
+      <div class="card">
+        <h3>Password</h3>
+        <div style="display:flex;gap:0.75rem;align-items:end">
+          <div style="flex:1">
+            <label>New Password</label>
+            <input type="password" id="newPass" placeholder="Enter new password" />
+          </div>
+          <button class="btn btn-primary" onclick="changePassword()">Change</button>
+        </div>
+        <p style="color:#64748b;font-size:0.8rem;margin-top:0.5rem">Current password: <span id="currentPassDisplay">cte2026</span></p>
+      </div>
+      <div class="card">
+        <h3>Email Configuration</h3>
+        <p style="color:#64748b;font-size:0.82rem;margin-bottom:0.75rem">Recommended: use <b>Web3Forms</b> (no Gmail reconnection needed). Get a free Access Key at <a href="https://web3forms.com" target="_blank" rel="noopener">web3forms.com</a> using the club email, then paste it below.</p>
+        <div class="grid-2">
+          <div style="grid-column:span 2"><label>Web3Forms Access Key ⭐</label><input id="cfg-web3forms-key" placeholder="paste your Web3Forms access key here" /></div>
+          <div><label>EmailJS Service ID (fallback)</label><input id="cfg-emailjs-service" /></div>
+          <div><label>EmailJS Template ID (fallback)</label><input id="cfg-emailjs-template" /></div>
+          <div><label>EmailJS Public Key (fallback)</label><input id="cfg-emailjs-key" /></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+// ═══ CONFIG ═══
+// Where the Node server lives.
+//  • Served over http(s)  → same origin (local Node server, or deployed e.g. on Render)
+//  • Opened from a file   → the local Node server on port 3000
+const LOCAL_API = 'http://localhost:3000';
+const API_CANDIDATES = (location.protocol === 'file:') ? [LOCAL_API] : ['', LOCAL_API];
+let ADMIN_PASSWORD = localStorage.getItem('cte-admin-pass') || 'cte2026';
+let data = null;
+let currentTransLang = 'en';
+const LANG_CODES = ['en', 'fr', 'ar'];
+const PAGE_NAMES = ['index', 'inventions', 'team', 'contact', 'join'];
+
+// ═══ DEFAULT DATA (fallback when no server) ═══
+function getDefaultData() {
+  return { "inventions": [], "team": [], "emailjs": { "serviceId": "service_32vywm9", "templateId": "template_63qog7p", "publicKey": "r5VyE0XmW10H7HRJU", "web3formsKey": "" }, "translations": { "index": { "en": { "nav-home": "Home", "nav-inventions": "Inventions", "nav-team": "Team", "nav-contact": "Contact", "nav-join": "Join Us", "club-name": "Technology & Engineering Club", "rights": "All rights reserved." }, "fr": { "nav-home": "Accueil", "nav-inventions": "Inventions", "nav-team": "Équipe", "nav-contact": "Contact", "nav-join": "Rejoindre", "club-name": "Club de Technologie et d'Ingénierie", "rights": "Tous droits réservés." }, "ar": { "nav-home": "الرئيسية", "nav-inventions": "الاختراعات", "nav-team": "الفريق", "nav-contact": "اتصل بنا", "nav-join": "انضم إلينا", "club-name": "نادي التكنولوجيا والهندسة", "rights": "جميع الحقوق محفوظة." } }, "inventions": { "en": { "nav-home": "Home", "nav-inventions": "Inventions", "nav-team": "Team", "nav-contact": "Contact", "nav-join": "Join Us", "club-name": "Technology & Engineering Club", "rights": "All rights reserved.", "section-label": "Student Innovation", "section-title": "Explore Each Project" }, "fr": { "nav-home": "Accueil", "nav-inventions": "Inventions", "nav-team": "Équipe", "nav-contact": "Contact", "nav-join": "Rejoindre", "club-name": "Club de Technologie et d'Ingénierie", "rights": "Tous droits réservés.", "section-label": "Innovation Étudiante", "section-title": "Explorez Chaque Projet" }, "ar": { "nav-home": "الرئيسية", "nav-inventions": "الاختراعات", "nav-team": "الفريق", "nav-contact": "اتصل بنا", "nav-join": "انضم إلينا", "club-name": "نادي التكنولوجيا والهندسة", "rights": "جميع الحقوق محفوظة.", "section-label": "ابتكارات الطلاب", "section-title": "استكشف كل مشروع" } }, "team": { "en": { "nav-home": "Home", "nav-inventions": "Inventions", "nav-team": "Team", "nav-contact": "Contact", "nav-join": "Join Us", "club-name": "Technology & Engineering Club", "rights": "All rights reserved.", "section-label": "Our People", "section-title": "Leadership & Founders", "page-title": "Meet the <span>Team</span>", "page-subtitle": "The talented students behind CTE — innovators, engineers, and changemakers" }, "fr": { "nav-home": "Accueil", "nav-inventions": "Inventions", "nav-team": "Équipe", "nav-contact": "Contact", "nav-join": "Rejoindre", "club-name": "Club de Technologie et d'Ingénierie", "rights": "Tous droits réservés.", "section-label": "Notre Équipe", "section-title": "Direction & Fondateurs", "page-title": "Rencontrez l'<span>Équipe</span>", "page-subtitle": "Les étudiants talentueux derrière CTE — innovateurs, ingénieurs et acteurs du changement" }, "ar": { "nav-home": "الرئيسية", "nav-inventions": "الاختراعات", "nav-team": "الفريق", "nav-contact": "اتصل بنا", "nav-join": "انضم إلينا", "club-name": "نادي التكنولوجيا والهندسة", "rights": "جميع الحقوق محفوظة.", "section-label": "فريقنا", "section-title": "القادة والمؤسسون", "page-title": "تعرف على <span>الفريق</span>", "page-subtitle": "الطلاب الموهوبون وراء CTE — مبتكرون، مهندسون، وصناع تغيير" } }, "contact": { "en": { "nav-home": "Home", "nav-inventions": "Inventions", "nav-team": "Team", "nav-contact": "Contact", "nav-join": "Join Us", "club-name": "Technology & Engineering Club", "rights": "All rights reserved.", "section-label": "Get in Touch", "section-title": "Contact Us", "page-title": "Get in <span>Touch</span>", "page-subtitle": "We'd love to hear from you — reach out anytime", "contact-heading": "We'd love to hear from you", "contact-desc": "Have questions about the club, our projects, or how to get involved? Reach out and one of our team members will get back to you.", "contact-email-label": "Email:", "contact-location-label": "Location:", "contact-location-value": "University Morsli Abdellah, Tipaza, Algeria", "contact-map-title": "University of Tipaza", "contact-map-addr": "Centre Universitaire Morsli Abdellah, Tipaza 42000, Algeria", "social-heading": "Follow Us", "social-desc": "Stay connected with CTE on social media for the latest updates on projects, events, and workshops.", "social-facebook-name": "Facebook", "social-facebook-user": "CTE DevTech", "social-instagram-name": "Instagram", "social-instagram-user": "@cte_2018", "social-tiktok-name": "TikTok", "social-tiktok-user": "@cte_2018", "social-email-name": "Email", "social-email-user": "ctedevtech@gmail.com" }, "fr": { "nav-home": "Accueil", "nav-inventions": "Inventions", "nav-team": "Équipe", "nav-contact": "Contact", "nav-join": "Rejoindre", "club-name": "Club de Technologie et d'Ingénierie", "rights": "Tous droits réservés.", "section-label": "Prenez Contact", "section-title": "Contactez-Nous", "page-title": "Contactez-<span>Nous</span>", "page-subtitle": "Nous serions ravis de vous entendre — contactez-nous à tout moment", "contact-heading": "Nous aimerions avoir de vos nouvelles", "contact-desc": "Des questions sur le club, nos projets ou comment s'impliquer ? Contactez-nous et un membre de notre équipe vous répondra.", "contact-email-label": "E-mail :", "contact-location-label": "Adresse :", "contact-location-value": "Université Morsli Abdellah, Tipaza, Algérie", "contact-map-title": "Université de Tipaza", "contact-map-addr": "Centre Universitaire Morsli Abdellah, Tipaza 42000, Algérie", "social-heading": "Suivez-Nous", "social-desc": "Restez connecté avec CTE sur les réseaux sociaux pour les dernières actualités sur les projets, événements et ateliers.", "social-facebook-name": "Facebook", "social-facebook-user": "CTE DevTech", "social-instagram-name": "Instagram", "social-instagram-user": "@cte_2018", "social-tiktok-name": "TikTok", "social-tiktok-user": "@cte_2018", "social-email-name": "E-mail", "social-email-user": "ctedevtech@gmail.com" }, "ar": { "nav-home": "الرئيسية", "nav-inventions": "الاختراعات", "nav-team": "الفريق", "nav-contact": "اتصل بنا", "nav-join": "انضم إلينا", "club-name": "نادي التكنولوجيا والهندسة", "rights": "جميع الحقوق محفوظة.", "section-label": "تواصل معنا", "section-title": "اتصل بنا", "page-title": "تواصل <span>معنا</span>", "page-subtitle": "يسعدنا التواصل معك — تواصل معنا في أي وقت", "contact-heading": "يسعدنا التواصل معك", "contact-desc": "لديك أسئلة عن النادي أو مشاريعنا أو كيفية الانضمام؟ تواصل معنا وسيرد عليك أحد أعضاء فريقنا.", "contact-email-label": "البريد الإلكتروني:", "contact-location-label": "الموقع:", "contact-location-value": "جامعة مرسلي عبد الله، تيبازة، الجزائر", "contact-map-title": "جامعة تيبازة", "contact-map-addr": "المركز الجامعي مرسلي عبد الله، تيبازة 42000، الجزائر", "social-heading": "تابعنا", "social-desc": "ابق على اتصال مع CTE عبر وسائل التواصل الاجتماعي لآخر التحديثات عن المشاريع والفعاليات والورشات.", "social-facebook-name": "فيسبوك", "social-facebook-user": "CTE DevTech", "social-instagram-name": "إنستغرام", "social-instagram-user": "@cte_2018", "social-tiktok-name": "تيك توك", "social-tiktok-user": "@cte_2018", "social-email-name": "البريد الإلكتروني", "social-email-user": "ctedevtech@gmail.com" } }, "join": { "en": { "nav-home": "Home", "nav-inventions": "Inventions", "nav-team": "Team", "nav-contact": "Contact", "nav-join": "Join Us", "club-name": "Technology & Engineering Club", "rights": "All rights reserved.", "section-label": "Our Benefits", "section-title": "Join the Club", "page-title": "Join <span>CTE</span>", "page-subtitle": "Become part of the oldest innovation club at the University of Tipaza" }, "fr": { "nav-home": "Accueil", "nav-inventions": "Inventions", "nav-team": "Équipe", "nav-contact": "Contact", "nav-join": "Rejoindre", "club-name": "Club de Technologie et d'Ingénierie", "rights": "Tous droits réservés.", "section-label": "Nos Avantages", "section-title": "Rejoindre le Club", "page-title": "Rejoindre <span>CTE</span>", "page-subtitle": "Faites partie du plus ancien club d'innovation de l'Université de Tipaza" }, "ar": { "nav-home": "الرئيسية", "nav-inventions": "الاختراعات", "nav-team": "الفريق", "nav-contact": "اتصل بنا", "nav-join": "انضم إلينا", "club-name": "نادي التكنولوجيا والهندسة", "rights": "جميع الحقوق محفوظة.", "section-label": "مزايا الانضمام", "section-title": "انضم إلى النادي", "page-title": "انضم إلى <span>CTE</span>", "page-subtitle": "كن جزءاً من أقدم نادٍ للابتكار في جامعة تيبازة" } } }, "emailjs": { "serviceId": "service_32vywm9", "templateId": "template_63qog7p", "publicKey": "r5VyE0XmW10H7HRJU" } };
+}
+
+function showToast(msg, isError) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.className = 'toast' + (isError ? ' error' : '');
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 3000);
+}
+
+// ═══ LOGIN ═══
+function checkLogin() {
+  const key = document.getElementById('adminKey').value;
+  if (key === ADMIN_PASSWORD) {
+    document.getElementById('login').style.display = 'none';
+    document.getElementById('app').style.display = 'block';
+    loadData();
+  } else {
+    document.getElementById('loginError').style.display = 'block';
+  }
+}
+
+// ═══ LOAD / SAVE ═══
+async function loadData() {
+  let loaded = false;
+  for (const base of API_CANDIDATES) {
+    try {
+      const res = await fetch(base + '/load');
+      if (res.ok) { data = await res.json(); loaded = true; break; }
+    } catch(e) { /* try next base */ }
+  }
+  if (!loaded) {
+    try {
+      const def = await fetch('content.json?v=' + Date.now());
+      if (def.ok) { data = await def.json(); }
+      else { throw new Error('File error ' + def.status); }
+    } catch(e2) {
+      data = getDefaultData();
+      showToast('⚠️ Using built-in defaults (no server or content.json found)', true);
+    }
+  }
+  if (!data.inventions || !data.team) {
+    data = getDefaultData();
+  }
+  renderInventions();
+  renderTeam();
+  renderTranslations();
+  loadSettings();
+}
+
+async function saveAll() {
+  const btn = document.querySelector('.btn-success');
+  btn.textContent = '⏳ Saving...';
+  btn.disabled = true;
+  let saved = false;
+  for (const base of API_CANDIDATES) {
+    try {
+      const res = await fetch(base + '/save', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'x-admin-password': ADMIN_PASSWORD },
+        body: JSON.stringify(data)
+      });
+      if (res.status === 401) {
+        showToast('❌ Wrong admin password — change it in Settings or set ADMIN_PASSWORD on the server.', true);
+        saved = true; // don't fall back to download on auth failure
+        break;
+      }
+      if (res.ok) {
+        const result = await res.json();
+        if (result.ok) {
+          showToast('✅ Saved successfully! (' + (result.storedIn || 'server') + ') Refresh pages to see changes.');
+          saved = true;
+          break;
+        }
+      }
+    } catch(e) { /* try next base */ }
+  }
+  if (!saved) {
+    // Fallback: download as file
+    const blob = new Blob([JSON.stringify(data, null, 2)], {type: 'application/json'});
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'content.json';
+    a.click();
+    showToast('📁 Downloaded as file (server not running)', true);
+  }
+  btn.textContent = '💾 Save All';
+  btn.disabled = false;
+}
+
+// ═══ INVENTIONS ═══
+function renderInventions() {
+  const container = document.getElementById('inventions-list');
+  container.innerHTML = '';
+  data.inventions.forEach((inv, i) => {
+    const div = document.createElement('div');
+    div.className = 'card';
+    const hasImage = inv.image && inv.image.startsWith('data:');
+    div.innerHTML = `
+      <div class="card-header">
+        <h3><span style="font-size:1.5rem">${inv.icon}</span> ${inv.title.en}</h3>
+        <button class="btn btn-sm btn-danger" onclick="deleteInvention(${i})">🗑️</button>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem">
+        <div>
+          <label>Image</label>
+          <div class="img-upload" id="inv-upload-${i}">
+            ${hasImage ? `<div class="img-preview"><img src="${esc(inv.image)}" /><button class="img-remove" onclick="removeInvImage(${i})">×</button></div>` : `<div class="placeholder"><div class="icon">🖼️</div><div>Click to upload image</div></div>`}
+            <input type="file" accept="image/*" onchange="uploadInvImage(${i}, this)" />
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;align-content:start">
+          <div><label>Icon (emoji)</label><input value="${esc(inv.icon)}" onchange="data.inventions[${i}].icon=this.value" /></div>
+          <div><label>Gradient</label><input value="${esc(inv.gradient)}" onchange="data.inventions[${i}].gradient=this.value" /></div>
+          <div style="grid-column:span 2"><label>Image URL (optional, overrides upload)</label><input value="${inv.image && !inv.image.startsWith('data:') ? esc(inv.image) : ''}" onchange="data.inventions[${i}].image=this.value;if(this.value)document.getElementById('inv-upload-${i}').querySelector('.placeholder').textContent='✅ URL set'" placeholder="https://example.com/image.jpg" /></div>
+        </div>
+      </div>
+      ${LANG_CODES.map(lang => `
+        <div class="lang-group">
+          <div class="lang-label">${lang.toUpperCase()}</div>
+          <div class="grid-3">
+            <div><label>Badge</label><input value="${esc(inv.badge[lang])}" onchange="data.inventions[${i}].badge.${lang}=this.value" /></div>
+            <div><label>Title</label><input value="${esc(inv.title[lang])}" onchange="data.inventions[${i}].title.${lang}=this.value" /></div>
+            <div><label>Inventor</label><input value="${esc(inv.inventor[lang])}" onchange="data.inventions[${i}].inventor.${lang}=this.value" /></div>
+          </div>
+          <div style="margin-top:0.5rem"><label>Description</label><textarea rows="3" onchange="data.inventions[${i}].desc.${lang}=this.value">${esc(inv.desc[lang])}</textarea></div>
+          <div style="margin-top:0.5rem">
+            <label>Tags (comma separated)</label>
+            <input value="${(inv.tags[lang]||[]).join(', ')}" onchange="data.inventions[${i}].tags.${lang}=this.value.split(',').map(t=>t.trim())" />
+          </div>
+        </div>
+      `).join('')}
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;margin-bottom:1rem;padding:0.75rem;background:#0f172a;border-radius:8px;border:1px solid #334155">
+        <div style="grid-column:span 2"><label>Year</label><input value="${esc(inv.year||'')}" onchange="data.inventions[${i}].year=this.value" /></div>
+        <div><label>Domain (EN)</label><input value="${esc(inv.domain?.en||'')}" onchange="data.inventions[${i}].domain.en=this.value" /></div>
+        <div><label>Domain (FR)</label><input value="${esc(inv.domain?.fr||'')}" onchange="data.inventions[${i}].domain.fr=this.value" /></div>
+        <div><label>Domain (AR)</label><input value="${esc(inv.domain?.ar||'')}" onchange="data.inventions[${i}].domain.ar=this.value" /></div>
+        <div style="grid-column:span 2"><label>Members (comma separated)</label><input value="${(inv.members||[]).join(', ')}" onchange="data.inventions[${i}].members=this.value.split(',').map(t=>t.trim())" /></div>
+      </div>
+    `;
+    container.appendChild(div);
+  });
+}
+
+function uploadInvImage(i, input) {
+  const file = input.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = function(e) {
+    data.inventions[i].image = e.target.result;
+    renderInventions();
+  };
+  reader.readAsDataURL(file);
+}
+
+function removeInvImage(i) {
+  data.inventions[i].image = '';
+  renderInventions();
+}
+
+function addInvention() {
+  const empty = { image: '', year: '', domain: {en:'',fr:'',ar:''}, members: [], icon: '💡', gradient: 'linear-gradient(135deg,#e2e8f0,#cbd5e1)', badge: {en:'',fr:'',ar:''}, title: {en:'New Invention',fr:'',ar:''}, inventor: {en:'',fr:'',ar:''}, desc: {en:'',fr:'',ar:''}, tags: {en:[],fr:[],ar:[]} };
+  data.inventions.push(empty);
+  renderInventions();
+}
+
+function deleteInvention(i) {
+  if (confirm('Delete this invention?')) {
+    data.inventions.splice(i, 1);
+    renderInventions();
+  }
+}
+
+// ═══ TEAM ═══
+function renderTeam() {
+  const container = document.getElementById('team-list');
+  container.innerHTML = '';
+  data.team.forEach((m, i) => {
+    const hasImage = m.image && m.image.startsWith('data:');
+    const div = document.createElement('div');
+    div.className = 'card';
+    div.innerHTML = `
+      <div class="card-header">
+        <h3>${m.name}</h3>
+        <button class="btn btn-sm btn-danger" onclick="deleteMember(${i})">🗑️</button>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 2fr;gap:1rem;margin-bottom:1rem">
+        <div>
+          <label>Photo</label>
+          <div class="img-upload" id="member-upload-${i}">
+            ${hasImage ? `<div class="img-preview"><img src="${esc(m.image)}" /><button class="img-remove" onclick="removeMemberImage(${i})">×</button></div>` : `<div class="placeholder"><div class="icon">👤</div><div>Click to upload photo</div></div>`}
+            <input type="file" accept="image/*" onchange="uploadMemberImage(${i}, this)" />
+          </div>
+        </div>
+        <div style="display:grid;gap:0.75rem;align-content:start">
+          <div class="grid-2">
+            <div><label>Name</label><input value="${esc(m.name)}" onchange="data.team[${i}].name=this.value;renderTeam()" /></div>
+            <div><label>Image filename (for file ref)</label><input value="${esc(m.image) && !m.image.startsWith('data:') ? esc(m.image) : ''}" onchange="data.team[${i}].image=this.value" placeholder="e.g. photo.jpg" /></div>
+          </div>
+          <div class="grid-2">
+            <div><label>ID</label><input value="${esc(m.id)}" onchange="data.team[${i}].id=this.value" /></div>
+            <div><label>Initials</label><input value="${esc(m.initials)}" onchange="data.team[${i}].initials=this.value" /></div>
+          </div>
+        </div>
+      </div>
+      ${LANG_CODES.map(lang => `
+        <div class="lang-group">
+          <div class="lang-label">${lang.toUpperCase()}</div>
+          <div class="grid-3">
+            <div><label>Role</label><input value="${esc(m.role[lang])}" onchange="data.team[${i}].role.${lang}=this.value" /></div>
+            <div><label>Tag</label><input value="${esc(m.tag[lang])}" onchange="data.team[${i}].tag.${lang}=this.value" /></div>
+          </div>
+          <div style="margin-top:0.5rem"><label>Bio</label><textarea rows="2" onchange="data.team[${i}].bio.${lang}=this.value">${esc(m.bio[lang])}</textarea></div>
+        </div>
+      `).join('')}
+    `;
+    container.appendChild(div);
+  });
+}
+
+function uploadMemberImage(i, input) {
+  const file = input.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = function(e) {
+    data.team[i].image = e.target.result;
+    renderTeam();
+  };
+  reader.readAsDataURL(file);
+}
+
+function removeMemberImage(i) {
+  data.team[i].image = '';
+  renderTeam();
+}
+
+function addMember() {
+  const empty = { id: 'm' + Date.now(), name: 'New Member', image: '', initials: 'NM', role: {en:'',fr:'',ar:''}, bio: {en:'',fr:'',ar:''}, tag: {en:'',fr:'',ar:''} };
+  data.team.push(empty);
+  renderTeam();
+}
+
+function deleteMember(i) {
+  if (confirm('Delete this member?')) {
+    data.team.splice(i, 1);
+    renderTeam();
+  }
+}
+
+// ═══ TRANSLATIONS ═══
+function renderTranslations() {
+  const langTabs = document.getElementById('trans-lang-tabs');
+  langTabs.innerHTML = LANG_CODES.map(l => `<button class="lang-tab${l===currentTransLang?' active':''}" onclick="switchTransLang('${l}',this)">${l.toUpperCase()}</button>`).join('');
+  renderTransForLang(currentTransLang);
+}
+
+function switchTransLang(lang, btn) {
+  currentTransLang = lang;
+  document.querySelectorAll('#trans-lang-tabs .lang-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  renderTransForLang(lang);
+}
+
+function renderTransForLang(lang) {
+  const container = document.getElementById('translations-list');
+  container.innerHTML = '';
+  PAGE_NAMES.forEach(page => {
+    const t = data.translations[page] && data.translations[page][lang];
+    if (!t) return;
+    const div = document.createElement('div');
+    div.className = 'card';
+    div.innerHTML = `<h3>${page}</h3>`;
+    Object.keys(t).forEach(key => {
+      const val = t[key];
+      if (Array.isArray(val)) {
+        div.innerHTML += `<div style="margin-bottom:0.75rem"><label>[${page}] ${key} (array)</label>`;
+        val.forEach((v, vi) => {
+          div.innerHTML += `<input value="${esc(v)}" style="margin-top:0.25rem" onchange="data.translations.${page}.${lang}.${key}[${vi}]=this.value" />`;
+        });
+        div.innerHTML += `</div>`;
+      } else if (val.length > 80 || val.includes('<')) {
+        div.innerHTML += `<div style="margin-bottom:0.75rem"><label>[${page}] ${key}</label><textarea rows="2" onchange="data.translations.${page}.${lang}.${key}=this.value">${esc(val)}</textarea></div>`;
+      } else {
+        div.innerHTML += `<div style="margin-bottom:0.5rem"><label>[${page}] ${key}</label><input value="${esc(val)}" onchange="data.translations.${page}.${lang}.${key}=this.value" /></div>`;
+      }
+    });
+    container.appendChild(div);
+  });
+}
+
+// ═══ SETTINGS ═══
+function loadSettings() {
+  document.getElementById('currentPassDisplay').textContent = ADMIN_PASSWORD;
+  if (!data.emailjs) data.emailjs = { serviceId: 'service_32vywm9', templateId: 'template_63qog7p', publicKey: 'r5VyE0XmW10H7HRJU', web3formsKey: '' };
+  const ej = data.emailjs;
+  document.getElementById('cfg-emailjs-service').value = ej.serviceId || 'service_32vywm9';
+  document.getElementById('cfg-emailjs-template').value = ej.templateId || 'template_63qog7p';
+  document.getElementById('cfg-emailjs-key').value = ej.publicKey || 'r5VyE0XmW10H7HRJU';
+  document.getElementById('cfg-web3forms-key').value = ej.web3formsKey || '';
+
+  // Bind inputs so changes are saved with "Save All"
+  const bind = (id, key) => { const el = document.getElementById(id); if (el) el.addEventListener('input', () => { data.emailjs[key] = el.value.trim(); }); };
+  bind('cfg-emailjs-service', 'serviceId');
+  bind('cfg-emailjs-template', 'templateId');
+  bind('cfg-emailjs-key', 'publicKey');
+  bind('cfg-web3forms-key', 'web3formsKey');
+}
+
+function changePassword() {
+  const newPass = document.getElementById('newPass').value;
+  if (newPass.length < 4) { showToast('Password must be at least 4 characters', true); return; }
+  ADMIN_PASSWORD = newPass;
+  localStorage.setItem('cte-admin-pass', newPass);
+  document.getElementById('currentPassDisplay').textContent = newPass;
+  document.getElementById('newPass').value = '';
+  showToast('✅ Password changed');
+}
+
+// ═══ UTILS ═══
+function esc(s) {
+  if (typeof s !== 'string') return '';
+  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+}
+
+function switchTab(name, btn) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('panel-' + name).classList.add('active');
+}
+</script>
+</body>
+</html>

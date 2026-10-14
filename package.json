@@ -1,0 +1,21 @@
+{
+  "name": "cte-website",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^4.22.2",
+    "mongodb": "^7.7.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "description": "",
+  "main": "security.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}
