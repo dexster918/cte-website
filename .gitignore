@@ -4,3 +4,10 @@ content.backup.json
 *.log
 Thumbs.db
 .DS_Store
+
+# --- secret files (never commit) ---
+render-key*.txt
+*key*.txt
+*secret*.txt
+New Text Document.txt
+

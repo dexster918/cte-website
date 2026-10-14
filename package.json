@@ -13,7 +13,7 @@
     "node": ">=18.0.0"
   },
   "description": "",
-  "main": "security.js",
+  "main": "server.js",
   "keywords": [],
   "author": "",
   "license": "ISC",
