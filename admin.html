@@ -88,6 +88,7 @@
       <div>
         <h1>CTE <span>Content Manager</span></h1>
         <p style="color:#64748b;font-size:0.85rem">Edit inventions, team, and translations</p>
+        <p id="conn-status" style="font-size:0.8rem;margin-top:0.35rem;color:#94a3b8">🔌 Connecting…</p>
       </div>
       <div style="display:flex;gap:0.75rem;align-items:center">
         <a href="index.html" target="_blank">View Site →</a>
@@ -207,12 +208,24 @@ async function checkLogin() {
 }
 
 // ═══ LOAD / SAVE ═══
+function setConnStatus(connected, base) {
+  const el = document.getElementById('conn-status');
+  if (!el) return;
+  if (connected) {
+    el.innerHTML = '🟢 متصل بـ <b>' + esc(base || location.origin) + '</b> — التبديلات تتسجّل في قاعدة البيانات';
+    el.style.color = '#4ade80';
+  } else {
+    el.innerHTML = '🔴 السيرفر ما راهوش يوصل! التبديلات راح تتنزّل كملف و ما راحش تبان في الموقع — تأكد أنك فتحت الأدمن على الرابط الرسمي';
+    el.style.color = '#f87171';
+  }
+}
+
 async function loadData() {
-  let loaded = false;
+  let loaded = false, usedBase = '';
   for (const base of API_CANDIDATES) {
     try {
       const res = await fetch(base + '/load');
-      if (res.ok) { data = await res.json(); loaded = true; break; }
+      if (res.ok) { data = await res.json(); loaded = true; usedBase = base || location.origin; break; }
     } catch(e) { /* try next base */ }
   }
   if (!loaded) {
@@ -225,6 +238,7 @@ async function loadData() {
       showToast('⚠️ Using built-in defaults (no server or content.json found)', true);
     }
   }
+  setConnStatus(loaded, usedBase);
   if (!data.inventions || !data.team) {
     data = getDefaultData();
   }
@@ -254,6 +268,7 @@ async function saveAll() {
       if (res.ok) {
         const result = await res.json();
         if (result.ok) {
+          setConnStatus(true, base || location.origin);
           showToast('✅ Saved successfully! (' + (result.storedIn || 'server') + ') Refresh pages to see changes.');
           saved = true;
           break;
@@ -262,6 +277,7 @@ async function saveAll() {
     } catch(e) { /* try next base */ }
   }
   if (!saved) {
+    setConnStatus(false);
     // Fallback: download as file
     const blob = new Blob([JSON.stringify(data, null, 2)], {type: 'application/json'});
     const a = document.createElement('a');
@@ -434,6 +450,24 @@ function deleteMember(i) {
 }
 
 // ═══ TRANSLATIONS ═══
+// Write a translation value into `data`.
+// NOTE: translation keys contain hyphens (e.g. "contact-map-addr"), so we can
+// NOT build an inline handler like `data.translations.contact.ar.contact-map-addr = ...`
+// — JavaScript reads that as a subtraction and the handler throws, so the value
+// was silently never saved. Always go through this helper.
+function setTrans(page, lang, key, value, index) {
+  if (!data.translations) data.translations = {};
+  if (!data.translations[page]) data.translations[page] = {};
+  if (!data.translations[page][lang]) data.translations[page][lang] = {};
+  const bucket = data.translations[page][lang];
+  if (index >= 0) {
+    if (!Array.isArray(bucket[key])) bucket[key] = [];
+    bucket[key][index] = value;
+  } else {
+    bucket[key] = value;
+  }
+}
+
 function renderTranslations() {
   const langTabs = document.getElementById('trans-lang-tabs');
   langTabs.innerHTML = LANG_CODES.map(l => `<button class="lang-tab${l===currentTransLang?' active':''}" onclick="switchTransLang('${l}',this)">${l.toUpperCase()}</button>`).join('');
@@ -458,16 +492,17 @@ function renderTransForLang(lang) {
     div.innerHTML = `<h3>${page}</h3>`;
     Object.keys(t).forEach(key => {
       const val = t[key];
+      const setter = `setTrans('${page}','${lang}','${key}',this.value`;
       if (Array.isArray(val)) {
         div.innerHTML += `<div style="margin-bottom:0.75rem"><label>[${page}] ${key} (array)</label>`;
         val.forEach((v, vi) => {
-          div.innerHTML += `<input value="${esc(v)}" style="margin-top:0.25rem" onchange="data.translations.${page}.${lang}.${key}[${vi}]=this.value" />`;
+          div.innerHTML += `<input value="${esc(v)}" style="margin-top:0.25rem" oninput="${setter},${vi})" />`;
         });
         div.innerHTML += `</div>`;
       } else if (val.length > 80 || val.includes('<')) {
-        div.innerHTML += `<div style="margin-bottom:0.75rem"><label>[${page}] ${key}</label><textarea rows="2" onchange="data.translations.${page}.${lang}.${key}=this.value">${esc(val)}</textarea></div>`;
+        div.innerHTML += `<div style="margin-bottom:0.75rem"><label>[${page}] ${key}</label><textarea rows="2" oninput="${setter},-1)">${esc(val)}</textarea></div>`;
       } else {
-        div.innerHTML += `<div style="margin-bottom:0.5rem"><label>[${page}] ${key}</label><input value="${esc(val)}" onchange="data.translations.${page}.${lang}.${key}=this.value" /></div>`;
+        div.innerHTML += `<div style="margin-bottom:0.5rem"><label>[${page}] ${key}</label><input value="${esc(val)}" oninput="${setter},-1)" /></div>`;
       }
     });
     container.appendChild(div);
