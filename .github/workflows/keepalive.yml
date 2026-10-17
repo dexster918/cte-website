@@ -28,7 +28,7 @@ jobs:
     steps:
       - name: Wake the Render service
         run: |
-          URL="https://cte-website.onrender.com/health"
+          URL="https://cte-website-1.onrender.com/health"
           for i in 1 2 3 4; do
             printf 'ping %s/4: ' "$i"
             curl -sS -m 90 -o /dev/null -w 'HTTP %{http_code} in %{time_total}s\n' "$URL" || true
