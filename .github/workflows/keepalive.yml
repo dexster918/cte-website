@@ -16,7 +16,8 @@ name: keep-alive
 
 on:
   schedule:
-    - cron: '*/10 * * * *'
+    # Avoid the top of the hour (GitHub runs scheduled jobs late when busy).
+    - cron: '5,15,25,35,45,55 * * * *'
   workflow_dispatch:
 
 permissions: {}
