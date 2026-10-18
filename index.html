@@ -108,9 +108,10 @@
     .hero-badge { display: inline-block; background: rgba(201,162,39,0.12); border: 1px solid rgba(201,162,39,0.3); color: var(--gold-light); font-family: 'Orbitron', sans-serif; font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase; padding: 0.4rem 1.2rem; border-radius: 100px; margin-bottom: 1.5rem; transition: all 0.3s; }
     .hero-badge:hover { background: rgba(201,162,39,0.2); border-color: var(--gold); transform: scale(1.05); }
 
-    .hero-title { font-family: 'Orbitron', sans-serif; font-size: clamp(2rem, 6vw, 4rem); font-weight: 900; color: var(--white); line-height: 1.1; margin-bottom: 0.5rem; }
+    .hero-title { font-family: 'Orbitron', sans-serif; font-size: clamp(1.75rem, 6vw, 4rem); font-weight: 900; color: var(--white); line-height: 1.1; margin-bottom: 0.5rem; }
     .hero-title .line { display: block; }
     .hero-title .gold { color: var(--gold-light); }
+    .hero-title .wrd { display: inline-block; white-space: nowrap; }
     .hero-title .char { display: inline-block; opacity: 0; transform: translateY(30px); animation: char-in 0.5s ease forwards; }
     @keyframes char-in { to { opacity: 1; transform: translateY(0); } }
 
@@ -430,20 +431,42 @@
   })();
 
   // ═══ 5. SPLIT TEXT ANIMATION ═══
+  // Split a title line into animated per-character spans, but wrap every WORD in a
+  // nowrap span so the browser can only break the line BETWEEN words (never mid-word),
+  // and recurse into inline elements (e.g. .gold) so their colour is preserved.
+  function splitTitleChars(lineEl, baseDelay) {
+    let i = 0;
+    const walk = (parent) => {
+      const nodes = Array.prototype.slice.call(parent.childNodes);
+      parent.innerHTML = '';
+      nodes.forEach(node => {
+        if (node.nodeType === 3) {
+          node.data.split(/(\s+)/).forEach(part => {
+            if (!part) return;
+            if (/^\s+$/.test(part)) { parent.appendChild(document.createTextNode(' ')); return; }
+            const w = document.createElement('span');
+            w.className = 'wrd';
+            Array.from(part).forEach(ch => {
+              const s = document.createElement('span');
+              s.className = 'char';
+              s.textContent = ch;
+              s.style.animationDelay = (baseDelay + (i++) * 35) + 'ms';
+              w.appendChild(s);
+            });
+            parent.appendChild(w);
+          });
+        } else if (node.nodeType === 1) {
+          walk(node);
+          parent.appendChild(node);
+        }
+      });
+    };
+    walk(lineEl);
+  }
+
   (function() {
     const title = document.getElementById('heroTitle');
-    const lines = title.querySelectorAll('.line');
-    lines.forEach((line, li) => {
-      const text = line.textContent;
-      line.innerHTML = '';
-      text.split('').forEach((ch, i) => {
-        const span = document.createElement('span');
-        span.className = 'char';
-        if (ch === ' ') span.innerHTML = '&nbsp;'; else span.textContent = ch;
-        span.style.animationDelay = (li * 300 + i * 35) + 'ms';
-        line.appendChild(span);
-      });
-    });
+    title.querySelectorAll('.line').forEach((line, li) => splitTitleChars(line, li * 300));
   })();
 
   // ═══ 6. TYPING EFFECT ═══
@@ -622,7 +645,7 @@
       'club-name': 'نادي التكنولوجيا والهندسة', 'rights': 'جميع الحقوق محفوظة.',
       'loading': 'جاري التحميل',
       'hero-badge': '✦ CTE.2018 · التكنولوجيا والهندسة ✦',
-      'hero-title': ['التكنولوجيا و<span class="gold">الهندسة</span>', 'النادي العلمي'],
+      'hero-title': ['التكنولوجيا <span class="gold">والهندسة</span>', 'النادي العلمي'],
       'hero-subtitle': ['مشاريع ابتكارية • ورش • دورات • رحلات • مسابقات', 'حيث تتلاقى تخصصات الهندسة لتشكيل المستقبل', 'نحول الأفكار إلى واقع منذ 2018'],
       'hero-text': '<h2>النادي العلمي: رائد الابتكار في جامعة تيبازة</h2><p>تأسس النادي العلمي CTE في عام 2018 على يد الطالب والمخترع أحمد لحول، ويعتبر أقدم نادٍ علمي في جامعة تيبازة. منذ نشأته، كان حجر الزاوية للابتكار الطلابي والتميز التقني.</p><h2>رؤيتنا: التكامل متعدد التخصصات</h2><p>يعمل نادي CTE على مبدأ أن مستقبل التكنولوجيا يكمن في دمج المجالات المتنوعة. نسد الفجوة بين تخصصات الهندسة المختلفة لخلق بيئة شاملة للنمو:</p><ul><li>الهندسة الميكانيكية (GM)</li><li>هندسة العمليات (GP)</li><li>الهندسة المدنية (GC)</li><li>الإلكترونيات</li></ul><h2>الأهداف</h2><p>يهدف النادي لتحويل التجربة الأكاديمية من التعلم النظري إلى الإتقان العملي من خلال:</p><ol><li><strong>تطوير أفكار الطلاب:</strong> تمكين الطلاب من تحويل مفاهيمهم الإبداعية إلى نماذج أولية وظيفية.</li><li><strong>الدعم المتبادل:</strong> تعزيز مجتمع تعاوني يتبادل فيه الطلاب من مختلف التخصصات الخبرات.</li><li><strong>تنمية الابتكار:</strong> مواصلة إرث مؤسسنا بتشجيع عقلية الابتكار والبحث والتطوير المستمر.</li></ol><h2>لماذا CTE؟</h2><p>باعتباره النادي العلمي الأكثر رسوخاً في الجامعة، يجمع CTE بين التقاليد والطموح الحديث. نحن أكثر من مجرد نادٍ؛ نحن حاضنة للمبتكرين.</p><h2>نادي CTE العلمي: حيث تتلاقى تخصصات الهندسة لتشكيل المستقبل.</h2>',
       'hero-cta': 'استكشف اختراعاتنا',
@@ -659,18 +682,7 @@
       titleEl.innerHTML = t['hero-title'].map(line => `<span class="line">${line}</span>`).join('');
       // Re-split chars (skip for Arabic to preserve letter connections)
       if (lang !== 'ar') {
-        const lines = titleEl.querySelectorAll('.line');
-        lines.forEach((line, li) => {
-          const text = line.textContent;
-          line.innerHTML = '';
-          text.split('').forEach((ch, i) => {
-            const span = document.createElement('span');
-            span.className = 'char';
-            if (ch === ' ') span.innerHTML = '&nbsp;'; else span.textContent = ch;
-            span.style.animationDelay = (li * 300 + i * 35) + 'ms';
-            line.appendChild(span);
-          });
-        });
+        titleEl.querySelectorAll('.line').forEach((line, li) => splitTitleChars(line, li * 300));
       }
     }
     // Typing effect
