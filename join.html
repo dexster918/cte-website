@@ -208,30 +208,44 @@
           <input type="text" name="fullName" id="fullName" data-i18n-placeholder="form-name-placeholder" placeholder="Your full name" required />
         </div>
         <div class="form-group">
-          <label data-i18n="form-spec-label">Specialization *</label>
-          <input type="text" name="specialization" id="specialization" data-i18n-placeholder="form-spec-placeholder" placeholder="e.g. Mechanical Engineering" required />
+          <label data-i18n="form-matricule-label">Registration Number *</label>
+          <input type="text" name="matricule" id="matricule" data-i18n-placeholder="form-matricule-placeholder" placeholder="e.g. 2021/12345" required />
         </div>
       </div>
       <div class="form-row">
         <div class="form-group">
+          <label data-i18n="form-spec-label">Specialization *</label>
+          <input type="text" name="specialization" id="specialization" data-i18n-placeholder="form-spec-placeholder" placeholder="e.g. Mechanical Engineering" required />
+        </div>
+        <div class="form-group">
           <label data-i18n="form-phone-label">Phone Number *</label>
           <input type="tel" name="phone" id="phone" data-i18n-placeholder="form-phone-placeholder" placeholder="+213 XX XXX XXXX" required />
         </div>
+      </div>
+      <div class="form-row">
         <div class="form-group">
           <label data-i18n="form-email-label">Email Address *</label>
           <input type="email" name="email" id="email" data-i18n-placeholder="form-email-placeholder" placeholder="you@example.com" required />
         </div>
+        <div class="form-group">
+          <label data-i18n="form-year-label">Academic Year *</label>
+          <select name="year" id="year" required>
+            <option value="" data-i18n="form-year-option-default">Select your year</option>
+            <option value="1" data-i18n="form-year-1">1st Year</option>
+            <option value="2" data-i18n="form-year-2">2nd Year</option>
+            <option value="3" data-i18n="form-year-3">3rd Year</option>
+            <option value="4" data-i18n="form-year-4">1st year master</option>
+            <option value="5" data-i18n="form-year-5">2nd Year master</option>
+          </select>
+        </div>
       </div>
       <div class="form-group">
-        <label data-i18n="form-year-label">Academic Year *</label>
-        <select name="year" id="year" required>
-          <option value="" data-i18n="form-year-option-default">Select your year</option>
-          <option value="1" data-i18n="form-year-1">1st Year</option>
-          <option value="2" data-i18n="form-year-2">2nd Year</option>
-          <option value="3" data-i18n="form-year-3">3rd Year</option>
-          <option value="4" data-i18n="form-year-4">1st year master</option>
-          <option value="5" data-i18n="form-year-5">2nd Year master</option>
-        </select>
+        <label data-i18n="form-skills-label">Skills / What you can do</label>
+        <textarea name="skills" id="skills" data-i18n-placeholder="form-skills-placeholder" placeholder="e.g. Arduino, 3D printing, SolidWorks, Python..."></textarea>
+      </div>
+      <div class="form-group">
+        <label data-i18n="form-interests-label">Interests</label>
+        <textarea name="interests" id="interests" data-i18n-placeholder="form-interests-placeholder" placeholder="e.g. Robotics, Electronics, Programming..."></textarea>
       </div>
       <div class="form-group">
         <label data-i18n="form-goal-label">What is your goal for joining? *</label>
@@ -315,11 +329,14 @@
 
     const result = CTESec.secureSubmit('joinForm', {
       fullName: ['required', { minLength: 2, maxLength: 100 }],
+      matricule: ['required', { minLength: 2, maxLength: 50 }],
       specialization: ['required', { minLength: 2, maxLength: 100 }],
       phone: ['required', 'phone'],
       email: ['required', 'email'],
       year: ['required', 'year'],
-      goal: ['required', { minLength: 10, maxLength: 1000 }]
+      goal: ['required', { minLength: 10, maxLength: 1000 }],
+      skills: ['optional', { maxLength: 500 }],
+      interests: ['optional', { maxLength: 500 }]
     });
 
     if (!result || !result.success) {
@@ -371,8 +388,11 @@
         name: d.fullName,
         email: d.email,
         phone: d.phone,
+        matricule: d.matricule,
         specialization: d.specialization,
         year: d.year,
+        skills: d.skills,
+        interests: d.interests,
         goal: d.goal
       })
     }).then((res) => res.json().catch(() => ({ success: false, message: 'Bad response from Web3Forms' })))
@@ -394,10 +414,13 @@
         from_name: d.fullName,
         from_email: d.email,
         phone: d.phone,
+        matricule: d.matricule,
         specialization: d.specialization,
         year: d.year,
+        skills: d.skills,
+        interests: d.interests,
         goal: d.goal,
-        message: 'Name: ' + d.fullName + '\nSpecialization: ' + d.specialization + '\nPhone: ' + d.phone + '\nEmail: ' + d.email + '\nYear: ' + d.year + '\nGoal: ' + d.goal
+        message: 'Name: ' + d.fullName + '\nRegistration Number: ' + d.matricule + '\nSpecialization: ' + d.specialization + '\nPhone: ' + d.phone + '\nEmail: ' + d.email + '\nYear: ' + d.year + '\nSkills: ' + d.skills + '\nInterests: ' + d.interests + '\nGoal: ' + d.goal
       },
       CTESec.config.EMAILJS_PUBLIC_KEY === '__EMAILJS_PUBLIC_KEY__' ? (EMAIL_CONF.publicKey || 'r5VyE0XmW10H7HRJU') : CTESec.config.EMAILJS_PUBLIC_KEY
     );
