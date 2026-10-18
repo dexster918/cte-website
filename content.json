@@ -1,1058 +1,1058 @@
-{
-  "inventions": [
-    {
-      "image": "",
-      "year": "2025",
-      "domain": {
-        "en": "Civil Engineering",
-        "fr": "Génie Civil",
-        "ar": "الهندسة المدنية"
-      },
-      "members": [
-        "Benyoucef Mohammed Nadhir",
-        "Benamara Wardia",
-        "Berrabah Hadil",
-        "Kared Halima Nour Elhouda"
-      ],
-      "icon": "🏗️",
-      "gradient": "linear-gradient(135deg,#dbeafe,#93c5fd)",
-      "badge": {
-        "en": "AI & Structural Safety",
-        "fr": "IA & Sécurité Structurale",
-        "ar": "ذكاء اصطناعي وسلامة إنشائية"
-      },
-      "title": {
-        "en": "AURA Engineering Suite",
-        "fr": "Suite Ingénierie AURA",
-        "ar": "منظومة AURA الهندسية"
-      },
-      "inventor": {
-        "en": "Benyoucef Mohammed Nadhir",
-        "fr": "Benyoucef Mohammed Nadhir",
-        "ar": "بن يوسف محمد نذير"
-      },
-      "desc": {
-        "en": "An integrated digital ecosystem combining intelligent structural health monitoring (SHM), automatic compliance with RPA 2024 earthquake standards, and sustainable bio-material mix design (marble dust, wood sawdust). Team: Benyoucef Mohammed Nadhir (Lead) — Benamara Wardia — Berrabah Hadil — Kared Halima Nour Elhouda. CTE Club | Civil Engineering | 2026.",
-        "fr": "Un écosystème numérique intégré combinant la surveillance intelligente de la santé structurale (SHM), la conformité automatique aux normes parasismiques RPA 2024, et la conception de mélanges de matériaux bio-durables (poussière de marbre, sciure de bois). Équipe: Benyoucef Mohammed Nadhir (Leader) — Benamara Wardia — Berrabah Hadil — Kared Halima Nour Elhouda. CTE Club | Génie Civil | 2026.",
-        "ar": "منظومة بيئية رقمية متكاملة تدمج الرؤية الذكية لمراقبة صحة الهياكل (SHM)، والمطابقة الآلية لمعايير الزلازل RPA 2024، وتصميم خلطات المواد الحيوية المستدامة (غبار الرخام، نشارة الخشب). الفريق: بن يوسف محمد نذير (قائد) — بن عمارة ورديا — برابح هديل — كارد هليمة نور الهولدة. نادي CTE | هندسة مدنية | 2026."
-      },
-      "tags": {
-        "en": [
-          "AI",
-          "SHM",
-          "RPA 2024",
-          "Bio-Materials"
-        ],
-        "fr": [
-          "IA",
-          "SHM",
-          "RPA 2024",
-          "Matériaux Bio"
-        ],
-        "ar": [
-          "ذكاء اصطناعي",
-          "مراقبة هياكل",
-          "معايير RPA 2024",
-          "مواد حيوية"
-        ]
-      }
-    },
-    {
-      "image": "",
-      "year": "2025",
-      "domain": {
-        "en": "Civil Engineering",
-        "fr": "Génie Civil",
-        "ar": "الهندسة المدنية"
-      },
-      "members": [
-        "Benyoucef Mohammed Nadhir",
-        "Benamara Wardia",
-        "Berrabah Hadil",
-        "Kared Halima Nour Elhouda"
-      ],
-      "icon": "📋",
-      "gradient": "linear-gradient(135deg,#fef3c7,#fde68a)",
-      "badge": {
-        "en": "Digital Construction",
-        "fr": "Construction Numérique",
-        "ar": "بناء رقمي"
-      },
-      "title": {
-        "en": "BATIMAP-DZ",
-        "fr": "BATIMAP-DZ",
-        "ar": "BATIMAP-DZ"
-      },
-      "inventor": {
-        "en": "Benyoucef Mohammed Nadhir",
-        "fr": "Benyoucef Mohammed Nadhir",
-        "ar": "بن يوسف محمد نذير"
-      },
-      "desc": {
-        "en": "A cloud-based SaaS platform for digitizing the entire lifecycle of construction projects in Algeria. Centralizes site management, resource tracking, and technical compliance in a single dashboard with RPA 2024 / CBA 93 integration. Team: Benyoucef Mohammed Nadhir (Lead) — Benamara Wardia — Berrabah Hadil — Kared Halima Nour Elhouda. CTE Club | Civil Engineering | 2026.",
-        "fr": "Une plateforme SaaS cloud pour numériser le cycle de vie complet des projets de construction en Algérie. Centralise la gestion de site, le suivi des ressources et la conformité technique dans un tableau de bord unique avec intégration RPA 2024 / CBA 93. Équipe: Benyoucef Mohammed Nadhir (Leader) — Benamara Wardia — Berrabah Hadil — Kared Halima Nour Elhouda. CTE Club | Génie Civil | 2026.",
-        "ar": "منصة SaaS سحابية لرقمنة دورة حياة مشاريع البناء في الجزائر. تمركز إدارة المواقع وتتبع الموارد والمطابقة التقنية في لوحة تحكم واحدة مع دمج قوانين RPA 2024 / CBA 93. الفريق: بن يوسف محمد نذير (قائد) — بن عمارة ورديا — برابح هديل — كارد هليمة نور الهولدة. نادي CTE | هندسة مدنية | 2026."
-      },
-      "tags": {
-        "en": [
-          "SaaS",
-          "Cloud",
-          "RPA 2024",
-          "BIM"
-        ],
-        "fr": [
-          "SaaS",
-          "Cloud",
-          "RPA 2024",
-          "BIM"
-        ],
-        "ar": [
-          "SaaS",
-          "سحابة",
-          "معايير RPA 2024",
-          "BIM"
-        ]
-      }
-    },
-    {
-      "image": "bionova.jpeg",
-      "year": "2025",
-      "domain": {
-        "en": "Process Engineering",
-        "fr": "Génie des Procédés",
-        "ar": "هندسة العمليات"
-      },
-      "members": [
-        "Boudjid Khouloud",
-        "Elahouel Ahmed",
-        "Ben Aissa Kaouther",
-        "Essaheli Maria",
-        "Benyoucef Mohamed Nadhir"
-      ],
-      "icon": "🌱",
-      "gradient": "linear-gradient(135deg,#dcfce7,#bbf7d0)",
-      "badge": {
-        "en": "Biotech & Environment",
-        "fr": "Biotech & Environnement",
-        "ar": "تقنية حيوية وبيئة"
-      },
-      "title": {
-        "en": "BioNovaSeed System",
-        "fr": "Système BioNovaSeed",
-        "ar": "منظومة BioNovaSeed"
-      },
-      "inventor": {
-        "en": "Boudjid Khouloud",
-        "fr": "Boudjid Khouloud",
-        "ar": "بوجيد خلود"
-      },
-      "desc": {
-        "en": "A smart multidisciplinary solution combining seed preservation with natural hydrogel coating, environmental monitoring system (EnviroGuard), and an engineered facility (16x26m) as a national gene bank resistant to earthquakes and wind. Team: Boudjid Khouloud — Elahouel Ahmed — Ben Aissa Kaouther — Essaheli Maria — Benyoucef Mohamed Nadhir. CTE Club | Process Engineering + Electronics + Civil.",
-        "fr": "Une solution intelligente multidisciplinaire combinant la préservation des semences avec un revêtement hydrogel naturel, un système de surveillance environnementale (EnviroGuard), et une installation ingénierie (16x26m) comme banque de gènes nationale résistante aux séismes et au vent. Équipe: Boudjid Khouloud — Elahouel Ahmed — Ben Aissa Kaouther — Essaheli Maria — Benyoucef Mohamed Nadhir. CTE Club | Génie des Procédés + Électronique + Civil.",
-        "ar": "حل ذكي متعدد التخصصات يجمع حفظ البذور بتغليف هلامي طبيعي، ونظام مراقبة بيئية (EnviroGuard)، ومنشأة هندسية (16x26م) كبنك جينات وطني مقاوم للزلازل والرياح. الفريق: بوجيد خلود — إحلاول أحمد — بن عيسى كوثري — Essaheli Maria — بن يوسف محمد نذير. نادي CTE | هندسة العمليات + إلكترونيات + مدنية."
-      },
-      "tags": {
-        "en": [
-          "Seed Preservation",
-          "Hydrogel",
-          "Gene Bank",
-          "IoT"
-        ],
-        "fr": [
-          "Préservation Semences",
-          "Hydrogel",
-          "Banque de Gènes",
-          "IoT"
-        ],
-        "ar": [
-          "حفظ البذور",
-          "هلامي",
-          "بنك جينات",
-          "إنترنت الأشياء"
-        ]
-      }
-    },
-    {
-      "image": "r.jpg",
-      "year": "2024",
-      "domain": {
-        "en": "Mechanical Engineering",
-        "fr": "Génie Mécanique",
-        "ar": "الهندسة الميكانيكية"
-      },
-      "members": [
-        "Kedim Mohamed Amine",
-        "Elahouel Ahmed"
-      ],
-      "icon": "🚀",
-      "gradient": "linear-gradient(135deg,#f3e8ff,#e9d5ff)",
-      "badge": {
-        "en": "Aerospace",
-        "fr": "Aérospatiale",
-        "ar": "طيران وفضاء"
-      },
-      "title": {
-        "en": "CTE Rocketry — TRT",
-        "fr": "CTE Rocketry — TRT",
-        "ar": "صواريخ CTE — فريق تيبازة"
-      },
-      "inventor": {
-        "en": "Kedim Mohamed Amine",
-        "fr": "Kedim Mohamed Amine",
-        "ar": "كديم محمد أمين"
-      },
-      "desc": {
-        "en": "Design and construction of 3 rockets: Sadki-1 (1.2m) achieved ~1 km altitude and was successfully recovered, TRT-1 (2.4m) won Best Rookie award at a national university competition, CTE-Rocket (1.2m) for testing local propulsion systems. Team: Kedim Mohamed Amine — Elahouel Ahmed. CTE Club | Mechanical & Electronics Engineering.",
-        "fr": "Conception et construction de 3 fusées : Sadki-1 (1,2m) a atteint ~1 km d'altitude et a été récupéré avec succès, TRT-1 (2,4m) a remporté le prix Best Rookie lors d'un concours universitaire national, CTE-Rocket (1,2m) pour tester des systèmes de propulsion locaux. Équipe: Kedim Mohamed Amine — Elahouel Ahmed. CTE Club | Génie Mécanique & Électronique.",
-        "ar": "تصميم وبناء 3 صواريخ: Sadki-1 (1.2م) حقق ~1 كم ارتفاع وتم استرداده بنجاح، TRT-1 (2.4م) فاز بجائزة Best Rookie في مسابقة جامعية وطنية، CTE-Rocket (1.2م) لاختبار أنظمة دفع محلية. الفريق: كديم محمد أمين — إحلاول أحمد. نادي CTE | هندسة ميكانيكية وإلكترونيات."
-      },
-      "tags": {
-        "en": [
-          "Rockets",
-          "Aerodynamics",
-          "Propulsion",
-          "Recovery"
-        ],
-        "fr": [
-          "Fusées",
-          "Aérodynamique",
-          "Propulsion",
-          "Récupération"
-        ],
-        "ar": [
-          "صواريخ",
-          "ديناميكا هوائية",
-          "دفع",
-          "استرداد"
-        ]
-      }
-    },
-    {
-      "image": "ecg.jpeg",
-      "year": "2024",
-      "domain": {
-        "en": "Electronics",
-        "fr": "Électronique",
-        "ar": "الإلكترونيات"
-      },
-      "members": [
-        "Boudjid Khouloud"
-      ],
-      "icon": "🫀",
-      "gradient": "linear-gradient(135deg,#fee2e2,#fecaca)",
-      "badge": {
-        "en": "Biomedical",
-        "fr": "Biomedical",
-        "ar": "هندسة طبية حيوية"
-      },
-      "title": {
-        "en": "Portable ECG Monitor",
-        "fr": "Moniteur ECG Portable",
-        "ar": "جهاز مراقبة رسم القلب المحمول"
-      },
-      "inventor": {
-        "en": "Boudjid Khouloud",
-        "fr": "Boudjid Khouloud",
-        "ar": "بوجيد خلود"
-      },
-      "desc": {
-        "en": "A portable ECG device that measures the heart's electrical signals, calculates BPM in real-time, and stores data on an SD card for early detection of heart diseases at low cost. Team: Boudjid Khouloud. CTE Club | Electronics.",
-        "fr": "Un dispositif ECG portable qui mesure les signaux électriques du cœur, calcule les BPM en temps réel et stocke les données sur une carte SD pour la détection précoce des maladies cardiaques à faible coût. Équipe: Boudjid Khouloud. CTE Club | Électronique.",
-        "ar": "جهاز ECG محمول يقيس الإشارات الكهربائية للقلب، يحسب BPM في الوقت الفعلي، ويخزّن البيانات على بطاقة SD للكشف المبكر عن أمراض القلب بتكلفة منخفضة. الفريق: بوجيد خلود. نادي CTE | إلكترونيات."
-      },
-      "tags": {
-        "en": [
-          "ECG",
-          "Arduino",
-          "SD Card",
-          "Healthcare"
-        ],
-        "fr": [
-          "ECG",
-          "Arduino",
-          "Carte SD",
-          "Santé"
-        ],
-        "ar": [
-          "تخطيط القلب",
-          "أردوينو",
-          "بطاقة SD",
-          "صحة"
-        ]
-      }
-    },
-    {
-      "image": "eco.jpeg",
-      "year": "2025",
-      "domain": {
-        "en": "Civil Engineering",
-        "fr": "Génie Civil",
-        "ar": "الهندسة المدنية"
-      },
-      "members": [
-        "Benyoucef Mohammed Nadhir",
-        "Benamara Wardia",
-        "Berrabah Hadil",
-        "Kared Halima Nour Elhouda"
-      ],
-      "icon": "♻️",
-      "gradient": "linear-gradient(135deg,#ecfdf5,#a7f3d0)",
-      "badge": {
-        "en": "Sustainable Building",
-        "fr": "Construction Durable",
-        "ar": "بناء مستدام"
-      },
-      "title": {
-        "en": "Eco-Cooling & Bio-Mortar",
-        "fr": "Éco-Climatisation & Mortier Bio",
-        "ar": "التبريد السلبي والملاط الحيوي"
-      },
-      "inventor": {
-        "en": "Benyoucef Mohammed Nadhir",
-        "fr": "Benyoucef Mohammed Nadhir",
-        "ar": "بن يوسف محمد نذير"
-      },
-      "desc": {
-        "en": "Recycles paper waste into building units 50% lighter than traditional concrete, combined with a zero-energy natural cooling system using Venturi effect that reduces temperature by 5-7°C and saves 40% of air conditioning energy. Team: Benyoucef Mohammed Nadhir (Lead) — Benamara Wardia — Berrabah Hadil — Kared Halima Nour Elhouda. CTE Club | Civil Engineering | 2026.",
-        "fr": "Recycle les déchets papier en unités de construction 50% plus légères que le béton traditionnel, combiné avec un système de refroidissement naturel à énergie zéro utilisant l'effet Venturi qui réduit la température de 5-7°C et économise 40% d'énergie de climatisation. Équipe: Benyoucef Mohammed Nadhir (Leader) — Benamara Wardia — Berrabah Hadil — Kared Halima Nour Elhouda. CTE Club | Génie Civil | 2026.",
-        "ar": "يعيد تدوير النفايات الورقية لإنتاج وحدات بناء أخف بـ 50% من الخرسانة التقليدية، مدمجة بنظام تبريد طبيعي صفري الطاقة عبر تأثير فنتوري يخفض الحرارة 5-7 درجات ويوفر 40% من طاقة التكييف. الفريق: بن يوسف محمد نذير (قائد) — بن عمارة ورديا — برابح هديل — كارد هليمة نور الهولدة. نادي CTE | هندسة مدنية | 2026."
-      },
-      "tags": {
-        "en": [
-          "Recycling",
-          "Venturi Effect",
-          "Zero Energy",
-          "Bio-Mortar"
-        ],
-        "fr": [
-          "Recyclage",
-          "Effet Venturi",
-          "Énergie Zéro",
-          "Mortier Bio"
-        ],
-        "ar": [
-          "إعادة تدوير",
-          "تأثير فنتوري",
-          "طاقة صفرا",
-          "ملاط حيوي"
-        ]
-      }
-    },
-    {
-      "image": "enviro.jpeg",
-      "year": "2024",
-      "domain": {
-        "en": "Electronics",
-        "fr": "Électronique",
-        "ar": "الإلكترونيات"
-      },
-      "members": [
-        "Elahouel Ahmed"
-      ],
-      "icon": "🌍",
-      "gradient": "linear-gradient(135deg,#e0f2fe,#bae6fd)",
-      "badge": {
-        "en": "Environmental Monitoring",
-        "fr": "Surveillance Environnementale",
-        "ar": "مراقبة بيئية"
-      },
-      "title": {
-        "en": "EnviroGuard",
-        "fr": "EnviroGuard",
-        "ar": "EnviroGuard — نظام المراقبة البيئية الذكي"
-      },
-      "inventor": {
-        "en": "Elahouel Ahmed",
-        "fr": "Elahouel Ahmed",
-        "ar": "إحلاول أحمد"
-      },
-      "desc": {
-        "en": "A closed-loop control system that monitors air quality, humidity, temperature, and water level via sensors, and automatically corrects deviations using Arduino/STM32. Designed for agriculture, laboratories, and medical environments. Team: Elahouel Ahmed. CTE Club | Electronics.",
-        "fr": "Un système de contrôle en boucle fermée qui surveille la qualité de l'air, l'humidité, la température et le niveau d'eau via des capteurs, et corrige automatiquement les déviations à l'aide d'Arduino/STM32. Conçu pour l'agriculture, les laboratoires et les environnements médicaux. Équipe: Elahouel Ahmed. CTE Club | Électronique.",
-        "ar": "نظام تحكم في حلقة مغلقة يراقب جودة الهواء والرطوبة ودرجة الحرارة ومستوى الماء عبر حساسات، ويصحّح الانحرافات آلياً بواسطة Arduino/STM32. مصمم للزراعة والمختبرات والبيئات الطبية. الفريق: إحلاول أحمد. نادي CTE | إلكترونيات."
-      },
-      "tags": {
-        "en": [
-          "Arduino",
-          "STM32",
-          "Sensors",
-          "Closed-Loop"
-        ],
-        "fr": [
-          "Arduino",
-          "STM32",
-          "Capteurs",
-          "Boucle Fermée"
-        ],
-        "ar": [
-          "أردوينو",
-          "STM32",
-          "مستشعرات",
-          "حلقة مغلقة"
-        ]
-      }
-    },
-    {
-      "image": "fire.jpeg",
-      "year": "2024",
-      "domain": {
-        "en": "Electronics",
-        "fr": "Électronique",
-        "ar": "الإلكترونيات"
-      },
-      "members": [
-        "Boudjid Khouloud"
-      ],
-      "icon": "🤖",
-      "gradient": "linear-gradient(135deg,#fff7ed,#fed7aa)",
-      "badge": {
-        "en": "Robotics & Safety",
-        "fr": "Robotique & Sécurité",
-        "ar": "روبوتات وسلامة"
-      },
-      "title": {
-        "en": "Fire Extinguisher Robot",
-        "fr": "Robot Extincteur d'Incendie",
-        "ar": "روبوت إطفاء الحرائق الآلي"
-      },
-      "inventor": {
-        "en": "Boudjid Khouloud",
-        "fr": "Boudjid Khouloud",
-        "ar": "بوجيد خلود"
-      },
-      "desc": {
-        "en": "An autonomous robot that detects fire using flame sensors via Arduino Uno, navigates toward it using DC motors, and extinguishes it with a water pump. Designed for forests and hard-to-reach areas. Team: Boudjid Khouloud. CTE Club | Electronics.",
-        "fr": "Un robot autonome qui détecte le feu grâce à des capteurs de flamme via Arduino Uno, se dirige vers lui en utilisant des moteurs DC, et l'éteint avec une pompe à eau. Conçu pour les forêts et les zones difficiles d'accès. Équipe: Boudjid Khouloud. CTE Club | Électronique.",
-        "ar": "روبوت مستقل يكتشف الحريق بحساسات اللهب عبر Arduino Uno، يتوجه نحوه بمحركات DC، ويطفئه بمضخة ماء. مصمم للعمل في الغابات والمناطق الصعبة الوصول. الفريق: بوجيد خلود. نادي CTE | إلكترونيات."
-      },
-      "tags": {
-        "en": [
-          "Arduino",
-          "Flame Sensors",
-          "DC Motors",
-          "Pump"
-        ],
-        "fr": [
-          "Arduino",
-          "Capteurs Flamme",
-          "Moteurs DC",
-          "Pompe"
-        ],
-        "ar": [
-          "أردوينو",
-          "مستشعرات لهب",
-          "محركات DC",
-          "مضخة"
-        ]
-      }
-    },
-    {
-      "image": "forst.jpeg",
-      "year": "2024",
-      "domain": {
-        "en": "Electronics",
-        "fr": "Électronique",
-        "ar": "الإلكترونيات"
-      },
-      "members": [
-        "Boudjid Khouloud"
-      ],
-      "icon": "🔥",
-      "gradient": "linear-gradient(135deg,#fef2f2,#fecaca)",
-      "badge": {
-        "en": "Environment & IoT",
-        "fr": "Environnement & IoT",
-        "ar": "بيئة وإنترنت الأشياء"
-      },
-      "title": {
-        "en": "Forest Fire Detection System",
-        "fr": "Système de Détection d'Incendies Forestiers",
-        "ar": "نظام الكشف الذكي عن حرائق الغابات"
-      },
-      "inventor": {
-        "en": "Boudjid Khouloud",
-        "fr": "Boudjid Khouloud",
-        "ar": "بوجيد خلود"
-      },
-      "desc": {
-        "en": "A device mounted on trees (Arduino Nano + flame sensor + GPS + GSM). Upon detecting a fire, it pinpoints the location and sends an SMS alert automatically. A scalable prototype for a complete forest monitoring network. Team: Boudjid Khouloud. CTE Club | Electronics.",
-        "fr": "Un dispositif monté sur les arbres (Arduino Nano + capteur de flamme + GPS + GSM). En cas de détection d'incendie, il localise précisément le lieu et envoie une alerte SMS automatiquement. Un prototype évolutif pour un réseau complet de surveillance forestière. Équipe: Boudjid Khouloud. CTE Club | Électronique.",
-        "ar": "جهاز يركّب على الأشجار (Arduino Nano + حساس لهب + GPS + GSM). عند اكتشاف حريق يحدد الموقع بدقة ويرسل SMS تلقائياً للجهات المعنية. نموذج أولي قابل للتوسع لشبكة مراقبة غابات كاملة. الفريق: بوجيد خلود. نادي CTE | إلكترونيات."
-      },
-      "tags": {
-        "en": [
-          "Arduino Nano",
-          "GPS",
-          "GSM",
-          "Flame Sensor"
-        ],
-        "fr": [
-          "Arduino Nano",
-          "GPS",
-          "GSM",
-          "Capteur Flamme"
-        ],
-        "ar": [
-          "Arduino Nano",
-          "GPS",
-          "GSM",
-          "حساس لهب"
-        ]
-      }
-    },
-    {
-      "image": "in.jpeg",
-      "year": "2025",
-      "domain": {
-        "en": "Electronics",
-        "fr": "Électronique",
-        "ar": "الإلكترونيات"
-      },
-      "members": [
-        "Hadj Yahia Rafik"
-      ],
-      "icon": "☀️",
-      "gradient": "linear-gradient(135deg,#fefce8,#fef08a)",
-      "badge": {
-        "en": "Solar & Agriculture",
-        "fr": "Solaire & Agriculture",
-        "ar": "طاقة شمسية وزراعة"
-      },
-      "title": {
-        "en": "Solar Automatic Irrigation",
-        "fr": "Irrigation Automatique Solaire",
-        "ar": "نظام الري التلقائي بالطاقة الشمسية"
-      },
-      "inventor": {
-        "en": "Hadj Yahia Rafik",
-        "fr": "Hadj Yahia Rafik",
-        "ar": "حاج يحية رفيق"
-      },
-      "desc": {
-        "en": "A solar-powered smart irrigation system that stores energy in a battery, monitors soil moisture, and automatically activates the pump when humidity drops below the set threshold. Targets smart agriculture in remote areas. Team: Hadj Yahia Rafik. CTE Club | Electronics.",
-        "fr": "Un système d'irrigation intelligent alimenté par énergie solaire qui stocke l'énergie dans une batterie, surveille l'humidité du sol et active automatiquement la pompe lorsque l'humidité descend sous le seuil défini. Cible l'agriculture intelligente dans les zones reculées. Équipe: Hadj Yahia Rafik. CTE Club | Électronique.",
-        "ar": "نظام ري ذكي يعمل بالطاقة الشمسية المخزّنة في بطارية، يراقب رطوبة التربة ويشغّل المضخة آلياً عند انخفاضها دون الحد المحدد. يستهدف الزراعة الذكية في المناطق النائية. الفريق: حاج يحية رفيق. نادي CTE | إلكترونيات."
-      },
-      "tags": {
-        "en": [
-          "Solar",
-          "Battery",
-          "Soil Sensor",
-          "Auto Pump"
-        ],
-        "fr": [
-          "Solaire",
-          "Batterie",
-          "Capteur Sol",
-          "Pompe Auto"
-        ],
-        "ar": [
-          "طاقة شمسية",
-          "بطارية",
-          "مستشعر تربة",
-          "مضخة تلقائية"
-        ]
-      }
-    }
-  ],
-  "team": [
-    {
-      "id": "m1",
-      "name": "Ahmed Lahoual",
-      "image": "a.jpg",
-      "initials": "AL",
-      "role": {
-        "en": "Founder & Lead Inventor",
-        "fr": "Fondateur & Inventeur Principal",
-        "ar": "المؤسس والمخترع الرئيسي"
-      },
-      "bio": {
-        "en": "Founded CTE in 2018. Student inventor with multiple engineering projects bridging mechanical and electronic systems. Passionate about turning ideas into functional prototypes that solve real-world problems.",
-        "fr": "A fondé CTE en 2018. Étudiant inventeur avec de multiples projets d'ingénierie reliant les systèmes mécaniques et électroniques. Passionné par la transformation d'idées en prototypes fonctionnels résolvant des problèmes réels.",
-        "ar": "أسس CTE في 2018. طالب مخترع بمشاريع هندسية متعددة تربط الأنظمة الميكانيكية والإلكترونية. شغوف بتحويل الأفكار إلى نماذج أولية وظيفية تحل مشاكل حقيقية."
-      },
-      "tag": {
-        "en": "Founder",
-        "fr": "Fondateur",
-        "ar": "المؤسس"
-      }
-    },
-    {
-      "id": "m2",
-      "name": "Kedim Mohamed Amine",
-      "image": "k.jpg",
-      "initials": "KA",
-      "role": {
-        "en": "Active Member",
-        "fr": "Membre Actif",
-        "ar": "عضو نشط"
-      },
-      "bio": {
-        "en": "Active member contributing to various projects and initiatives within the club. passionate about technology, innovation, and collaborative problem-solving across engineering disciplines.",
-        "fr": "Membre actif contribuant à divers projets et initiatives au sein du club. Passionné par la technologie, l'innovation et la résolution collaborative de problèmes dans toutes les disciplines d'ingénierie.",
-        "ar": "عضو نشط يساهم في مشاريع ومبادرات متنوعة داخل النادي. شغوف بالتكنولوجيا والابتكار وحل المشكلات التعاوني عبر التخصصات الهندسية."
-      },
-      "tag": {
-        "en": "Member",
-        "fr": "Membre",
-        "ar": "عضو"
-      }
-    },
-    {
-      "id": "m3",
-      "name": "Nadir Benyoucef",
-      "image": "n.jpg",
-      "initials": "NB",
-      "role": {
-        "en": "President",
-        "fr": "Président",
-        "ar": "الرئيس"
-      },
-      "bio": {
-        "en": "Civil Engineering student leading the club's vision, strategy, and cross-disciplinary collaboration initiatives. Dedicated to expanding CTE's impact across the university and local community.",
-        "fr": "Étudiant en Génie Civil dirigeant la vision, la stratégie et les initiatives de collaboration inter-disciplines du club. Dédié à l'expansion de l'impact de CTE à travers l'université et la communauté locale.",
-        "ar": "طالب هندسة مدنية يقود رؤية النادي واستراتيجيته ومبادرات التعاون عبر التخصصات. يسعى لتوسيع تأثير CTE في الجامعة والمجتمع المحلي."
-      },
-      "tag": {
-        "en": "President",
-        "fr": "Président",
-        "ar": "الرئيس"
-      }
-    }
-  ],
-  "emailjs": {
-    "serviceId": "service_32vywm9",
-    "templateId": "template_63qog7p",
-    "publicKey": "r5VyE0XmW10H7HRJU",
-    "web3formsKey": "d406f4b9-ca33-421a-8526-c6bcc6222cd3"
-  },
-  "translations": {
-    "index": {
-      "en": {
-        "nav-home": "Home",
-        "nav-inventions": "Inventions",
-        "nav-team": "Team",
-        "nav-contact": "Contact",
-        "nav-join": "Join Us",
-        "club-name": "Technology & Engineering Club",
-        "rights": "All rights reserved.",
-        "loading": "Loading",
-        "hero-badge": "✦ CTE.2018 · Technology & Engineering ✦",
-        "hero-title": [
-          "Technology & <span class=\"gold\">Engineering</span>",
-          "Club"
-        ],
-        "hero-subtitle": [
-          "Innovation projects • Workshops • Courses • Trips • Competitions",
-          "Where Engineering Disciplines Converge to Shape the Future",
-          "Turning Ideas into Reality Since 2018"
-        ],
-        "hero-text": "<h2>Scientific Club: The Pioneer of Innovation at the University of Tipaza</h2><p>Founded in 2018 by the student and inventor Ahmed Lahoual, the CTE Scientific Club holds the distinction of being the oldest scientific club at the University of Tipaza. Since its inception, it has served as a cornerstone for student-led innovation and technical excellence.</p><h2>Our Vision: Interdisciplinary Synergy</h2><p>The CTE Club operates on the principle that the future of technology lies in the integration of diverse fields. We bridge the gap between various engineering disciplines to create a holistic environment for growth:</p><ul><li>Mechanical Engineering (GM)</li><li>Process Engineering (GP)</li><li>Civil Engineering (GC)</li><li>Electronics</li></ul><h2>Objectives</h2><p>The club is dedicated to transforming the academic experience from theoretical learning into practical mastery by:</p><ol><li><strong>Developing Student Ideas:</strong> Empowering students to evolve their creative concepts into functional prototypes and real-world projects.</li><li><strong>Peer-to-Peer Support:</strong> Fostering a collaborative community where students from different majors exchange expertise and solve technical challenges.</li><li><strong>Cultivating Invention:</strong> Carrying forward the legacy of our founder by encouraging a mindset of invention, research, and continuous improvement.</li></ol><h2>Why CTE?</h2><p>As the most established scientific club in the university, CTE combines tradition with modern ambition. We are more than just a club; we are an incubator for innovators. By bringing together the best minds from GM, GP, GC, and Electronics, we build a foundation where interdisciplinary collaboration leads to groundbreaking results.</p><h2>CTE Scientific Club: Where Engineering Disciplines Converge to Shape the Future.</h2>",
-        "hero-cta": "Explore Our Inventions",
-        "stat-founded": "Founded",
-        "stat-fields": "Engineering Fields",
-        "stat-projects": "Projects",
-        "scroll": "Scroll",
-        "explore-label": "Explore",
-        "explore-title": "Discover CTE",
-        "card-inv-title": "Our Inventions",
-        "card-inv-desc": "Explore the innovative projects and prototypes built by our members.",
-        "card-team-title": "Meet the Team",
-        "card-team-desc": "Get to know the talented students behind CTE, from founder to leadership.",
-        "card-contact-title": "Contact Us",
-        "card-contact-desc": "Have questions? Reach out via email, social media, or visit us at the university.",
-        "card-join-title": "Join CTE",
-        "card-join-desc": "Become a member and start your journey of innovation, collaboration, and excellence.",
-        "toast-welcome": "🚀 Welcome to CTE 2018!"
-      },
-      "fr": {
-        "nav-home": "Accueil",
-        "nav-inventions": "Inventions",
-        "nav-team": "Équipe",
-        "nav-contact": "Contact",
-        "nav-join": "Rejoindre",
-        "club-name": "Club de Technologie et d'Ingénierie",
-        "rights": "Tous droits réservés.",
-        "loading": "Chargement",
-        "hero-badge": "✦ CTE.2018 · Technologie & Ingénierie ✦",
-        "hero-title": [
-          "Technologie & <span class=\"gold\">Ingénierie</span>",
-          "Club"
-        ],
-        "hero-subtitle": [
-          "Projets d'innovation • Ateliers • Cours • Sorties • Compétitions",
-          "Où les disciplines d'ingénierie convergent pour façonner l'avenir",
-          "Des idées en réalité depuis 2018"
-        ],
-        "hero-text": "<h2>Club Scientifique : Pionnier de l'Innovation à l'Université de Tipaza</h2><p>Fondé en 2018 par l'étudiant et inventeur Ahmed Lahoual, le Club Scientifique CTE est le plus ancien club scientifique de l'Université de Tipaza. Depuis sa création, il sert de pilier pour l'innovation étudiante et l'excellence technique.</p><h2>Notre Vision : Synergie Interdisciplinaire</h2><p>Le Club CTE fonctionne sur le principe que l'avenir de la technologie réside dans l'intégration de divers domaines. Nous comblons le fossé entre les disciplines d'ingénierie pour créer un environnement holistique de croissance :</p><ul><li>Génie Mécanique (GM)</li><li>Génie des Procédés (GP)</li><li>Génie Civil (GC)</li><li>Électronique</li></ul><h2>Objectifs</h2><p>Le club se consacre à transformer l'expérience académique de l'apprentissage théorique en maîtrise pratique en :</p><ol><li><strong>Développer les idées étudiantes :</strong> Permettre aux étudiants de transformer leurs concepts créatifs en prototypes fonctionnels.</li><li><strong>Soutien par les pairs :</strong> Favoriser une communauté collaborative où les étudiants échangent leur expertise.</li><li><strong>Cultiver l'invention :</strong> Perpétuer l'héritage de notre fondateur en encourageant l'innovation et la recherche.</li></ol><h2>Pourquoi CTE ?</h2><p>En tant que club scientifique le plus établi de l'université, CTE allie tradition et ambition moderne. Nous sommes plus qu'un club ; nous sommes un incubateur d'innovateurs.</p><h2>Club Scientifique CTE : Là où les disciplines d'ingénierie convergent pour façonner l'avenir.</h2>",
-        "hero-cta": "Explorer Nos Inventions",
-        "stat-founded": "Fondé",
-        "stat-fields": "Domaines d'Ingénierie",
-        "stat-projects": "Projets",
-        "scroll": "Défiler",
-        "explore-label": "Explorer",
-        "explore-title": "Découvrir CTE",
-        "card-inv-title": "Nos Inventions",
-        "card-inv-desc": "Explorez les projets innovants réalisés par nos membres.",
-        "card-team-title": "Rencontrez l'Équipe",
-        "card-team-desc": "Découvrez les étudiants talentueux derrière CTE.",
-        "card-contact-title": "Contactez-Nous",
-        "card-contact-desc": "Des questions ? Contactez-nous par email ou réseaux sociaux.",
-        "card-join-title": "Rejoindre CTE",
-        "card-join-desc": "Devenez membre et commencez votre parcours d'innovation.",
-        "toast-welcome": "🚀 Bienvenue au CTE 2018 !"
-      },
-      "ar": {
-        "nav-home": "الرئيسية",
-        "nav-inventions": "الاختراعات",
-        "nav-team": "الفريق",
-        "nav-contact": "اتصل بنا",
-        "nav-join": "انضم إلينا",
-        "club-name": "نادي التكنولوجيا والهندسة",
-        "rights": "جميع الحقوق محفوظة.",
-        "loading": "جاري التحميل",
-        "hero-badge": "✦ CTE.2018 · التكنولوجيا والهندسة ✦",
-        "hero-title": [
-          "النادي العلمي",
-          "للتكنولوجيا <span class=\"gold\">والهندسة</span>"
-        ],
-        "hero-subtitle": [
-          "مشاريع ابتكارية • ورش • دورات • رحلات • مسابقات",
-          "حيث تتلاقى تخصصات الهندسة لتشكيل المستقبل",
-          "نحول الأفكار إلى واقع منذ 2018"
-        ],
-        "hero-text": "<h2>النادي العلمي: رائد الابتكار في جامعة تيبازة</h2><p>تأسس النادي العلمي CTE في عام 2018 على يد الطالب والمخترع أحمد لحول، ويعتبر أقدم نادٍ علمي في جامعة تيبازة. منذ نشأته، كان حجر الزاوية للابتكار الطلابي والتميز التقني.</p><h2>رؤيتنا: التكامل متعدد التخصصات</h2><p>يعمل نادي CTE على مبدأ أن مستقبل التكنولوجيا يكمن في دمج المجالات المتنوعة. نسد الفجوة بين تخصصات الهندسة المختلفة لخلق بيئة شاملة للنمو:</p><ul><li>الهندسة الميكانيكية (GM)</li><li>هندسة العمليات (GP)</li><li>الهندسة المدنية (GC)</li><li>الإلكترونيات</li></ul><h2>الأهداف</h2><p>يهدف النادي لتحويل التجربة الأكاديمية من التعلم النظري إلى الإتقان العملي من خلال:</p><ol><li><strong>تطوير أفكار الطلاب:</strong> تمكين الطلاب من تحويل مفاهيمهم الإبداعية إلى نماذج أولية وظيفية.</li><li><strong>الدعم المتبادل:</strong> تعزيز مجتمع تعاوني يتبادل فيه الطلاب من مختلف التخصصات الخبرات.</li><li><strong>تنمية الابتكار:</strong> مواصلة إرث مؤسسنا بتشجيع عقلية الابتكار والبحث والتطوير المستمر.</li></ol><h2>لماذا CTE؟</h2><p>باعتباره النادي العلمي الأكثر رسوخاً في الجامعة، يجمع CTE بين التقاليد والطموح الحديث. نحن أكثر من مجرد نادٍ؛ نحن حاضنة للمبتكرين.</p><h2>نادي CTE العلمي: حيث تتلاقى تخصصات الهندسة لتشكيل المستقبل.</h2>",
-        "hero-cta": "استكشف اختراعاتنا",
-        "stat-founded": "تأسس",
-        "stat-fields": "مجالات الهندسة",
-        "stat-projects": "مشاريع",
-        "scroll": "لأسفل",
-        "explore-label": "استكشف",
-        "explore-title": "اكتشف CTE",
-        "card-inv-title": "اختراعاتنا",
-        "card-inv-desc": "استكشف المشاريع والنماذج الأولية المبتكرة التي أنشأها أعضاؤنا.",
-        "card-team-title": "تعرف على الفريق",
-        "card-team-desc": "تعرف على الطلاب الموهوبين الذين يقفون وراء CTE.",
-        "card-contact-title": "اتصل بنا",
-        "card-contact-desc": "لديك أسئلة؟ تواصل معنا عبر البريد الإلكتروني أو وسائل التواصل الاجتماعي.",
-        "card-join-title": "انضم إلى CTE",
-        "card-join-desc": "كن عضواً وابدأ رحلتك في الابتكار والتعاون والتميز.",
-        "toast-welcome": "🚀 مرحباً بك في CTE 2018!"
-      }
-    },
-    "inventions": {
-      "en": {
-        "nav-home": "Home",
-        "nav-inventions": "Inventions",
-        "nav-team": "Team",
-        "nav-contact": "Contact",
-        "nav-join": "Join Us",
-        "club-name": "Technology & Engineering Club",
-        "rights": "All rights reserved.",
-        "loading": "Loading",
-        "section-label": "Student Innovation",
-        "section-title": "Explore Each Project"
-      },
-      "fr": {
-        "nav-home": "Accueil",
-        "nav-inventions": "Inventions",
-        "nav-team": "Équipe",
-        "nav-contact": "Contact",
-        "nav-join": "Rejoindre",
-        "club-name": "Club de Technologie et d'Ingénierie",
-        "rights": "Tous droits réservés.",
-        "loading": "Chargement",
-        "section-label": "Innovation Étudiante",
-        "section-title": "Explorez Chaque Projet"
-      },
-      "ar": {
-        "nav-home": "الرئيسية",
-        "nav-inventions": "الاختراعات",
-        "nav-team": "الفريق",
-        "nav-contact": "اتصل بنا",
-        "nav-join": "انضم إلينا",
-        "club-name": "نادي التكنولوجيا والهندسة",
-        "rights": "جميع الحقوق محفوظة.",
-        "loading": "جاري التحميل",
-        "section-label": "ابتكارات الطلاب",
-        "section-title": "استكشف كل مشروع"
-      }
-    },
-    "team": {
-      "en": {
-        "nav-home": "Home",
-        "nav-inventions": "Inventions",
-        "nav-team": "Team",
-        "nav-contact": "Contact",
-        "nav-join": "Join Us",
-        "club-name": "Technology & Engineering Club",
-        "rights": "All rights reserved.",
-        "loading": "Loading",
-        "section-label": "Our People",
-        "section-title": "Leadership & Founders",
-        "page-title": "Meet the <span>Team</span>",
-        "page-subtitle": "The talented students behind CTE — innovators, engineers, and changemakers"
-      },
-      "fr": {
-        "nav-home": "Accueil",
-        "nav-inventions": "Inventions",
-        "nav-team": "Équipe",
-        "nav-contact": "Contact",
-        "nav-join": "Rejoindre",
-        "club-name": "Club de Technologie et d'Ingénierie",
-        "rights": "Tous droits réservés.",
-        "loading": "Chargement",
-        "section-label": "Notre Équipe",
-        "section-title": "Direction & Fondateurs",
-        "page-title": "Rencontrez l'<span>Équipe</span>",
-        "page-subtitle": "Les étudiants talentueux derrière CTE — innovateurs, ingénieurs et acteurs du changement"
-      },
-      "ar": {
-        "nav-home": "الرئيسية",
-        "nav-inventions": "الاختراعات",
-        "nav-team": "الفريق",
-        "nav-contact": "اتصل بنا",
-        "nav-join": "انضم إلينا",
-        "club-name": "نادي التكنولوجيا والهندسة",
-        "rights": "جميع الحقوق محفوظة.",
-        "loading": "جاري التحميل",
-        "section-label": "فريقنا",
-        "section-title": "القادة والمؤسسون",
-        "page-title": "تعرف على <span>الفريق</span>",
-        "page-subtitle": "الطلاب الموهوبون وراء CTE — مبتكرون، مهندسون، وصناع تغيير"
-      }
-    },
-    "contact": {
-      "en": {
-        "nav-home": "Home",
-        "nav-inventions": "Inventions",
-        "nav-team": "Team",
-        "nav-contact": "Contact",
-        "nav-join": "Join Us",
-        "club-name": "Technology & Engineering Club",
-        "rights": "All rights reserved.",
-        "loading": "Loading",
-        "section-label": "Get in Touch",
-        "section-title": "Contact Us",
-        "page-title": "Get in <span>Touch</span>",
-        "page-subtitle": "We'd love to hear from you — reach out anytime",
-        "contact-heading": "We'd love to hear from you",
-        "contact-desc": "Have questions about the club, our projects, or how to get involved? Reach out and one of our team members will get back to you.",
-        "contact-email-label": "Email:",
-        "contact-location-label": "Location:",
-        "contact-location-value": "University Morsli Abdellah, Tipaza, Algeria",
-        "contact-map-title": "University of Tipaza",
-        "contact-map-addr": "University Morsli Abdellah, Tipaza 42000, Algeria",
-        "social-heading": "Follow Us",
-        "social-desc": "Stay connected with CTE on social media for the latest updates on projects, events, and workshops.",
-        "social-facebook-name": "Facebook",
-        "social-facebook-user": "CTE DevTech",
-        "social-instagram-name": "Instagram",
-        "social-instagram-user": "@cte_2018",
-        "social-tiktok-name": "TikTok",
-        "social-tiktok-user": "@cte_2018",
-        "social-email-name": "Email",
-        "social-email-user": "ctedevtech@gmail.com"
-      },
-      "fr": {
-        "nav-home": "Accueil",
-        "nav-inventions": "Inventions",
-        "nav-team": "Équipe",
-        "nav-contact": "Contact",
-        "nav-join": "Rejoindre",
-        "club-name": "Club de Technologie et d'Ingénierie",
-        "rights": "Tous droits réservés.",
-        "loading": "Chargement",
-        "section-label": "Prenez Contact",
-        "section-title": "Contactez-Nous",
-        "page-title": "Contactez-<span>Nous</span>",
-        "page-subtitle": "Nous serions ravis de vous entendre — contactez-nous à tout moment",
-        "contact-heading": "Nous aimerions avoir de vos nouvelles",
-        "contact-desc": "Des questions sur le club, nos projets ou comment s'impliquer ? Contactez-nous et un membre de notre équipe vous répondra.",
-        "contact-email-label": "E-mail :",
-        "contact-location-label": "Adresse :",
-        "contact-location-value": "Université Morsli Abdellah, Tipaza, Algérie",
-        "contact-map-title": "Université de Tipaza",
-        "contact-map-addr": "Université Morsli Abdellah, Tipaza 42000, Algérie",
-        "social-heading": "Suivez-Nous",
-        "social-desc": "Restez connecté avec CTE sur les réseaux sociaux pour les dernières actualités sur les projets, événements et ateliers.",
-        "social-facebook-name": "Facebook",
-        "social-facebook-user": "CTE DevTech",
-        "social-instagram-name": "Instagram",
-        "social-instagram-user": "@cte_2018",
-        "social-tiktok-name": "TikTok",
-        "social-tiktok-user": "@cte_2018",
-        "social-email-name": "E-mail",
-        "social-email-user": "ctedevtech@gmail.com"
-      },
-      "ar": {
-        "nav-home": "الرئيسية",
-        "nav-inventions": "الاختراعات",
-        "nav-team": "الفريق",
-        "nav-contact": "اتصل بنا",
-        "nav-join": "انضم إلينا",
-        "club-name": "نادي التكنولوجيا والهندسة",
-        "rights": "جميع الحقوق محفوظة.",
-        "loading": "جاري التحميل",
-        "section-label": "تواصل معنا",
-        "section-title": "اتصل بنا",
-        "page-title": "تواصل <span>معنا</span>",
-        "page-subtitle": "يسعدنا التواصل معك — تواصل معنا في أي وقت",
-        "contact-heading": "يسعدنا التواصل معك",
-        "contact-desc": "لديك أسئلة عن النادي أو مشاريعنا أو كيفية الانضمام؟ تواصل معنا وسيرد عليك أحد أعضاء فريقنا.",
-        "contact-email-label": "البريد الإلكتروني:",
-        "contact-location-label": "الموقع:",
-        "contact-location-value": "جامعة مرسلي عبد الله، تيبازة، الجزائر",
-        "contact-map-title": "جامعة تيبازة",
-        "contact-map-addr": "جامعة مرسلي عبد الله، تيبازة 42000، الجزائر",
-        "social-heading": "تابعنا",
-        "social-desc": "ابق على اتصال مع CTE عبر وسائل التواصل الاجتماعي لآخر التحديثات عن المشاريع والفعاليات والورشات.",
-        "social-facebook-name": "فيسبوك",
-        "social-facebook-user": "CTE DevTech",
-        "social-instagram-name": "إنستغرام",
-        "social-instagram-user": "@cte_2018",
-        "social-tiktok-name": "تيك توك",
-        "social-tiktok-user": "@cte_2018",
-        "social-email-name": "البريد الإلكتروني",
-        "social-email-user": "ctedevtech@gmail.com"
-      }
-    },
-    "join": {
-      "en": {
-        "nav-home": "Home",
-        "nav-inventions": "Inventions",
-        "nav-team": "Team",
-        "nav-contact": "Contact",
-        "nav-join": "Join Us",
-        "club-name": "Technology & Engineering Club",
-        "rights": "All rights reserved.",
-        "loading": "Loading",
-        "section-label": "Our Benefits",
-        "section-title": "Join the Club",
-        "page-title": "Join <span>CTE</span>",
-        "page-subtitle": "Become part of the oldest innovation club at the University of Tipaza",
-        "benefit1-title": "Hands-On Projects",
-        "benefit1-desc": "Turn your ideas into working prototypes with mentorship and resources",
-        "benefit2-title": "Workshops & Training",
-        "benefit2-desc": "Learn Arduino, CAD, 3D printing, programming, and more for free",
-        "benefit3-title": "Competitions",
-        "benefit3-desc": "Represent CTE in national and international robotics and innovation contests",
-        "benefit4-title": "Community",
-        "benefit4-desc": "Join a multidisciplinary network of passionate engineers and innovators",
-        "form-name-label": "Full Name *",
-        "form-name-placeholder": "Your full name",
-        "form-spec-label": "Specialization *",
-        "form-spec-placeholder": "e.g. Mechanical Engineering",
-        "form-phone-label": "Phone Number *",
-        "form-phone-placeholder": "+213 XX XXX XXXX",
-        "form-email-label": "Email Address *",
-        "form-email-placeholder": "you@example.com",
-        "form-year-label": "Academic Year *",
-        "form-year-option-default": "Select your year",
-        "form-year-1": "1st Year",
-        "form-year-2": "2nd Year",
-        "form-year-3": "3rd Year",
-        "form-year-4": "1st year master",
-        "form-year-5": "2nd Year master",
-        "form-goal-label": "What is your goal for joining? *",
-        "form-goal-placeholder": "Tell us why you want to join CTE and what you hope to achieve…",
-        "form-submit": "⚡ Submit Registration",
-        "form-note": "Your information will be sent directly to the club email for review.",
-        "toast-success": "✅ Registration sent! We'll be in touch soon.",
-        "toast-error": "❌ Something went wrong. Please try again.",
-        "toast-rate-limit": "⏳ Too many submissions. Try again in",
-        "toast-validation": "❌ Please fix the highlighted fields."
-      },
-      "fr": {
-        "nav-home": "Accueil",
-        "nav-inventions": "Inventions",
-        "nav-team": "Équipe",
-        "nav-contact": "Contact",
-        "nav-join": "Rejoindre",
-        "club-name": "Club de Technologie et d'Ingénierie",
-        "rights": "Tous droits réservés.",
-        "loading": "Chargement",
-        "section-label": "Nos Avantages",
-        "section-title": "Rejoindre le Club",
-        "page-title": "Rejoindre <span>CTE</span>",
-        "page-subtitle": "Faites partie du plus ancien club d'innovation de l'Université de Tipaza",
-        "benefit1-title": "Projets Pratiques",
-        "benefit1-desc": "Transformez vos idées en prototypes fonctionnels avec mentorat et ressources",
-        "benefit2-title": "Ateliers & Formations",
-        "benefit2-desc": "Apprenez Arduino, CAO, impression 3D, programmation et plus gratuitement",
-        "benefit3-title": "Compétitions",
-        "benefit3-desc": "Représentez CTE dans des concours nationaux et internationaux de robotique et d'innovation",
-        "benefit4-title": "Communauté",
-        "benefit4-desc": "Rejoignez un réseau multidisciplinaire d'ingénieurs et d'innovateurs passionnés",
-        "form-name-label": "Nom Complet *",
-        "form-name-placeholder": "Votre nom complet",
-        "form-spec-label": "Spécialisation *",
-        "form-spec-placeholder": "ex. Génie Mécanique",
-        "form-phone-label": "Numéro de Téléphone *",
-        "form-phone-placeholder": "+213 XX XXX XXXX",
-        "form-email-label": "Adresse E-mail *",
-        "form-email-placeholder": "vous@exemple.com",
-        "form-year-label": "Année Académique *",
-        "form-year-option-default": "Sélectionnez votre année",
-        "form-year-1": "1ère Année",
-        "form-year-2": "2ème Année",
-        "form-year-3": "3ème Année",
-        "form-year-4": "1ère année master",
-        "form-year-5": "2ème année master",
-        "form-goal-label": "Quel est votre objectif en rejoignant ? *",
-        "form-goal-placeholder": "Dites-nous pourquoi vous voulez rejoindre CTE et ce que vous espérez accomplir…",
-        "form-submit": "⚡ Envoyer l'Inscription",
-        "form-note": "Vos informations seront envoyées directement à l'email du club pour examen.",
-        "toast-success": "✅ Inscription envoyée ! Nous vous contacterons bientôt.",
-        "toast-error": "❌ Une erreur est survenue. Veuillez réessayer.",
-        "toast-rate-limit": "⏳ Trop de soumissions. Réessayez dans",
-        "toast-validation": "❌ Veuillez corriger les champs indiqués."
-      },
-      "ar": {
-        "nav-home": "الرئيسية",
-        "nav-inventions": "الاختراعات",
-        "nav-team": "الفريق",
-        "nav-contact": "اتصل بنا",
-        "nav-join": "انضم إلينا",
-        "club-name": "نادي التكنولوجيا والهندسة",
-        "rights": "جميع الحقوق محفوظة.",
-        "loading": "جاري التحميل",
-        "section-label": "مزايا الانضمام",
-        "section-title": "انضم إلى النادي",
-        "page-title": "انضم إلى <span>CTE</span>",
-        "page-subtitle": "كن جزءاً من أقدم نادٍ للابتكار في جامعة تيبازة",
-        "benefit1-title": "مشاريع تطبيقية",
-        "benefit1-desc": "حوّل أفكارك إلى نماذج أولية عملية بإشراف وموارد متاحة",
-        "benefit2-title": "ورشات وتدريب",
-        "benefit2-desc": "تعلم الأردوينو والتصميم بمساعدة الحاسوب والطباعة ثلاثية الأبعاد والبرمجة مجاناً",
-        "benefit3-title": "مسابقات",
-        "benefit3-desc": "مثّل CTE في مسابقات وطنية ودولية في الروبوتيك والابتكار",
-        "benefit4-title": "مجتمع",
-        "benefit4-desc": "انضم إلى شبكة متعددة التخصصات من المهندسين والمبتكرين المتحمسين",
-        "form-name-label": "الاسم الكامل *",
-        "form-name-placeholder": "اسمك الكامل",
-        "form-spec-label": "التخصص *",
-        "form-spec-placeholder": "مثال: الهندسة الميكانيكية",
-        "form-phone-label": "رقم الهاتف *",
-        "form-phone-placeholder": "+213 XX XXX XXXX",
-        "form-email-label": "البريد الإلكتروني *",
-        "form-email-placeholder": "you@example.com",
-        "form-year-label": "السنة الدراسية *",
-        "form-year-option-default": "اختر سنتك الدراسية",
-        "form-year-1": "السنة الأولى",
-        "form-year-2": "السنة الثانية",
-        "form-year-3": "السنة الثالثة",
-        "form-year-4": "السنة الأولى ماستر",
-        "form-year-5": "السنة الثانية ماستر",
-        "form-goal-label": "ما هو هدفك من الانضمام؟ *",
-        "form-goal-placeholder": "أخبرنا لماذا تريد الانضمام إلى CTE وماذا تطمح لتحقيقه…",
-        "form-submit": "⚡ إرسال التسجيل",
-        "form-note": "سيتم إرسال معلوماتك مباشرة إلى البريد الإلكتروني للنادي للمراجعة.",
-        "toast-success": "✅ تم إرسال التسجيل! سنتواصل معك قريباً.",
-        "toast-error": "❌ حدث خطأ ما. الرجاء المحاولة مرة أخرى.",
-        "toast-rate-limit": "⏳ عدد كبير من المحاولات. حاول مرة أخرى بعد",
-        "toast-validation": "❌ الرجاء تصحيح الحقول المشار إليها."
-      }
-    }
-  }
+﻿{
+    "inventions":  [
+                       {
+                           "image":  "",
+                           "year":  "2025",
+                           "domain":  {
+                                          "en":  "Civil Engineering",
+                                          "fr":  "Génie Civil",
+                                          "ar":  "الهندسة المدنية"
+                                      },
+                           "members":  [
+                                           "Benyoucef Mohammed Nadhir",
+                                           "Benamara Wardia",
+                                           "Berrabah Hadil",
+                                           "Kared Halima Nour Elhouda"
+                                       ],
+                           "icon":  "🏗️",
+                           "gradient":  "linear-gradient(135deg,#dbeafe,#93c5fd)",
+                           "badge":  {
+                                         "en":  "AI \u0026 Structural Safety",
+                                         "fr":  "IA \u0026 Sécurité Structurale",
+                                         "ar":  "ذكاء اصطناعي وسلامة إنشائية"
+                                     },
+                           "title":  {
+                                         "en":  "AURA Engineering Suite",
+                                         "fr":  "Suite Ingénierie AURA",
+                                         "ar":  "منظومة AURA الهندسية"
+                                     },
+                           "inventor":  {
+                                            "en":  "Benyoucef Mohammed Nadhir",
+                                            "fr":  "Benyoucef Mohammed Nadhir",
+                                            "ar":  "بن يوسف محمد نذير"
+                                        },
+                           "desc":  {
+                                        "en":  "An integrated digital ecosystem combining intelligent structural health monitoring (SHM), automatic compliance with RPA 2024 earthquake standards, and sustainable bio-material mix design (marble dust, wood sawdust). Team: Benyoucef Mohammed Nadhir (Lead) — Benamara Wardia — Berrabah Hadil — Kared Halima Nour Elhouda. CTE Club | Civil Engineering | 2026.",
+                                        "fr":  "Un écosystème numérique intégré combinant la surveillance intelligente de la santé structurale (SHM), la conformité automatique aux normes parasismiques RPA 2024, et la conception de mélanges de matériaux bio-durables (poussière de marbre, sciure de bois). Équipe: Benyoucef Mohammed Nadhir (Leader) — Benamara Wardia — Berrabah Hadil — Kared Halima Nour Elhouda. CTE Club | Génie Civil | 2026.",
+                                        "ar":  "منظومة بيئية رقمية متكاملة تدمج الرؤية الذكية لمراقبة صحة الهياكل (SHM)، والمطابقة الآلية لمعايير الزلازل RPA 2024، وتصميم خلطات المواد الحيوية المستدامة (غبار الرخام، نشارة الخشب). الفريق: بن يوسف محمد نذير (قائد) — بن عمارة ورديا — برابح هديل — كارد هليمة نور الهولدة. نادي CTE | هندسة مدنية | 2026."
+                                    },
+                           "tags":  {
+                                        "en":  [
+                                                   "AI",
+                                                   "SHM",
+                                                   "RPA 2024",
+                                                   "Bio-Materials"
+                                               ],
+                                        "fr":  [
+                                                   "IA",
+                                                   "SHM",
+                                                   "RPA 2024",
+                                                   "Matériaux Bio"
+                                               ],
+                                        "ar":  [
+                                                   "ذكاء اصطناعي",
+                                                   "مراقبة هياكل",
+                                                   "معايير RPA 2024",
+                                                   "مواد حيوية"
+                                               ]
+                                    }
+                       },
+                       {
+                           "image":  "",
+                           "year":  "2025",
+                           "domain":  {
+                                          "en":  "Civil Engineering",
+                                          "fr":  "Génie Civil",
+                                          "ar":  "الهندسة المدنية"
+                                      },
+                           "members":  [
+                                           "Benyoucef Mohammed Nadhir",
+                                           "Benamara Wardia",
+                                           "Berrabah Hadil",
+                                           "Kared Halima Nour Elhouda"
+                                       ],
+                           "icon":  "📋",
+                           "gradient":  "linear-gradient(135deg,#fef3c7,#fde68a)",
+                           "badge":  {
+                                         "en":  "Digital Construction",
+                                         "fr":  "Construction Numérique",
+                                         "ar":  "بناء رقمي"
+                                     },
+                           "title":  {
+                                         "en":  "BATIMAP-DZ",
+                                         "fr":  "BATIMAP-DZ",
+                                         "ar":  "BATIMAP-DZ"
+                                     },
+                           "inventor":  {
+                                            "en":  "Benyoucef Mohammed Nadhir",
+                                            "fr":  "Benyoucef Mohammed Nadhir",
+                                            "ar":  "بن يوسف محمد نذير"
+                                        },
+                           "desc":  {
+                                        "en":  "A cloud-based SaaS platform for digitizing the entire lifecycle of construction projects in Algeria. Centralizes site management, resource tracking, and technical compliance in a single dashboard with RPA 2024 / CBA 93 integration. Team: Benyoucef Mohammed Nadhir (Lead) — Benamara Wardia — Berrabah Hadil — Kared Halima Nour Elhouda. CTE Club | Civil Engineering | 2026.",
+                                        "fr":  "Une plateforme SaaS cloud pour numériser le cycle de vie complet des projets de construction en Algérie. Centralise la gestion de site, le suivi des ressources et la conformité technique dans un tableau de bord unique avec intégration RPA 2024 / CBA 93. Équipe: Benyoucef Mohammed Nadhir (Leader) — Benamara Wardia — Berrabah Hadil — Kared Halima Nour Elhouda. CTE Club | Génie Civil | 2026.",
+                                        "ar":  "منصة SaaS سحابية لرقمنة دورة حياة مشاريع البناء في الجزائر. تمركز إدارة المواقع وتتبع الموارد والمطابقة التقنية في لوحة تحكم واحدة مع دمج قوانين RPA 2024 / CBA 93. الفريق: بن يوسف محمد نذير (قائد) — بن عمارة ورديا — برابح هديل — كارد هليمة نور الهولدة. نادي CTE | هندسة مدنية | 2026."
+                                    },
+                           "tags":  {
+                                        "en":  [
+                                                   "SaaS",
+                                                   "Cloud",
+                                                   "RPA 2024",
+                                                   "BIM"
+                                               ],
+                                        "fr":  [
+                                                   "SaaS",
+                                                   "Cloud",
+                                                   "RPA 2024",
+                                                   "BIM"
+                                               ],
+                                        "ar":  [
+                                                   "SaaS",
+                                                   "سحابة",
+                                                   "معايير RPA 2024",
+                                                   "BIM"
+                                               ]
+                                    }
+                       },
+                       {
+                           "image":  "bionova.jpeg",
+                           "year":  "2025",
+                           "domain":  {
+                                          "en":  "Process Engineering",
+                                          "fr":  "Génie des Procédés",
+                                          "ar":  "هندسة العمليات"
+                                      },
+                           "members":  [
+                                           "Boudjid Khouloud",
+                                           "Elahouel Ahmed",
+                                           "Ben Aissa Kaouther",
+                                           "Essaheli Maria",
+                                           "Benyoucef Mohamed Nadhir"
+                                       ],
+                           "icon":  "🌱",
+                           "gradient":  "linear-gradient(135deg,#dcfce7,#bbf7d0)",
+                           "badge":  {
+                                         "en":  "Biotech \u0026 Environment",
+                                         "fr":  "Biotech \u0026 Environnement",
+                                         "ar":  "تقنية حيوية وبيئة"
+                                     },
+                           "title":  {
+                                         "en":  "BioNovaSeed System",
+                                         "fr":  "Système BioNovaSeed",
+                                         "ar":  "منظومة BioNovaSeed"
+                                     },
+                           "inventor":  {
+                                            "en":  "Boudjid Khouloud",
+                                            "fr":  "Boudjid Khouloud",
+                                            "ar":  "بوجيد خلود"
+                                        },
+                           "desc":  {
+                                        "en":  "A smart multidisciplinary solution combining seed preservation with natural hydrogel coating, environmental monitoring system (EnviroGuard), and an engineered facility (16x26m) as a national gene bank resistant to earthquakes and wind. Team: Boudjid Khouloud — Elahouel Ahmed — Ben Aissa Kaouther — Essaheli Maria — Benyoucef Mohamed Nadhir. CTE Club | Process Engineering + Electronics + Civil.",
+                                        "fr":  "Une solution intelligente multidisciplinaire combinant la préservation des semences avec un revêtement hydrogel naturel, un système de surveillance environnementale (EnviroGuard), et une installation ingénierie (16x26m) comme banque de gènes nationale résistante aux séismes et au vent. Équipe: Boudjid Khouloud — Elahouel Ahmed — Ben Aissa Kaouther — Essaheli Maria — Benyoucef Mohamed Nadhir. CTE Club | Génie des Procédés + Électronique + Civil.",
+                                        "ar":  "حل ذكي متعدد التخصصات يجمع حفظ البذور بتغليف هلامي طبيعي، ونظام مراقبة بيئية (EnviroGuard)، ومنشأة هندسية (16x26م) كبنك جينات وطني مقاوم للزلازل والرياح. الفريق: بوجيد خلود — إحلاول أحمد — بن عيسى كوثري — Essaheli Maria — بن يوسف محمد نذير. نادي CTE | هندسة العمليات + إلكترونيات + مدنية."
+                                    },
+                           "tags":  {
+                                        "en":  [
+                                                   "Seed Preservation",
+                                                   "Hydrogel",
+                                                   "Gene Bank",
+                                                   "IoT"
+                                               ],
+                                        "fr":  [
+                                                   "Préservation Semences",
+                                                   "Hydrogel",
+                                                   "Banque de Gènes",
+                                                   "IoT"
+                                               ],
+                                        "ar":  [
+                                                   "حفظ البذور",
+                                                   "هلامي",
+                                                   "بنك جينات",
+                                                   "إنترنت الأشياء"
+                                               ]
+                                    }
+                       },
+                       {
+                           "image":  "r.jpg",
+                           "year":  "2024",
+                           "domain":  {
+                                          "en":  "Mechanical Engineering",
+                                          "fr":  "Génie Mécanique",
+                                          "ar":  "الهندسة الميكانيكية"
+                                      },
+                           "members":  [
+                                           "Kedim Mohamed Amine",
+                                           "Elahouel Ahmed"
+                                       ],
+                           "icon":  "🚀",
+                           "gradient":  "linear-gradient(135deg,#f3e8ff,#e9d5ff)",
+                           "badge":  {
+                                         "en":  "Aerospace",
+                                         "fr":  "Aérospatiale",
+                                         "ar":  "طيران وفضاء"
+                                     },
+                           "title":  {
+                                         "en":  "CTE Rocketry — TRT",
+                                         "fr":  "CTE Rocketry — TRT",
+                                         "ar":  "صواريخ CTE — فريق تيبازة"
+                                     },
+                           "inventor":  {
+                                            "en":  "Kedim Mohamed Amine",
+                                            "fr":  "Kedim Mohamed Amine",
+                                            "ar":  "كديم محمد أمين"
+                                        },
+                           "desc":  {
+                                        "en":  "Design and construction of 3 rockets: Sadki-1 (1.2m) achieved ~1 km altitude and was successfully recovered, TRT-1 (2.4m) won Best Rookie award at a national university competition, CTE-Rocket (1.2m) for testing local propulsion systems. Team: Kedim Mohamed Amine — Elahouel Ahmed. CTE Club | Mechanical \u0026 Electronics Engineering.",
+                                        "fr":  "Conception et construction de 3 fusées : Sadki-1 (1,2m) a atteint ~1 km d\u0027altitude et a été récupéré avec succès, TRT-1 (2,4m) a remporté le prix Best Rookie lors d\u0027un concours universitaire national, CTE-Rocket (1,2m) pour tester des systèmes de propulsion locaux. Équipe: Kedim Mohamed Amine — Elahouel Ahmed. CTE Club | Génie Mécanique \u0026 Électronique.",
+                                        "ar":  "تصميم وبناء 3 صواريخ: Sadki-1 (1.2م) حقق ~1 كم ارتفاع وتم استرداده بنجاح، TRT-1 (2.4م) فاز بجائزة Best Rookie في مسابقة جامعية وطنية، CTE-Rocket (1.2م) لاختبار أنظمة دفع محلية. الفريق: كديم محمد أمين — إحلاول أحمد. نادي CTE | هندسة ميكانيكية وإلكترونيات."
+                                    },
+                           "tags":  {
+                                        "en":  [
+                                                   "Rockets",
+                                                   "Aerodynamics",
+                                                   "Propulsion",
+                                                   "Recovery"
+                                               ],
+                                        "fr":  [
+                                                   "Fusées",
+                                                   "Aérodynamique",
+                                                   "Propulsion",
+                                                   "Récupération"
+                                               ],
+                                        "ar":  [
+                                                   "صواريخ",
+                                                   "ديناميكا هوائية",
+                                                   "دفع",
+                                                   "استرداد"
+                                               ]
+                                    }
+                       },
+                       {
+                           "image":  "ecg.jpeg",
+                           "year":  "2024",
+                           "domain":  {
+                                          "en":  "Electronics",
+                                          "fr":  "Électronique",
+                                          "ar":  "الإلكترونيات"
+                                      },
+                           "members":  [
+                                           "Boudjid Khouloud"
+                                       ],
+                           "icon":  "🫀",
+                           "gradient":  "linear-gradient(135deg,#fee2e2,#fecaca)",
+                           "badge":  {
+                                         "en":  "Biomedical",
+                                         "fr":  "Biomedical",
+                                         "ar":  "هندسة طبية حيوية"
+                                     },
+                           "title":  {
+                                         "en":  "Portable ECG Monitor",
+                                         "fr":  "Moniteur ECG Portable",
+                                         "ar":  "جهاز مراقبة رسم القلب المحمول"
+                                     },
+                           "inventor":  {
+                                            "en":  "Boudjid Khouloud",
+                                            "fr":  "Boudjid Khouloud",
+                                            "ar":  "بوجيد خلود"
+                                        },
+                           "desc":  {
+                                        "en":  "A portable ECG device that measures the heart\u0027s electrical signals, calculates BPM in real-time, and stores data on an SD card for early detection of heart diseases at low cost. Team: Boudjid Khouloud. CTE Club | Electronics.",
+                                        "fr":  "Un dispositif ECG portable qui mesure les signaux électriques du cœur, calcule les BPM en temps réel et stocke les données sur une carte SD pour la détection précoce des maladies cardiaques à faible coût. Équipe: Boudjid Khouloud. CTE Club | Électronique.",
+                                        "ar":  "جهاز ECG محمول يقيس الإشارات الكهربائية للقلب، يحسب BPM في الوقت الفعلي، ويخزّن البيانات على بطاقة SD للكشف المبكر عن أمراض القلب بتكلفة منخفضة. الفريق: بوجيد خلود. نادي CTE | إلكترونيات."
+                                    },
+                           "tags":  {
+                                        "en":  [
+                                                   "ECG",
+                                                   "Arduino",
+                                                   "SD Card",
+                                                   "Healthcare"
+                                               ],
+                                        "fr":  [
+                                                   "ECG",
+                                                   "Arduino",
+                                                   "Carte SD",
+                                                   "Santé"
+                                               ],
+                                        "ar":  [
+                                                   "تخطيط القلب",
+                                                   "أردوينو",
+                                                   "بطاقة SD",
+                                                   "صحة"
+                                               ]
+                                    }
+                       },
+                       {
+                           "image":  "eco.jpeg",
+                           "year":  "2025",
+                           "domain":  {
+                                          "en":  "Civil Engineering",
+                                          "fr":  "Génie Civil",
+                                          "ar":  "الهندسة المدنية"
+                                      },
+                           "members":  [
+                                           "Benyoucef Mohammed Nadhir",
+                                           "Benamara Wardia",
+                                           "Berrabah Hadil",
+                                           "Kared Halima Nour Elhouda"
+                                       ],
+                           "icon":  "♻️",
+                           "gradient":  "linear-gradient(135deg,#ecfdf5,#a7f3d0)",
+                           "badge":  {
+                                         "en":  "Sustainable Building",
+                                         "fr":  "Construction Durable",
+                                         "ar":  "بناء مستدام"
+                                     },
+                           "title":  {
+                                         "en":  "Eco-Cooling \u0026 Bio-Mortar",
+                                         "fr":  "Éco-Climatisation \u0026 Mortier Bio",
+                                         "ar":  "التبريد السلبي والملاط الحيوي"
+                                     },
+                           "inventor":  {
+                                            "en":  "Benyoucef Mohammed Nadhir",
+                                            "fr":  "Benyoucef Mohammed Nadhir",
+                                            "ar":  "بن يوسف محمد نذير"
+                                        },
+                           "desc":  {
+                                        "en":  "Recycles paper waste into building units 50% lighter than traditional concrete, combined with a zero-energy natural cooling system using Venturi effect that reduces temperature by 5-7°C and saves 40% of air conditioning energy. Team: Benyoucef Mohammed Nadhir (Lead) — Benamara Wardia — Berrabah Hadil — Kared Halima Nour Elhouda. CTE Club | Civil Engineering | 2026.",
+                                        "fr":  "Recycle les déchets papier en unités de construction 50% plus légères que le béton traditionnel, combiné avec un système de refroidissement naturel à énergie zéro utilisant l\u0027effet Venturi qui réduit la température de 5-7°C et économise 40% d\u0027énergie de climatisation. Équipe: Benyoucef Mohammed Nadhir (Leader) — Benamara Wardia — Berrabah Hadil — Kared Halima Nour Elhouda. CTE Club | Génie Civil | 2026.",
+                                        "ar":  "يعيد تدوير النفايات الورقية لإنتاج وحدات بناء أخف بـ 50% من الخرسانة التقليدية، مدمجة بنظام تبريد طبيعي صفري الطاقة عبر تأثير فنتوري يخفض الحرارة 5-7 درجات ويوفر 40% من طاقة التكييف. الفريق: بن يوسف محمد نذير (قائد) — بن عمارة ورديا — برابح هديل — كارد هليمة نور الهولدة. نادي CTE | هندسة مدنية | 2026."
+                                    },
+                           "tags":  {
+                                        "en":  [
+                                                   "Recycling",
+                                                   "Venturi Effect",
+                                                   "Zero Energy",
+                                                   "Bio-Mortar"
+                                               ],
+                                        "fr":  [
+                                                   "Recyclage",
+                                                   "Effet Venturi",
+                                                   "Énergie Zéro",
+                                                   "Mortier Bio"
+                                               ],
+                                        "ar":  [
+                                                   "إعادة تدوير",
+                                                   "تأثير فنتوري",
+                                                   "طاقة صفرا",
+                                                   "ملاط حيوي"
+                                               ]
+                                    }
+                       },
+                       {
+                           "image":  "enviro.jpeg",
+                           "year":  "2024",
+                           "domain":  {
+                                          "en":  "Electronics",
+                                          "fr":  "Électronique",
+                                          "ar":  "الإلكترونيات"
+                                      },
+                           "members":  [
+                                           "Elahouel Ahmed"
+                                       ],
+                           "icon":  "🌍",
+                           "gradient":  "linear-gradient(135deg,#e0f2fe,#bae6fd)",
+                           "badge":  {
+                                         "en":  "Environmental Monitoring",
+                                         "fr":  "Surveillance Environnementale",
+                                         "ar":  "مراقبة بيئية"
+                                     },
+                           "title":  {
+                                         "en":  "EnviroGuard",
+                                         "fr":  "EnviroGuard",
+                                         "ar":  "EnviroGuard — نظام المراقبة البيئية الذكي"
+                                     },
+                           "inventor":  {
+                                            "en":  "Elahouel Ahmed",
+                                            "fr":  "Elahouel Ahmed",
+                                            "ar":  "إحلاول أحمد"
+                                        },
+                           "desc":  {
+                                        "en":  "A closed-loop control system that monitors air quality, humidity, temperature, and water level via sensors, and automatically corrects deviations using Arduino/STM32. Designed for agriculture, laboratories, and medical environments. Team: Elahouel Ahmed. CTE Club | Electronics.",
+                                        "fr":  "Un système de contrôle en boucle fermée qui surveille la qualité de l\u0027air, l\u0027humidité, la température et le niveau d\u0027eau via des capteurs, et corrige automatiquement les déviations à l\u0027aide d\u0027Arduino/STM32. Conçu pour l\u0027agriculture, les laboratoires et les environnements médicaux. Équipe: Elahouel Ahmed. CTE Club | Électronique.",
+                                        "ar":  "نظام تحكم في حلقة مغلقة يراقب جودة الهواء والرطوبة ودرجة الحرارة ومستوى الماء عبر حساسات، ويصحّح الانحرافات آلياً بواسطة Arduino/STM32. مصمم للزراعة والمختبرات والبيئات الطبية. الفريق: إحلاول أحمد. نادي CTE | إلكترونيات."
+                                    },
+                           "tags":  {
+                                        "en":  [
+                                                   "Arduino",
+                                                   "STM32",
+                                                   "Sensors",
+                                                   "Closed-Loop"
+                                               ],
+                                        "fr":  [
+                                                   "Arduino",
+                                                   "STM32",
+                                                   "Capteurs",
+                                                   "Boucle Fermée"
+                                               ],
+                                        "ar":  [
+                                                   "أردوينو",
+                                                   "STM32",
+                                                   "مستشعرات",
+                                                   "حلقة مغلقة"
+                                               ]
+                                    }
+                       },
+                       {
+                           "image":  "fire.jpeg",
+                           "year":  "2024",
+                           "domain":  {
+                                          "en":  "Electronics",
+                                          "fr":  "Électronique",
+                                          "ar":  "الإلكترونيات"
+                                      },
+                           "members":  [
+                                           "Boudjid Khouloud"
+                                       ],
+                           "icon":  "🤖",
+                           "gradient":  "linear-gradient(135deg,#fff7ed,#fed7aa)",
+                           "badge":  {
+                                         "en":  "Robotics \u0026 Safety",
+                                         "fr":  "Robotique \u0026 Sécurité",
+                                         "ar":  "روبوتات وسلامة"
+                                     },
+                           "title":  {
+                                         "en":  "Fire Extinguisher Robot",
+                                         "fr":  "Robot Extincteur d\u0027Incendie",
+                                         "ar":  "روبوت إطفاء الحرائق الآلي"
+                                     },
+                           "inventor":  {
+                                            "en":  "Boudjid Khouloud",
+                                            "fr":  "Boudjid Khouloud",
+                                            "ar":  "بوجيد خلود"
+                                        },
+                           "desc":  {
+                                        "en":  "An autonomous robot that detects fire using flame sensors via Arduino Uno, navigates toward it using DC motors, and extinguishes it with a water pump. Designed for forests and hard-to-reach areas. Team: Boudjid Khouloud. CTE Club | Electronics.",
+                                        "fr":  "Un robot autonome qui détecte le feu grâce à des capteurs de flamme via Arduino Uno, se dirige vers lui en utilisant des moteurs DC, et l\u0027éteint avec une pompe à eau. Conçu pour les forêts et les zones difficiles d\u0027accès. Équipe: Boudjid Khouloud. CTE Club | Électronique.",
+                                        "ar":  "روبوت مستقل يكتشف الحريق بحساسات اللهب عبر Arduino Uno، يتوجه نحوه بمحركات DC، ويطفئه بمضخة ماء. مصمم للعمل في الغابات والمناطق الصعبة الوصول. الفريق: بوجيد خلود. نادي CTE | إلكترونيات."
+                                    },
+                           "tags":  {
+                                        "en":  [
+                                                   "Arduino",
+                                                   "Flame Sensors",
+                                                   "DC Motors",
+                                                   "Pump"
+                                               ],
+                                        "fr":  [
+                                                   "Arduino",
+                                                   "Capteurs Flamme",
+                                                   "Moteurs DC",
+                                                   "Pompe"
+                                               ],
+                                        "ar":  [
+                                                   "أردوينو",
+                                                   "مستشعرات لهب",
+                                                   "محركات DC",
+                                                   "مضخة"
+                                               ]
+                                    }
+                       },
+                       {
+                           "image":  "forst.jpeg",
+                           "year":  "2024",
+                           "domain":  {
+                                          "en":  "Electronics",
+                                          "fr":  "Électronique",
+                                          "ar":  "الإلكترونيات"
+                                      },
+                           "members":  [
+                                           "Boudjid Khouloud"
+                                       ],
+                           "icon":  "🔥",
+                           "gradient":  "linear-gradient(135deg,#fef2f2,#fecaca)",
+                           "badge":  {
+                                         "en":  "Environment \u0026 IoT",
+                                         "fr":  "Environnement \u0026 IoT",
+                                         "ar":  "بيئة وإنترنت الأشياء"
+                                     },
+                           "title":  {
+                                         "en":  "Forest Fire Detection System",
+                                         "fr":  "Système de Détection d\u0027Incendies Forestiers",
+                                         "ar":  "نظام الكشف الذكي عن حرائق الغابات"
+                                     },
+                           "inventor":  {
+                                            "en":  "Boudjid Khouloud",
+                                            "fr":  "Boudjid Khouloud",
+                                            "ar":  "بوجيد خلود"
+                                        },
+                           "desc":  {
+                                        "en":  "A device mounted on trees (Arduino Nano + flame sensor + GPS + GSM). Upon detecting a fire, it pinpoints the location and sends an SMS alert automatically. A scalable prototype for a complete forest monitoring network. Team: Boudjid Khouloud. CTE Club | Electronics.",
+                                        "fr":  "Un dispositif monté sur les arbres (Arduino Nano + capteur de flamme + GPS + GSM). En cas de détection d\u0027incendie, il localise précisément le lieu et envoie une alerte SMS automatiquement. Un prototype évolutif pour un réseau complet de surveillance forestière. Équipe: Boudjid Khouloud. CTE Club | Électronique.",
+                                        "ar":  "جهاز يركّب على الأشجار (Arduino Nano + حساس لهب + GPS + GSM). عند اكتشاف حريق يحدد الموقع بدقة ويرسل SMS تلقائياً للجهات المعنية. نموذج أولي قابل للتوسع لشبكة مراقبة غابات كاملة. الفريق: بوجيد خلود. نادي CTE | إلكترونيات."
+                                    },
+                           "tags":  {
+                                        "en":  [
+                                                   "Arduino Nano",
+                                                   "GPS",
+                                                   "GSM",
+                                                   "Flame Sensor"
+                                               ],
+                                        "fr":  [
+                                                   "Arduino Nano",
+                                                   "GPS",
+                                                   "GSM",
+                                                   "Capteur Flamme"
+                                               ],
+                                        "ar":  [
+                                                   "Arduino Nano",
+                                                   "GPS",
+                                                   "GSM",
+                                                   "حساس لهب"
+                                               ]
+                                    }
+                       },
+                       {
+                           "image":  "in.jpeg",
+                           "year":  "2025",
+                           "domain":  {
+                                          "en":  "Electronics",
+                                          "fr":  "Électronique",
+                                          "ar":  "الإلكترونيات"
+                                      },
+                           "members":  [
+                                           "Hadj Yahia Rafik"
+                                       ],
+                           "icon":  "☀️",
+                           "gradient":  "linear-gradient(135deg,#fefce8,#fef08a)",
+                           "badge":  {
+                                         "en":  "Solar \u0026 Agriculture",
+                                         "fr":  "Solaire \u0026 Agriculture",
+                                         "ar":  "طاقة شمسية وزراعة"
+                                     },
+                           "title":  {
+                                         "en":  "Solar Automatic Irrigation",
+                                         "fr":  "Irrigation Automatique Solaire",
+                                         "ar":  "نظام الري التلقائي بالطاقة الشمسية"
+                                     },
+                           "inventor":  {
+                                            "en":  "Hadj Yahia Rafik",
+                                            "fr":  "Hadj Yahia Rafik",
+                                            "ar":  "حاج يحية رفيق"
+                                        },
+                           "desc":  {
+                                        "en":  "A solar-powered smart irrigation system that stores energy in a battery, monitors soil moisture, and automatically activates the pump when humidity drops below the set threshold. Targets smart agriculture in remote areas. Team: Hadj Yahia Rafik. CTE Club | Electronics.",
+                                        "fr":  "Un système d\u0027irrigation intelligent alimenté par énergie solaire qui stocke l\u0027énergie dans une batterie, surveille l\u0027humidité du sol et active automatiquement la pompe lorsque l\u0027humidité descend sous le seuil défini. Cible l\u0027agriculture intelligente dans les zones reculées. Équipe: Hadj Yahia Rafik. CTE Club | Électronique.",
+                                        "ar":  "نظام ري ذكي يعمل بالطاقة الشمسية المخزّنة في بطارية، يراقب رطوبة التربة ويشغّل المضخة آلياً عند انخفاضها دون الحد المحدد. يستهدف الزراعة الذكية في المناطق النائية. الفريق: حاج يحية رفيق. نادي CTE | إلكترونيات."
+                                    },
+                           "tags":  {
+                                        "en":  [
+                                                   "Solar",
+                                                   "Battery",
+                                                   "Soil Sensor",
+                                                   "Auto Pump"
+                                               ],
+                                        "fr":  [
+                                                   "Solaire",
+                                                   "Batterie",
+                                                   "Capteur Sol",
+                                                   "Pompe Auto"
+                                               ],
+                                        "ar":  [
+                                                   "طاقة شمسية",
+                                                   "بطارية",
+                                                   "مستشعر تربة",
+                                                   "مضخة تلقائية"
+                                               ]
+                                    }
+                       }
+                   ],
+    "team":  [
+                 {
+                     "id":  "m1",
+                     "name":  "Ahmed Lahoual",
+                     "image":  "a.jpg",
+                     "initials":  "AL",
+                     "role":  {
+                                  "en":  "Founder \u0026 Lead Inventor",
+                                  "fr":  "Fondateur \u0026 Inventeur Principal",
+                                  "ar":  "المؤسس والمخترع الرئيسي"
+                              },
+                     "bio":  {
+                                 "en":  "Founded CTE in 2018. Student inventor with multiple engineering projects bridging mechanical and electronic systems. Passionate about turning ideas into functional prototypes that solve real-world problems.",
+                                 "fr":  "A fondé CTE en 2018. Étudiant inventeur avec de multiples projets d\u0027ingénierie reliant les systèmes mécaniques et électroniques. Passionné par la transformation d\u0027idées en prototypes fonctionnels résolvant des problèmes réels.",
+                                 "ar":  "أسس CTE في 2018. طالب مخترع بمشاريع هندسية متعددة تربط الأنظمة الميكانيكية والإلكترونية. شغوف بتحويل الأفكار إلى نماذج أولية وظيفية تحل مشاكل حقيقية."
+                             },
+                     "tag":  {
+                                 "en":  "Founder",
+                                 "fr":  "Fondateur",
+                                 "ar":  "المؤسس"
+                             }
+                 },
+                 {
+                     "id":  "m2",
+                     "name":  "Kedim Mohamed Amine",
+                     "image":  "k.jpg",
+                     "initials":  "KA",
+                     "role":  {
+                                  "en":  "Active Member",
+                                  "fr":  "Membre Actif",
+                                  "ar":  "عضو نشط"
+                              },
+                     "bio":  {
+                                 "en":  "Active member contributing to various projects and initiatives within the club. passionate about technology, innovation, and collaborative problem-solving across engineering disciplines.",
+                                 "fr":  "Membre actif contribuant à divers projets et initiatives au sein du club. Passionné par la technologie, l\u0027innovation et la résolution collaborative de problèmes dans toutes les disciplines d\u0027ingénierie.",
+                                 "ar":  "عضو نشط يساهم في مشاريع ومبادرات متنوعة داخل النادي. شغوف بالتكنولوجيا والابتكار وحل المشكلات التعاوني عبر التخصصات الهندسية."
+                             },
+                     "tag":  {
+                                 "en":  "Member",
+                                 "fr":  "Membre",
+                                 "ar":  "عضو"
+                             }
+                 },
+                 {
+                     "id":  "m3",
+                     "name":  "Nadir Benyoucef",
+                     "image":  "n.jpg",
+                     "initials":  "NB",
+                     "role":  {
+                                  "en":  "President",
+                                  "fr":  "Président",
+                                  "ar":  "الرئيس"
+                              },
+                     "bio":  {
+                                 "en":  "Civil Engineering student leading the club\u0027s vision, strategy, and cross-disciplinary collaboration initiatives. Dedicated to expanding CTE\u0027s impact across the university and local community.",
+                                 "fr":  "Étudiant en Génie Civil dirigeant la vision, la stratégie et les initiatives de collaboration inter-disciplines du club. Dédié à l\u0027expansion de l\u0027impact de CTE à travers l\u0027université et la communauté locale.",
+                                 "ar":  "طالب هندسة مدنية يقود رؤية النادي واستراتيجيته ومبادرات التعاون عبر التخصصات. يسعى لتوسيع تأثير CTE في الجامعة والمجتمع المحلي."
+                             },
+                     "tag":  {
+                                 "en":  "President",
+                                 "fr":  "Président",
+                                 "ar":  "الرئيس"
+                             }
+                 }
+             ],
+    "emailjs":  {
+                    "serviceId":  "service_32vywm9",
+                    "templateId":  "template_63qog7p",
+                    "publicKey":  "r5VyE0XmW10H7HRJU",
+                    "web3formsKey":  "d406f4b9-ca33-421a-8526-c6bcc6222cd3"
+                },
+    "translations":  {
+                         "index":  {
+                                       "en":  {
+                                                  "nav-home":  "Home",
+                                                  "nav-inventions":  "Inventions",
+                                                  "nav-team":  "Team",
+                                                  "nav-contact":  "Contact",
+                                                  "nav-join":  "Join Us",
+                                                  "club-name":  "Technology \u0026 Engineering Club",
+                                                  "rights":  "All rights reserved.",
+                                                  "loading":  "Loading",
+                                                  "hero-badge":  "✦ CTE.2018 · Technology \u0026 Engineering ✦",
+                                                  "hero-title":  [
+                                                                     "Technology \u0026 \u003cspan class=\"gold\"\u003eEngineering\u003c/span\u003e",
+                                                                     "Club"
+                                                                 ],
+                                                  "hero-subtitle":  [
+                                                                        "Innovation projects • Workshops • Courses • Trips • Competitions",
+                                                                        "Where Engineering Disciplines Converge to Shape the Future",
+                                                                        "Turning Ideas into Reality Since 2018"
+                                                                    ],
+                                                  "hero-text":  "\u003ch2\u003eScientific Club: The Pioneer of Innovation at the University of Tipaza\u003c/h2\u003e\u003cp\u003eFounded in 2018 by the student and inventor Ahmed Lahoual, the CTE Scientific Club holds the distinction of being the oldest scientific club at the University of Tipaza. Since its inception, it has served as a cornerstone for student-led innovation and technical excellence.\u003c/p\u003e\u003ch2\u003eOur Vision: Interdisciplinary Synergy\u003c/h2\u003e\u003cp\u003eThe CTE Club operates on the principle that the future of technology lies in the integration of diverse fields. We bridge the gap between various engineering disciplines to create a holistic environment for growth:\u003c/p\u003e\u003cul\u003e\u003cli\u003eMechanical Engineering (GM)\u003c/li\u003e\u003cli\u003eProcess Engineering (GP)\u003c/li\u003e\u003cli\u003eCivil Engineering (GC)\u003c/li\u003e\u003cli\u003eElectronics\u003c/li\u003e\u003c/ul\u003e\u003ch2\u003eObjectives\u003c/h2\u003e\u003cp\u003eThe club is dedicated to transforming the academic experience from theoretical learning into practical mastery by:\u003c/p\u003e\u003col\u003e\u003cli\u003e\u003cstrong\u003eDeveloping Student Ideas:\u003c/strong\u003e Empowering students to evolve their creative concepts into functional prototypes and real-world projects.\u003c/li\u003e\u003cli\u003e\u003cstrong\u003ePeer-to-Peer Support:\u003c/strong\u003e Fostering a collaborative community where students from different majors exchange expertise and solve technical challenges.\u003c/li\u003e\u003cli\u003e\u003cstrong\u003eCultivating Invention:\u003c/strong\u003e Carrying forward the legacy of our founder by encouraging a mindset of invention, research, and continuous improvement.\u003c/li\u003e\u003c/ol\u003e\u003ch2\u003eWhy CTE?\u003c/h2\u003e\u003cp\u003eAs the most established scientific club in the university, CTE combines tradition with modern ambition. We are more than just a club; we are an incubator for innovators. By bringing together the best minds from GM, GP, GC, and Electronics, we build a foundation where interdisciplinary collaboration leads to groundbreaking results.\u003c/p\u003e\u003ch2\u003eCTE Scientific Club: Where Engineering Disciplines Converge to Shape the Future.\u003c/h2\u003e",
+                                                  "hero-cta":  "Explore Our Inventions",
+                                                  "stat-founded":  "Founded",
+                                                  "stat-fields":  "Engineering Fields",
+                                                  "stat-projects":  "Projects",
+                                                  "scroll":  "Scroll",
+                                                  "explore-label":  "Explore",
+                                                  "explore-title":  "Discover CTE",
+                                                  "card-inv-title":  "Our Inventions",
+                                                  "card-inv-desc":  "Explore the innovative projects and prototypes built by our members.",
+                                                  "card-team-title":  "Meet the Team",
+                                                  "card-team-desc":  "Get to know the talented students behind CTE, from founder to leadership.",
+                                                  "card-contact-title":  "Contact Us",
+                                                  "card-contact-desc":  "Have questions? Reach out via email, social media, or visit us at the university.",
+                                                  "card-join-title":  "Join CTE",
+                                                  "card-join-desc":  "Become a member and start your journey of innovation, collaboration, and excellence.",
+                                                  "toast-welcome":  "🚀 Welcome to CTE 2018!"
+                                              },
+                                       "fr":  {
+                                                  "nav-home":  "Accueil",
+                                                  "nav-inventions":  "Inventions",
+                                                  "nav-team":  "Équipe",
+                                                  "nav-contact":  "Contact",
+                                                  "nav-join":  "Rejoindre",
+                                                  "club-name":  "Club de Technologie et d\u0027Ingénierie",
+                                                  "rights":  "Tous droits réservés.",
+                                                  "loading":  "Chargement",
+                                                  "hero-badge":  "✦ CTE.2018 · Technologie \u0026 Ingénierie ✦",
+                                                  "hero-title":  [
+                                                                     "Technologie \u0026 \u003cspan class=\"gold\"\u003eIngénierie\u003c/span\u003e",
+                                                                     "Club"
+                                                                 ],
+                                                  "hero-subtitle":  [
+                                                                        "Projets d\u0027innovation • Ateliers • Cours • Sorties • Compétitions",
+                                                                        "Où les disciplines d\u0027ingénierie convergent pour façonner l\u0027avenir",
+                                                                        "Des idées en réalité depuis 2018"
+                                                                    ],
+                                                  "hero-text":  "\u003ch2\u003eClub Scientifique : Pionnier de l\u0027Innovation à l\u0027Université de Tipaza\u003c/h2\u003e\u003cp\u003eFondé en 2018 par l\u0027étudiant et inventeur Ahmed Lahoual, le Club Scientifique CTE est le plus ancien club scientifique de l\u0027Université de Tipaza. Depuis sa création, il sert de pilier pour l\u0027innovation étudiante et l\u0027excellence technique.\u003c/p\u003e\u003ch2\u003eNotre Vision : Synergie Interdisciplinaire\u003c/h2\u003e\u003cp\u003eLe Club CTE fonctionne sur le principe que l\u0027avenir de la technologie réside dans l\u0027intégration de divers domaines. Nous comblons le fossé entre les disciplines d\u0027ingénierie pour créer un environnement holistique de croissance :\u003c/p\u003e\u003cul\u003e\u003cli\u003eGénie Mécanique (GM)\u003c/li\u003e\u003cli\u003eGénie des Procédés (GP)\u003c/li\u003e\u003cli\u003eGénie Civil (GC)\u003c/li\u003e\u003cli\u003eÉlectronique\u003c/li\u003e\u003c/ul\u003e\u003ch2\u003eObjectifs\u003c/h2\u003e\u003cp\u003eLe club se consacre à transformer l\u0027expérience académique de l\u0027apprentissage théorique en maîtrise pratique en :\u003c/p\u003e\u003col\u003e\u003cli\u003e\u003cstrong\u003eDévelopper les idées étudiantes :\u003c/strong\u003e Permettre aux étudiants de transformer leurs concepts créatifs en prototypes fonctionnels.\u003c/li\u003e\u003cli\u003e\u003cstrong\u003eSoutien par les pairs :\u003c/strong\u003e Favoriser une communauté collaborative où les étudiants échangent leur expertise.\u003c/li\u003e\u003cli\u003e\u003cstrong\u003eCultiver l\u0027invention :\u003c/strong\u003e Perpétuer l\u0027héritage de notre fondateur en encourageant l\u0027innovation et la recherche.\u003c/li\u003e\u003c/ol\u003e\u003ch2\u003ePourquoi CTE ?\u003c/h2\u003e\u003cp\u003eEn tant que club scientifique le plus établi de l\u0027université, CTE allie tradition et ambition moderne. Nous sommes plus qu\u0027un club ; nous sommes un incubateur d\u0027innovateurs.\u003c/p\u003e\u003ch2\u003eClub Scientifique CTE : Là où les disciplines d\u0027ingénierie convergent pour façonner l\u0027avenir.\u003c/h2\u003e",
+                                                  "hero-cta":  "Explorer Nos Inventions",
+                                                  "stat-founded":  "Fondé",
+                                                  "stat-fields":  "Domaines d\u0027Ingénierie",
+                                                  "stat-projects":  "Projets",
+                                                  "scroll":  "Défiler",
+                                                  "explore-label":  "Explorer",
+                                                  "explore-title":  "Découvrir CTE",
+                                                  "card-inv-title":  "Nos Inventions",
+                                                  "card-inv-desc":  "Explorez les projets innovants réalisés par nos membres.",
+                                                  "card-team-title":  "Rencontrez l\u0027Équipe",
+                                                  "card-team-desc":  "Découvrez les étudiants talentueux derrière CTE.",
+                                                  "card-contact-title":  "Contactez-Nous",
+                                                  "card-contact-desc":  "Des questions ? Contactez-nous par email ou réseaux sociaux.",
+                                                  "card-join-title":  "Rejoindre CTE",
+                                                  "card-join-desc":  "Devenez membre et commencez votre parcours d\u0027innovation.",
+                                                  "toast-welcome":  "🚀 Bienvenue au CTE 2018 !"
+                                              },
+                                       "ar":  {
+                                                  "nav-home":  "الرئيسية",
+                                                  "nav-inventions":  "الاختراعات",
+                                                  "nav-team":  "الفريق",
+                                                  "nav-contact":  "اتصل بنا",
+                                                  "nav-join":  "انضم إلينا",
+                                                  "club-name":  "نادي التكنولوجيا والهندسة",
+                                                  "rights":  "جميع الحقوق محفوظة.",
+                                                  "loading":  "جاري التحميل",
+                                                  "hero-badge":  "✦ CTE.2018 · التكنولوجيا والهندسة ✦",
+                                                  "hero-title":  [
+                                                                     "النادي العلمي",
+                                                                     "للتكنولوجيا \u003cspan class=\"gold\"\u003eوالهندسة\u003c/span\u003e"
+                                                                 ],
+                                                  "hero-subtitle":  [
+                                                                        "مشاريع ابتكارية • ورش • دورات • رحلات • مسابقات",
+                                                                        "حيث تتلاقى تخصصات الهندسة لتشكيل المستقبل",
+                                                                        "نحول الأفكار إلى واقع منذ 2018"
+                                                                    ],
+                                                  "hero-text":  "\u003ch2\u003eالنادي العلمي: رائد الابتكار في جامعة تيبازة\u003c/h2\u003e\u003cp\u003eتأسس النادي العلمي CTE في عام 2018 على يد الطالب والمخترع أحمد لحول، ويعتبر أقدم نادٍ علمي في جامعة تيبازة. منذ نشأته، كان حجر الزاوية للابتكار الطلابي والتميز التقني.\u003c/p\u003e\u003ch2\u003eرؤيتنا: التكامل متعدد التخصصات\u003c/h2\u003e\u003cp\u003eيعمل نادي CTE على مبدأ أن مستقبل التكنولوجيا يكمن في دمج المجالات المتنوعة. نسد الفجوة بين تخصصات الهندسة المختلفة لخلق بيئة شاملة للنمو:\u003c/p\u003e\u003cul\u003e\u003cli\u003eالهندسة الميكانيكية (GM)\u003c/li\u003e\u003cli\u003eهندسة العمليات (GP)\u003c/li\u003e\u003cli\u003eالهندسة المدنية (GC)\u003c/li\u003e\u003cli\u003eالإلكترونيات\u003c/li\u003e\u003c/ul\u003e\u003ch2\u003eالأهداف\u003c/h2\u003e\u003cp\u003eيهدف النادي لتحويل التجربة الأكاديمية من التعلم النظري إلى الإتقان العملي من خلال:\u003c/p\u003e\u003col\u003e\u003cli\u003e\u003cstrong\u003eتطوير أفكار الطلاب:\u003c/strong\u003e تمكين الطلاب من تحويل مفاهيمهم الإبداعية إلى نماذج أولية وظيفية.\u003c/li\u003e\u003cli\u003e\u003cstrong\u003eالدعم المتبادل:\u003c/strong\u003e تعزيز مجتمع تعاوني يتبادل فيه الطلاب من مختلف التخصصات الخبرات.\u003c/li\u003e\u003cli\u003e\u003cstrong\u003eتنمية الابتكار:\u003c/strong\u003e مواصلة إرث مؤسسنا بتشجيع عقلية الابتكار والبحث والتطوير المستمر.\u003c/li\u003e\u003c/ol\u003e\u003ch2\u003eلماذا CTE؟\u003c/h2\u003e\u003cp\u003eباعتباره النادي العلمي الأكثر رسوخاً في الجامعة، يجمع CTE بين التقاليد والطموح الحديث. نحن أكثر من مجرد نادٍ؛ نحن حاضنة للمبتكرين.\u003c/p\u003e\u003ch2\u003eنادي CTE العلمي: حيث تتلاقى تخصصات الهندسة لتشكيل المستقبل.\u003c/h2\u003e",
+                                                  "hero-cta":  "استكشف اختراعاتنا",
+                                                  "stat-founded":  "تأسس",
+                                                  "stat-fields":  "مجالات الهندسة",
+                                                  "stat-projects":  "مشاريع",
+                                                  "scroll":  "لأسفل",
+                                                  "explore-label":  "استكشف",
+                                                  "explore-title":  "اكتشف CTE",
+                                                  "card-inv-title":  "اختراعاتنا",
+                                                  "card-inv-desc":  "استكشف المشاريع والنماذج الأولية المبتكرة التي أنشأها أعضاؤنا.",
+                                                  "card-team-title":  "تعرف على الفريق",
+                                                  "card-team-desc":  "تعرف على الطلاب الموهوبين الذين يقفون وراء CTE.",
+                                                  "card-contact-title":  "اتصل بنا",
+                                                  "card-contact-desc":  "لديك أسئلة؟ تواصل معنا عبر البريد الإلكتروني أو وسائل التواصل الاجتماعي.",
+                                                  "card-join-title":  "انضم إلى CTE",
+                                                  "card-join-desc":  "كن عضواً وابدأ رحلتك في الابتكار والتعاون والتميز.",
+                                                  "toast-welcome":  "🚀 مرحباً بك في CTE 2018!"
+                                              }
+                                   },
+                         "inventions":  {
+                                            "en":  {
+                                                       "nav-home":  "Home",
+                                                       "nav-inventions":  "Inventions",
+                                                       "nav-team":  "Team",
+                                                       "nav-contact":  "Contact",
+                                                       "nav-join":  "Join Us",
+                                                       "club-name":  "Technology \u0026 Engineering Club",
+                                                       "rights":  "All rights reserved.",
+                                                       "loading":  "Loading",
+                                                       "section-label":  "Student Innovation",
+                                                       "section-title":  "Explore Each Project"
+                                                   },
+                                            "fr":  {
+                                                       "nav-home":  "Accueil",
+                                                       "nav-inventions":  "Inventions",
+                                                       "nav-team":  "Équipe",
+                                                       "nav-contact":  "Contact",
+                                                       "nav-join":  "Rejoindre",
+                                                       "club-name":  "Club de Technologie et d\u0027Ingénierie",
+                                                       "rights":  "Tous droits réservés.",
+                                                       "loading":  "Chargement",
+                                                       "section-label":  "Innovation Étudiante",
+                                                       "section-title":  "Explorez Chaque Projet"
+                                                   },
+                                            "ar":  {
+                                                       "nav-home":  "الرئيسية",
+                                                       "nav-inventions":  "الاختراعات",
+                                                       "nav-team":  "الفريق",
+                                                       "nav-contact":  "اتصل بنا",
+                                                       "nav-join":  "انضم إلينا",
+                                                       "club-name":  "نادي التكنولوجيا والهندسة",
+                                                       "rights":  "جميع الحقوق محفوظة.",
+                                                       "loading":  "جاري التحميل",
+                                                       "section-label":  "ابتكارات الطلاب",
+                                                       "section-title":  "استكشف كل مشروع"
+                                                   }
+                                        },
+                         "team":  {
+                                      "en":  {
+                                                 "nav-home":  "Home",
+                                                 "nav-inventions":  "Inventions",
+                                                 "nav-team":  "Team",
+                                                 "nav-contact":  "Contact",
+                                                 "nav-join":  "Join Us",
+                                                 "club-name":  "Technology \u0026 Engineering Club",
+                                                 "rights":  "All rights reserved.",
+                                                 "loading":  "Loading",
+                                                 "section-label":  "Our People",
+                                                 "section-title":  "Leadership \u0026 Founders",
+                                                 "page-title":  "Meet the \u003cspan\u003eTeam\u003c/span\u003e",
+                                                 "page-subtitle":  "The talented students behind CTE — innovators, engineers, and changemakers"
+                                             },
+                                      "fr":  {
+                                                 "nav-home":  "Accueil",
+                                                 "nav-inventions":  "Inventions",
+                                                 "nav-team":  "Équipe",
+                                                 "nav-contact":  "Contact",
+                                                 "nav-join":  "Rejoindre",
+                                                 "club-name":  "Club de Technologie et d\u0027Ingénierie",
+                                                 "rights":  "Tous droits réservés.",
+                                                 "loading":  "Chargement",
+                                                 "section-label":  "Notre Équipe",
+                                                 "section-title":  "Direction \u0026 Fondateurs",
+                                                 "page-title":  "Rencontrez l\u0027\u003cspan\u003eÉquipe\u003c/span\u003e",
+                                                 "page-subtitle":  "Les étudiants talentueux derrière CTE — innovateurs, ingénieurs et acteurs du changement"
+                                             },
+                                      "ar":  {
+                                                 "nav-home":  "الرئيسية",
+                                                 "nav-inventions":  "الاختراعات",
+                                                 "nav-team":  "الفريق",
+                                                 "nav-contact":  "اتصل بنا",
+                                                 "nav-join":  "انضم إلينا",
+                                                 "club-name":  "نادي التكنولوجيا والهندسة",
+                                                 "rights":  "جميع الحقوق محفوظة.",
+                                                 "loading":  "جاري التحميل",
+                                                 "section-label":  "فريقنا",
+                                                 "section-title":  "القادة والمؤسسون",
+                                                 "page-title":  "تعرف على \u003cspan\u003eالفريق\u003c/span\u003e",
+                                                 "page-subtitle":  "الطلاب الموهوبون وراء CTE — مبتكرون، مهندسون، وصناع تغيير"
+                                             }
+                                  },
+                         "contact":  {
+                                         "en":  {
+                                                    "nav-home":  "Home",
+                                                    "nav-inventions":  "Inventions",
+                                                    "nav-team":  "Team",
+                                                    "nav-contact":  "Contact",
+                                                    "nav-join":  "Join Us",
+                                                    "club-name":  "Technology \u0026 Engineering Club",
+                                                    "rights":  "All rights reserved.",
+                                                    "loading":  "Loading",
+                                                    "section-label":  "Get in Touch",
+                                                    "section-title":  "Contact Us",
+                                                    "page-title":  "Get in \u003cspan\u003eTouch\u003c/span\u003e",
+                                                    "page-subtitle":  "We\u0027d love to hear from you — reach out anytime",
+                                                    "contact-heading":  "We\u0027d love to hear from you",
+                                                    "contact-desc":  "Have questions about the club, our projects, or how to get involved? Reach out and one of our team members will get back to you.",
+                                                    "contact-email-label":  "Email:",
+                                                    "contact-location-label":  "Location:",
+                                                    "contact-location-value":  "University Morsli Abdellah, Tipaza, Algeria",
+                                                    "contact-map-title":  "University of Tipaza",
+                                                    "contact-map-addr":  "University Morsli Abdellah, Tipaza 42000, Algeria",
+                                                    "social-heading":  "Follow Us",
+                                                    "social-desc":  "Stay connected with CTE on social media for the latest updates on projects, events, and workshops.",
+                                                    "social-facebook-name":  "Facebook",
+                                                    "social-facebook-user":  "CTE DevTech",
+                                                    "social-instagram-name":  "Instagram",
+                                                    "social-instagram-user":  "@cte_2018",
+                                                    "social-tiktok-name":  "TikTok",
+                                                    "social-tiktok-user":  "@cte_2018",
+                                                    "social-email-name":  "Email",
+                                                    "social-email-user":  "ctedevtech@gmail.com"
+                                                },
+                                         "fr":  {
+                                                    "nav-home":  "Accueil",
+                                                    "nav-inventions":  "Inventions",
+                                                    "nav-team":  "Équipe",
+                                                    "nav-contact":  "Contact",
+                                                    "nav-join":  "Rejoindre",
+                                                    "club-name":  "Club de Technologie et d\u0027Ingénierie",
+                                                    "rights":  "Tous droits réservés.",
+                                                    "loading":  "Chargement",
+                                                    "section-label":  "Prenez Contact",
+                                                    "section-title":  "Contactez-Nous",
+                                                    "page-title":  "Contactez-\u003cspan\u003eNous\u003c/span\u003e",
+                                                    "page-subtitle":  "Nous serions ravis de vous entendre — contactez-nous à tout moment",
+                                                    "contact-heading":  "Nous aimerions avoir de vos nouvelles",
+                                                    "contact-desc":  "Des questions sur le club, nos projets ou comment s\u0027impliquer ? Contactez-nous et un membre de notre équipe vous répondra.",
+                                                    "contact-email-label":  "E-mail :",
+                                                    "contact-location-label":  "Adresse :",
+                                                    "contact-location-value":  "Université Morsli Abdellah, Tipaza, Algérie",
+                                                    "contact-map-title":  "Université de Tipaza",
+                                                    "contact-map-addr":  "Université Morsli Abdellah, Tipaza 42000, Algérie",
+                                                    "social-heading":  "Suivez-Nous",
+                                                    "social-desc":  "Restez connecté avec CTE sur les réseaux sociaux pour les dernières actualités sur les projets, événements et ateliers.",
+                                                    "social-facebook-name":  "Facebook",
+                                                    "social-facebook-user":  "CTE DevTech",
+                                                    "social-instagram-name":  "Instagram",
+                                                    "social-instagram-user":  "@cte_2018",
+                                                    "social-tiktok-name":  "TikTok",
+                                                    "social-tiktok-user":  "@cte_2018",
+                                                    "social-email-name":  "E-mail",
+                                                    "social-email-user":  "ctedevtech@gmail.com"
+                                                },
+                                         "ar":  {
+                                                    "nav-home":  "الرئيسية",
+                                                    "nav-inventions":  "الاختراعات",
+                                                    "nav-team":  "الفريق",
+                                                    "nav-contact":  "اتصل بنا",
+                                                    "nav-join":  "انضم إلينا",
+                                                    "club-name":  "نادي التكنولوجيا والهندسة",
+                                                    "rights":  "جميع الحقوق محفوظة.",
+                                                    "loading":  "جاري التحميل",
+                                                    "section-label":  "تواصل معنا",
+                                                    "section-title":  "اتصل بنا",
+                                                    "page-title":  "تواصل \u003cspan\u003eمعنا\u003c/span\u003e",
+                                                    "page-subtitle":  "يسعدنا التواصل معك — تواصل معنا في أي وقت",
+                                                    "contact-heading":  "يسعدنا التواصل معك",
+                                                    "contact-desc":  "لديك أسئلة عن النادي أو مشاريعنا أو كيفية الانضمام؟ تواصل معنا وسيرد عليك أحد أعضاء فريقنا.",
+                                                    "contact-email-label":  "البريد الإلكتروني:",
+                                                    "contact-location-label":  "الموقع:",
+                                                    "contact-location-value":  "جامعة مرسلي عبد الله، تيبازة، الجزائر",
+                                                    "contact-map-title":  "جامعة تيبازة",
+                                                    "contact-map-addr":  "جامعة مرسلي عبد الله، تيبازة 42000، الجزائر",
+                                                    "social-heading":  "تابعنا",
+                                                    "social-desc":  "ابق على اتصال مع CTE عبر وسائل التواصل الاجتماعي لآخر التحديثات عن المشاريع والفعاليات والورشات.",
+                                                    "social-facebook-name":  "فيسبوك",
+                                                    "social-facebook-user":  "CTE DevTech",
+                                                    "social-instagram-name":  "إنستغرام",
+                                                    "social-instagram-user":  "@cte_2018",
+                                                    "social-tiktok-name":  "تيك توك",
+                                                    "social-tiktok-user":  "@cte_2018",
+                                                    "social-email-name":  "البريد الإلكتروني",
+                                                    "social-email-user":  "ctedevtech@gmail.com"
+                                                }
+                                     },
+                         "join":  {
+                                      "en":  {
+                                                 "nav-home":  "Home",
+                                                 "nav-inventions":  "Inventions",
+                                                 "nav-team":  "Team",
+                                                 "nav-contact":  "Contact",
+                                                 "nav-join":  "Join Us",
+                                                 "club-name":  "Technology \u0026 Engineering Club",
+                                                 "rights":  "All rights reserved.",
+                                                 "loading":  "Loading",
+                                                 "section-label":  "Our Benefits",
+                                                 "section-title":  "Join the Club",
+                                                 "page-title":  "Join \u003cspan\u003eCTE\u003c/span\u003e",
+                                                 "page-subtitle":  "Become part of the oldest innovation club at the University of Tipaza",
+                                                 "benefit1-title":  "Hands-On Projects",
+                                                 "benefit1-desc":  "Turn your ideas into working prototypes with mentorship and resources",
+                                                 "benefit2-title":  "Workshops \u0026 Training",
+                                                 "benefit2-desc":  "Learn Arduino, CAD, 3D printing, programming, and more for free",
+                                                 "benefit3-title":  "Competitions",
+                                                 "benefit3-desc":  "Represent CTE in national and international robotics and innovation contests",
+                                                 "benefit4-title":  "Community",
+                                                 "benefit4-desc":  "Join a multidisciplinary network of passionate engineers and innovators",
+                                                 "form-name-label":  "Full Name *",
+                                                 "form-name-placeholder":  "Your full name",
+                                                 "form-spec-label":  "Specialization *",
+                                                 "form-spec-placeholder":  "e.g. Mechanical Engineering",
+                                                 "form-phone-label":  "Phone Number *",
+                                                 "form-phone-placeholder":  "+213 XX XXX XXXX",
+                                                 "form-email-label":  "Email Address *",
+                                                 "form-email-placeholder":  "you@example.com",
+                                                 "form-year-label":  "Academic Year *",
+                                                 "form-year-option-default":  "Select your year",
+                                                 "form-year-1":  "1st Year",
+                                                 "form-year-2":  "2nd Year",
+                                                 "form-year-3":  "3rd Year",
+                                                 "form-year-4":  "1st year master",
+                                                 "form-year-5":  "2nd Year master",
+                                                 "form-goal-label":  "What is your goal for joining? *",
+                                                 "form-goal-placeholder":  "Tell us why you want to join CTE and what you hope to achieve…",
+                                                 "form-submit":  "⚡ Submit Registration",
+                                                 "form-note":  "Your information will be sent directly to the club email for review.",
+                                                 "toast-success":  "✅ Registration sent! We\u0027ll be in touch soon.",
+                                                 "toast-error":  "❌ Something went wrong. Please try again.",
+                                                 "toast-rate-limit":  "⏳ Too many submissions. Try again in",
+                                                 "toast-validation":  "❌ Please fix the highlighted fields."
+                                             },
+                                      "fr":  {
+                                                 "nav-home":  "Accueil",
+                                                 "nav-inventions":  "Inventions",
+                                                 "nav-team":  "Équipe",
+                                                 "nav-contact":  "Contact",
+                                                 "nav-join":  "Rejoindre",
+                                                 "club-name":  "Club de Technologie et d\u0027Ingénierie",
+                                                 "rights":  "Tous droits réservés.",
+                                                 "loading":  "Chargement",
+                                                 "section-label":  "Nos Avantages",
+                                                 "section-title":  "Rejoindre le Club",
+                                                 "page-title":  "Rejoindre \u003cspan\u003eCTE\u003c/span\u003e",
+                                                 "page-subtitle":  "Faites partie du plus ancien club d\u0027innovation de l\u0027Université de Tipaza",
+                                                 "benefit1-title":  "Projets Pratiques",
+                                                 "benefit1-desc":  "Transformez vos idées en prototypes fonctionnels avec mentorat et ressources",
+                                                 "benefit2-title":  "Ateliers \u0026 Formations",
+                                                 "benefit2-desc":  "Apprenez Arduino, CAO, impression 3D, programmation et plus gratuitement",
+                                                 "benefit3-title":  "Compétitions",
+                                                 "benefit3-desc":  "Représentez CTE dans des concours nationaux et internationaux de robotique et d\u0027innovation",
+                                                 "benefit4-title":  "Communauté",
+                                                 "benefit4-desc":  "Rejoignez un réseau multidisciplinaire d\u0027ingénieurs et d\u0027innovateurs passionnés",
+                                                 "form-name-label":  "Nom Complet *",
+                                                 "form-name-placeholder":  "Votre nom complet",
+                                                 "form-spec-label":  "Spécialisation *",
+                                                 "form-spec-placeholder":  "ex. Génie Mécanique",
+                                                 "form-phone-label":  "Numéro de Téléphone *",
+                                                 "form-phone-placeholder":  "+213 XX XXX XXXX",
+                                                 "form-email-label":  "Adresse E-mail *",
+                                                 "form-email-placeholder":  "vous@exemple.com",
+                                                 "form-year-label":  "Année Académique *",
+                                                 "form-year-option-default":  "Sélectionnez votre année",
+                                                 "form-year-1":  "1ère Année",
+                                                 "form-year-2":  "2ème Année",
+                                                 "form-year-3":  "3ème Année",
+                                                 "form-year-4":  "1ère année master",
+                                                 "form-year-5":  "2ème année master",
+                                                 "form-goal-label":  "Quel est votre objectif en rejoignant ? *",
+                                                 "form-goal-placeholder":  "Dites-nous pourquoi vous voulez rejoindre CTE et ce que vous espérez accomplir…",
+                                                 "form-submit":  "⚡ Envoyer l\u0027Inscription",
+                                                 "form-note":  "Vos informations seront envoyées directement à l\u0027email du club pour examen.",
+                                                 "toast-success":  "✅ Inscription envoyée ! Nous vous contacterons bientôt.",
+                                                 "toast-error":  "❌ Une erreur est survenue. Veuillez réessayer.",
+                                                 "toast-rate-limit":  "⏳ Trop de soumissions. Réessayez dans",
+                                                 "toast-validation":  "❌ Veuillez corriger les champs indiqués."
+                                             },
+                                      "ar":  {
+                                                 "nav-home":  "الرئيسية",
+                                                 "nav-inventions":  "الاختراعات",
+                                                 "nav-team":  "الفريق",
+                                                 "nav-contact":  "اتصل بنا",
+                                                 "nav-join":  "انضم إلينا",
+                                                 "club-name":  "نادي التكنولوجيا والهندسة",
+                                                 "rights":  "جميع الحقوق محفوظة.",
+                                                 "loading":  "جاري التحميل",
+                                                 "section-label":  "مزايا الانضمام",
+                                                 "section-title":  "انضم إلى النادي",
+                                                 "page-title":  "انضم إلى \u003cspan\u003eCTE\u003c/span\u003e",
+                                                 "page-subtitle":  "كن جزءاً من أقدم نادٍ للابتكار في جامعة تيبازة",
+                                                 "benefit1-title":  "مشاريع تطبيقية",
+                                                 "benefit1-desc":  "حوّل أفكارك إلى نماذج أولية عملية بإشراف وموارد متاحة",
+                                                 "benefit2-title":  "ورشات وتدريب",
+                                                 "benefit2-desc":  "تعلم الأردوينو والتصميم بمساعدة الحاسوب والطباعة ثلاثية الأبعاد والبرمجة مجاناً",
+                                                 "benefit3-title":  "مسابقات",
+                                                 "benefit3-desc":  "مثّل CTE في مسابقات وطنية ودولية في الروبوتيك والابتكار",
+                                                 "benefit4-title":  "مجتمع",
+                                                 "benefit4-desc":  "انضم إلى شبكة متعددة التخصصات من المهندسين والمبتكرين المتحمسين",
+                                                 "form-name-label":  "الاسم الكامل *",
+                                                 "form-name-placeholder":  "اسمك الكامل",
+                                                 "form-spec-label":  "التخصص *",
+                                                 "form-spec-placeholder":  "مثال: الهندسة الميكانيكية",
+                                                 "form-phone-label":  "رقم الهاتف *",
+                                                 "form-phone-placeholder":  "+213 XX XXX XXXX",
+                                                 "form-email-label":  "البريد الإلكتروني *",
+                                                 "form-email-placeholder":  "you@example.com",
+                                                 "form-year-label":  "السنة الدراسية *",
+                                                 "form-year-option-default":  "اختر سنتك الدراسية",
+                                                 "form-year-1":  "السنة الأولى",
+                                                 "form-year-2":  "السنة الثانية",
+                                                 "form-year-3":  "السنة الثالثة",
+                                                 "form-year-4":  "السنة الأولى ماستر",
+                                                 "form-year-5":  "السنة الثانية ماستر",
+                                                 "form-goal-label":  "ما هو هدفك من الانضمام؟ *",
+                                                 "form-goal-placeholder":  "أخبرنا لماذا تريد الانضمام إلى CTE وماذا تطمح لتحقيقه…",
+                                                 "form-submit":  "⚡ إرسال التسجيل",
+                                                 "form-note":  "سيتم إرسال معلوماتك مباشرة إلى البريد الإلكتروني للنادي للمراجعة.",
+                                                 "toast-success":  "✅ تم إرسال التسجيل! سنتواصل معك قريباً.",
+                                                 "toast-error":  "❌ حدث خطأ ما. الرجاء المحاولة مرة أخرى.",
+                                                 "toast-rate-limit":  "⏳ عدد كبير من المحاولات. حاول مرة أخرى بعد",
+                                                 "toast-validation":  "❌ الرجاء تصحيح الحقول المشار إليها."
+                                             }
+                                  }
+                     }
 }
